@@ -5,18 +5,25 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
+    "component": "node scripts/generate-component.mjs",
+    "section": "node scripts/generate-section.mjs",
     "start": "next start",
     "lint": "eslint"
   },
   "dependencies": {
+    "framer-motion": "^12.42.2",
+    "gsap": "^3.15.0",
+    "lenis": "^1.3.25",
     "next": "16.2.10",
     "react": "19.2.4",
-    "react-dom": "19.2.4"
+    "react-card-flip": "^1.2.3",
+    "react-dom": "19.2.4",
+    "react-icons": "^5.7.0",
+    "react-intersection-observer": "^10.1.0",
+    "sass": "^1.101.0"
   },
   "devDependencies": {
-    "@tailwindcss/postcss": "^4",
     "eslint": "^9",
-    "eslint-config-next": "16.2.10",
-    "tailwindcss": "^4"
+    "eslint-config-next": "16.2.10"
   }
 }

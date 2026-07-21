@@ -1,0 +1,41 @@
+.imagenParallaxComponent {
+    --parallax-y: 0px;
+    --rotate-x: 0deg;
+    --rotate-y: 0deg;
+    aspect-ratio: 16 / 9;
+    overflow: hidden;
+    perspective: 900px;
+    transform: rotateX(var(--rotate-x)) rotateY(var(--rotate-y));
+    transform-style: preserve-3d;
+    transition: transform 180ms ease-out;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    object-fit: cover;
+    z-index: -1;
+
+    img {
+        width: 100%;
+        height: calc(100% + 96px);
+        display: block;
+        object-fit: cover;
+        transform: translateY(var(--parallax-y)) translateZ(40px) scale(1.08);
+        transform-origin: center;
+        will-change: transform;
+        transition: transform 120ms ease-out;
+        user-select: none;
+        pointer-events: none;
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+        transition: none;
+
+        img {
+            height: 100%;
+            transform: none;
+            transition: none;
+        }
+    }
+}
