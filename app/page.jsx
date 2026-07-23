@@ -6,7 +6,10 @@ export default function Home() {
     return <>
         <NavbarComponent />
         <main>
-            <HeaderComponent />
+            <HeaderComponent 
+                imageUrl="/home/headerBg.jpg" 
+                title="La forma más simple de resolver el almuerzo corporativo."
+            />
             <HomeSecondSection />
             <HomeThirdSection />
             <HomeFourthSection />   

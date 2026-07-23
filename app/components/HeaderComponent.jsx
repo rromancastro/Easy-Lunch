@@ -1,15 +1,25 @@
-import { CotizaComponent, ImagenParallaxComponent, SplitH1 } from "."
+import Link from "next/link"
+import { CotizaComponent, ImagenParallaxComponent, SplitH1, SplitP } from "."
 
-export const HeaderComponent = () => {
+export const HeaderComponent = ({ imageUrl, title, description, link}) => {
     return <header>
         <ImagenParallaxComponent 
-            rutaImagen="/home/headerBg.jpg" 
+            rutaImagen={imageUrl}
             alt="EasyLunch banner" 
-            intensidad={1.6}
+            intensidad={2}
         />
         <SplitH1 id="homeHeaderTitle">
-            La forma más simple de resolver el almuerzo corporativo.
+            {title}
         </SplitH1>
-        <CotizaComponent />
+        {
+            description && <SplitP id={'homeHeaderDescription'}>{description}</SplitP>
+        }
+        {
+            link && <Link target="_blank" href={link}>Ver App
+            </Link>
+        }
+        {
+            !link && <CotizaComponent />
+        }
     </header>
 }

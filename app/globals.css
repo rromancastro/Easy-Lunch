@@ -228,13 +228,33 @@ header {
   display: flex;
   flex-direction: column;
   justify-content: end;
-  gap: 32px;
+  gap: 24px;
   padding: 0 64px;
   padding-bottom: 200px;
   padding-bottom: 20vh;
 }
 header > h1 {
   width: 50%;
+}
+header p {
+  max-width: 460px;
+}
+header > a {
+  background-color: #138E03;
+  font-weight: 500;
+  box-shadow: 0px -2px 4px 0px rgba(30, 30, 30, 0.1019607843) inset;
+  box-shadow: 0px 1px 2px 0px rgba(255, 255, 255, 0.2) inset;
+  height: 40px;
+  width: 200px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 16px;
+}
+header > a:hover {
+  background-color: #79DB6C;
 }
 
 #cotizaComponent > button {
@@ -825,6 +845,143 @@ header > h1 {
     max-width: 100vw;
   }
 }
+#appSecondSection {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#appSecondSectionContent {
+  max-width: 1250px;
+  width: 100%;
+  height: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  justify-content: center;
+}
+#appSecondSectionContent > article {
+  padding: 0 56px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+#appSecondSectionContent > article h2 {
+  color: #1E1E1E;
+}
+#appSecondSectionContent > article p {
+  color: #1E1E1E;
+}
+#appSecondSectionContent > article > div {
+  display: flex;
+  gap: 16px;
+}
+#appSecondSectionContent > article > div > article {
+  background-color: #fff;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.1607843137);
+  border-radius: 16px;
+  padding: 24px 16px;
+  width: 256px;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+#appSecondSectionContent > article > div > article svg {
+  position: absolute;
+  top: 24px;
+  right: 16px;
+}
+#appSecondSectionContent > article > div > article h3 {
+  font-size: 16px;
+  max-width: 160px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  color: #1E1E1E;
+  font-weight: 600;
+}
+#appSecondSectionContent > article > div > article ul {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding-left: 4px;
+}
+#appSecondSectionContent > article > div > article ul li {
+  color: #1E1E1E;
+  list-style: none;
+  position: relative;
+  font-size: 14px;
+  padding-left: 12px;
+}
+#appSecondSectionContent > article > div > article ul li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 2px;
+  height: 2px;
+  border-radius: 50%;
+  background-color: black;
+}
+
+#appThirdSection {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 72px;
+}
+
+.appThirdSectionCard {
+  border-radius: 24px;
+  width: 100vw;
+  max-width: 903px;
+  height: 598px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  gap: 24px;
+  padding: 48px 64px;
+}
+.appThirdSectionCard > div {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  height: 100%;
+  width: 100%;
+  max-width: 345px;
+  justify-content: center;
+}
+.appThirdSectionCard > svg {
+  position: absolute;
+  width: 32px;
+  height: 32px;
+  bottom: 24px;
+  justify-self: center;
+  background-color: rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(4px);
+  border-radius: 8px;
+  padding: 4px;
+}
+.appThirdSectionCard > svg path {
+  color: #A4F898;
+}
+.appThirdSectionCard .appThirdSectionCardImageContainer {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: end;
+  align-items: center;
+}
+.appThirdSectionCard .appThirdSectionCardImageContainer img {
+  height: 100%;
+  width: auto;
+}
+.appThirdSectionCard:nth-child(1) {
+  background: linear-gradient(180deg, #4D4D4D 0%, #1E1E1E 100%);
+}
+
 @font-face {
   font-family: "Montserrat";
   src: url("/fonts/Montserrat.ttf") format("truetype");

@@ -1,0 +1,89 @@
+#appSecondSection {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#appSecondSectionContent {
+    max-width: 1250px;
+    width: 100%;
+    height: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    justify-content: center;
+
+    >article {
+        padding: 0 56px;
+        display: flex;
+        flex-direction: column;
+        gap: 24px;
+
+        h2 {
+            color: #1E1E1E;
+        }
+
+        p {
+            color: #1E1E1E;
+        }
+
+        >div {
+            display: flex;
+            gap: 16px;
+
+            >article {
+                background-color: #fff;
+                box-shadow: 0px 4px 4px 0px #00000029;
+                border-radius: 16px;
+                padding: 24px 16px;
+                width: 256px;
+                display: flex;
+                flex-direction: column;
+                gap: 40px;
+
+                svg {
+                    position: absolute;
+                    top: 24px;
+                    right: 16px;
+                }
+
+                h3 {
+                    font-size: 16px;
+                    max-width: 160px;
+                    height: 40px;
+                    display: flex;
+                    align-items: center;
+                    color: #1E1E1E;
+                    font-weight: 600;
+                }
+
+                ul {
+                    display: flex;
+                    flex-direction: column;
+                    gap: 16px;
+                    padding-left: 4px;
+
+                    li {
+                        color: #1E1E1E;
+                        list-style: none;
+                        position: relative;
+                        font-size: 14px;
+                        padding-left: 12px;
+                    }
+
+                    li::before {
+                        content: "";
+                        position: absolute;
+                        left: 0;
+                        top: 50%;
+                        transform: translateY(-50%);
+                        width: 2px;
+                        height: 2px;
+                        border-radius: 50%;
+                        background-color: black;
+                    }
+                }
+            }
+        }
+    }
+}
