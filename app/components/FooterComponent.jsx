@@ -28,7 +28,7 @@ export const FooterComponent = () => {
                 <form>
                     <input type="text" placeholder="Nombre y Apellido" />
                     <input type="text" placeholder="Teléfono" />
-                    <input type="email" placeholder="E-Mail" />
+                    <input type="email" placeholder="E-mail" />
                     <input type="text" placeholder="Empresa" />
                     <button className="verMasButton">Cotizá ahora</button>
                 </form>

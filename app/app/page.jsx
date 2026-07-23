@@ -1,5 +1,5 @@
 import { FooterComponent, HeaderComponent, NavbarComponent } from "../components";
-import { AppSecondSection, AppThirdSection } from "../sections";
+import { AppFourthSection, AppSecondSection, AppThirdSection } from "../sections";
 
 export default function AppPage() {
     return <>
@@ -13,6 +13,7 @@ export default function AppPage() {
             />
             <AppSecondSection />
             <AppThirdSection />
+            <AppFourthSection />
         </main>
         <FooterComponent />
     </>

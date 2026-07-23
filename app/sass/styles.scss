@@ -15,6 +15,13 @@
 @use "./sections/home/homeSeventhSection";
 @use "./sections/app/appSecondSection";
 @use "./sections/app/appThirdSection";
+@use "./sections/app/appFourthSection";
+@use "./sections/servicios/serviciosSecondSection";
+@use "./sections/servicios/serviciosThirdSection";
+@use "./sections/servicios/serviciosFourthSection";
+@use "./sections/servicios/serviciosFifthSection";
+@use "./sections/faq/faqSecondSection";
+@use "./sections/trabaja-con-nosotros/trabajaConNosotrosSecondSection";
 
 @font-face {
     font-family: 'Montserrat';
@@ -86,6 +93,7 @@ li,
 button,
 input,
 textarea,
+label,
 select {
     font-family: 'Montserrat', sans-serif;
     font-style: normal;

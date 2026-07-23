@@ -84,11 +84,14 @@
                         font-weight: 400;
                         background-color: #EEEEEE;
                         width: 100%;
+                        border: 0.75px solid #EEEEEE;
 
-                        &:hover, &:focus {
-                            border: 0.75px solid #79DB6C outset;
+                        &:hover,
+                        &:focus {
+                            border: 0.75px solid #79DB6C;
                         }
                     }
+
                     button {
                         grid-column: 2/3;
                         width: 200px;
@@ -99,7 +102,7 @@
         }
     }
 
-    > p {
+    >p {
         z-index: 2;
     }
 }

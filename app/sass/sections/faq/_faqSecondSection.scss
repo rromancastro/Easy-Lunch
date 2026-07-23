@@ -1,0 +1,63 @@
+#faqSecondSection {
+    padding: 92px 72px;
+
+    >article {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        border-radius: 24px;
+        overflow: hidden;
+
+        >div {
+            &:nth-child(1) {
+                width: 100%;
+                height: auto;
+            }
+
+            &:nth-child(2) {
+                background-color: #fff;
+                min-width: 536px;
+                padding: 72px;
+                height: 100%;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                gap: 8px;
+
+                h2,
+                p {
+                    color: #1E1E1E;
+                }
+                h2 {
+                    margin-bottom: 16px;
+                }
+
+                p {
+                    font-size: 16px;
+                    font-weight: 600;
+                    display: flex;
+                    gap: 8px;
+                    flex-direction: column;
+                    cursor: pointer;
+
+                    span {
+                        color: #1E1E1E !important;
+                        font-weight: initial;
+                        overflow: hidden;
+                        transition: .3s ease-in-out;
+                        height: 0px;
+                    }
+
+                    &:hover {
+                        color: #138E03;
+
+                        span {
+                            height: 20px;
+                        }
+                    }
+
+                }
+            }
+        }
+    }
+}

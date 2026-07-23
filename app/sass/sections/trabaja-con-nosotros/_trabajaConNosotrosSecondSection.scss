@@ -1,0 +1,85 @@
+#trabajaConNosotrosSecondSection {
+    padding-right: 0px;
+
+    article {
+        width: 100%;
+        border-radius: 24px 0 0 24px;
+        display: flex;
+        overflow: hidden;
+        height: 848px;
+
+        >div {
+            &:nth-child(1) {
+                padding: 0 72px;
+                background-color: #fff;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                gap: 24px;
+                width: fit-content;
+
+                h2,
+                p {
+                    color: #1E1E1E;
+                    width: 372px;
+                }
+
+                form {
+                    display: flex;
+                    flex-direction: column;
+                    gap: 16px;
+
+                    input {
+                        height: 33px;
+                        border-radius: 8px;
+                        padding: 8px;
+                        outline: none;
+                        color: #1E1E1E;
+                        font-weight: 400;
+                        background-color: #EEEEEE;
+                        width: 372px;
+                        border: 0.75px solid #EEEEEE;
+
+                        &:hover,
+                        &:focus {
+                            border: 0.75px solid #79DB6C;
+                        }
+
+                        &[type="file"] {
+                            display: none;
+                        }
+                    }
+
+                    .trabajaConNosotrosFileInput {
+                        width: 200px;
+                        height: 40px;
+                        border-radius: 8px;
+                        background-color: #ADACAC;
+                        color: #fff;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        font-weight: 500;
+                        cursor: pointer;
+                        box-shadow: 0px -2px 4px 0px #1E1E1E1A inset;
+                        box-shadow: 0px 1px 2px 0px #FFFFFF33 inset;
+
+                        &:hover,
+                        &:focus {
+                            background-color: #898989;
+                        }
+                    }
+
+                    button {
+                        width: 200px;
+                    }
+                }
+            }
+
+            &:nth-child(2) {
+                width: 100%;
+                height: auto;
+            }
+        }
+    }
+}

@@ -6,85 +6,51 @@ import Image from "next/image"
 import { useRef } from "react"
 
 const cardCount = 4
+const cardStackOffset = 24
+const cardTravel = 686
+const cardShrink = 0.045
+const cardBlur = 2.4
 
-const clamp = (value, min, max) => Math.min(max, Math.max(min, value))
-const getScrollStep = (progress) => progress * (cardCount - 1)
+const getCardY = (progress, index) => {
+    const scrollStep = progress * (cardCount - 1)
 
-const getDistanceFromCenter = (progress, index) => {
-    const scrollStep = getScrollStep(progress)
-
-    if (index === cardCount - 1 && scrollStep < 1) {
-        return -1 - scrollStep
+    if (scrollStep >= index) {
+        return index * cardStackOffset
     }
 
-    if (index === 0 && scrollStep > cardCount - 2) {
-        return 1 + (cardCount - 1 - scrollStep)
-    }
+    return index * cardStackOffset + (index - scrollStep) * cardTravel
+}
 
-    return index - scrollStep
+const getShownDistance = (progress, index) => {
+    const scrollStep = progress * (cardCount - 1)
+    return Math.max(0, scrollStep - index)
+}
+
+const getCardScale = (progress, index) => {
+    return Math.max(0.86, 1 - getShownDistance(progress, index) * cardShrink)
+}
+
+const getCardBlur = (progress, index) => {
+    return Math.min(getShownDistance(progress, index) * cardBlur, 7)
+}
+
+const getOverlayOpacity = (progress, index) => {
+    return Math.min(getShownDistance(progress, index) * 0.16, 0.42)
 }
 
 const useCardMotion = (scrollYProgress, index) => {
-    const x = useTransform(scrollYProgress, (latest) => {
-        const distance = clamp(getDistanceFromCenter(latest, index), -1.45, 1.45)
-        return `${distance * 334}px`
-    })
+    const y = useTransform(scrollYProgress, (latest) => getCardY(latest, index))
+    const scale = useTransform(scrollYProgress, (latest) => getCardScale(latest, index))
+    const contentBlur = useTransform(scrollYProgress, (latest) => `${getCardBlur(latest, index)}px`)
+    const overlayOpacity = useTransform(scrollYProgress, (latest) => getOverlayOpacity(latest, index))
 
-    const width = useTransform(scrollYProgress, (latest) => {
-        const distance = Math.min(Math.abs(getDistanceFromCenter(latest, index)), 1)
-        return 576 - distance * 204
-    })
-
-    const height = useTransform(scrollYProgress, (latest) => {
-        const distance = Math.min(Math.abs(getDistanceFromCenter(latest, index)), 1)
-        return 598 - distance * 142
-    })
-
-    const padding = useTransform(scrollYProgress, (latest) => {
-        const distance = Math.min(Math.abs(getDistanceFromCenter(latest, index)), 1)
-        return 72 - distance * 24
-    })
-
-    const opacity = useTransform(scrollYProgress, (latest) => {
-        const distance = Math.abs(getDistanceFromCenter(latest, index))
-
-        if (distance <= 1) {
-            return 1
-        }
-
-        return 1 - clamp((distance - 1) / 0.45, 0, 1)
-    })
-
-    const overlayOpacity = useTransform(scrollYProgress, (latest) => {
-        const rawDistance = getDistanceFromCenter(latest, index)
-        const distance = clamp((Math.abs(rawDistance) - 0.28) / 0.72, 0, 1)
-        const maxOpacity = rawDistance < 0 ? 0.95 : 0.6
-
-        return distance * maxOpacity
-    })
-
-    const overlayBlur = useTransform(scrollYProgress, (latest) => {
-        const rawDistance = getDistanceFromCenter(latest, index)
-        const distance = clamp((Math.abs(rawDistance) - 0.28) / 0.72, 0, 1)
-        const maxBlur = rawDistance < 0 ? 12 : 6
-
-        return `${distance * maxBlur}px`
-    })
-
-    const zIndex = useTransform(scrollYProgress, (latest) => {
-        const distance = Math.abs(getDistanceFromCenter(latest, index))
-        return Math.round(10 - Math.min(distance, 2) * 4)
-    })
+    const zIndex = index + 1
 
     return {
-        "--card-x": x,
+        "--card-content-blur": contentBlur,
         "--overlay-opacity": overlayOpacity,
-        "--overlay-blur": overlayBlur,
-        "--card-content-blur": overlayBlur,
-        width,
-        height,
-        padding,
-        opacity,
+        y,
+        scale,
         zIndex,
     }
 }

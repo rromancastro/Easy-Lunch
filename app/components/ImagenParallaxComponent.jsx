@@ -59,6 +59,20 @@ export const ImagenParallaxComponent = ({
             frameRef.current = window.requestAnimationFrame(updatePerspective);
         };
 
+        const handlePointerMove = (event) => {
+            const rect = container.getBoundingClientRect();
+            pointerRef.current = {
+                x: ((event.clientX - rect.left) / rect.width - 0.5) * 2,
+                y: ((event.clientY - rect.top) / rect.height - 0.5) * 2,
+            };
+            requestUpdate();
+        };
+
+        const handlePointerLeave = () => {
+            pointerRef.current = { x: 0, y: 0 };
+            requestUpdate();
+        };
+
         const observer = new IntersectionObserver(
             ([entry]) => {
                 isInViewRef.current = entry.isIntersecting;
@@ -72,6 +86,8 @@ export const ImagenParallaxComponent = ({
 
         window.addEventListener("scroll", requestUpdate, { passive: true });
         window.addEventListener("resize", requestUpdate);
+        container.addEventListener("pointermove", handlePointerMove);
+        container.addEventListener("pointerleave", handlePointerLeave);
 
         return () => {
             observer.disconnect();

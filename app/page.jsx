@@ -9,6 +9,7 @@ export default function Home() {
             <HeaderComponent 
                 imageUrl="/home/headerBg.jpg" 
                 title="La forma más simple de resolver el almuerzo corporativo."
+                shadow={2}
             />
             <HomeSecondSection />
             <HomeThirdSection />

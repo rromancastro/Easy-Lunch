@@ -11,6 +11,13 @@
     border: 1px solid #FFFFFF33;
     z-index: 100;
 
+    svg {
+        &:hover {
+            path {
+                fill: #79DB6C;
+            }
+        }
+    }
 
     img {
         height: 100%;
@@ -23,6 +30,11 @@
         gap: 16px;
         a {
             color: #fff;
+
+            &.is-active {
+                color: #A4F898;
+            }
+
             &:hover {
                 color: #A4F898;
             }

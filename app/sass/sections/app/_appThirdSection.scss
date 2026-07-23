@@ -1,24 +1,50 @@
 #appThirdSection {
+    padding: 0;
+    min-height: 400vh;
+
+    .inverted {
+        flex-direction: row-reverse;
+    }
+}
+
+#appThirdSectionSticky {
+    position: sticky;
+    top: 0;
+    height: 100vh;
+    width: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    gap: 72px;
+    gap: clamp(32px, 6vh, 72px);
+    padding: clamp(24px, 6vh, 72px) 72px;
+    overflow: hidden;
 }
 
 
-#appThirdSectionCardsContainer {}
+#appThirdSectionCardsContainer {
+    width: min(100%, 903px);
+    height: 670px;
+    flex: 0 0 670px;
+    overflow: visible;
+}
 
 .appThirdSectionCard {
     border-radius: 24px;
-    width: 100vw;
+    width: 100%;
     max-width: 903px;
     height: 598px;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
+    display: flex;
     align-items: center;
+    justify-content: space-between;
     gap: 24px;
     padding: 48px 64px;
+    position: absolute;
+    inset: 0 0 auto;
+    margin: 0 auto;
+    overflow: hidden;
+    transform-origin: top center;
+    will-change: transform;
 
     >div {
         display: flex;
@@ -28,6 +54,10 @@
         width: 100%;
         max-width: 345px;
         justify-content: center;
+
+        p {
+            font-weight: 300;
+        }
     }
 
     >svg {
@@ -39,6 +69,8 @@
         background-color: #00000033;
         backdrop-filter: blur(4px);
         border-radius: 8px;
+        left: 50%;
+        transform: translateX(-50%);
         padding: 4px;
 
         path {
@@ -62,5 +94,29 @@
 
     &:nth-child(1) {
         background: linear-gradient(180deg, #4D4D4D 0%, #1E1E1E 100%);
+    }
+
+    &:nth-child(2) {
+        background: linear-gradient(180deg, #898989 0%, #4D4D4D 100%);
+    }
+
+    &:nth-child(3) {
+        background: linear-gradient(180deg, #ADACAC 0%, #898989 100%);
+    }
+
+    &:nth-child(4) {
+        background: linear-gradient(180deg, #A4F898 0%, #79DB6C 100%);
+
+        h3, p {
+            color: #1E1E1E;
+        }
+
+        p {
+            font-weight: 400;
+        }
+
+        .verMasButton {
+            width: 200px !important;
+        }
     }
 }
