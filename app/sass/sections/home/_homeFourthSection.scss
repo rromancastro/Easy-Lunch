@@ -8,7 +8,7 @@
 #homeFourthSectionSticky {
     position: sticky;
     top: 0;
-    height: 100vh;
+    height: 100%;
     width: 100%;
     display: flex;
     flex-direction: column;
@@ -119,5 +119,71 @@
 
     img {
         width: 361px;
+    }
+}
+
+
+@media (max-width: 1024px) {
+    #homeFourthSectionSticky {
+        padding: 24px 16px;
+        padding-bottom: 48px;
+        gap: 24px;
+    }
+
+    #homeFourthSectionTitle {
+        max-width: 199px;
+    }
+
+    #homeFourthSectionCardsContainer {
+        height: 500px;
+        flex: 0 0 500px;
+    }
+
+    .homeFourthSectionCard {
+        width: 296px;
+        height: 420px;
+        padding: 32px 24px;
+        gap: 16px;
+
+        h3 {
+            font-size: 36px;
+        }
+
+        h4 {
+            font-size: 24px;
+        }
+
+        p {
+            font-size: 13px;
+            max-width: 248px;
+            text-wrap: wrap;
+        }
+    }
+
+    .homeFourthSectionCard1 {
+        img {
+            width: 270px;
+        }
+    }
+
+    .homeFourthSectionCard2 {
+        p {
+            max-width: 240px;
+        }
+        img {
+            width: 230px;
+        }
+    }
+
+    .homeFourthSectionCard3 {
+        img {
+            width: 250px;
+        }
+    }
+
+    .homeFourthSectionCard4 {
+        img {
+            width: 230px;
+        }
     }
 }

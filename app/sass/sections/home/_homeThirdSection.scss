@@ -91,3 +91,40 @@
         }
     }
 }
+
+@media (max-width: 1024px) {
+    #homeThirdSection {
+        padding: 24px 16px;
+        padding-bottom: 48px;
+        gap: 48px;
+
+        .sectionTitleContainer {
+            h2 {
+                font-size: 36px;
+                font-weight: 600;
+            }
+            p {
+                font-size: 13px;
+            }
+        }
+
+        #homeThirdSectionContent {
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        .flipCard, .flipCardFront, .flipCardBack {
+            width: 100%;
+            width: 361px;
+            height: 266px;
+        }
+
+        .flipCardFront {
+            padding-bottom: 32px;
+            h3 {
+                font-size: 24px;
+                max-width: 290px;
+            }
+        }
+    }
+}

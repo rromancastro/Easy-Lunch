@@ -17,30 +17,36 @@ export const AppFourthSection = () => {
         gsap.registerPlugin(ScrollTrigger)
 
         const ctx = gsap.context(() => {
-            gsap.timeline({
-                scrollTrigger: {
-                    trigger: cardsContainerRef.current,
-                    start: "top 85%",
-                    end: "bottom 85%",
-                    scrub: 0.8,
-                },
-            }).fromTo(
-                "article",
-                {
-                    y: (index) => 72 + index * 24,
-                    scale: 0.9,
-                    autoAlpha: 0,
-                },
-                {
-                    y: 0,
-                    scale: 1,
-                    autoAlpha: 1,
-                    ease: "none",
-                    stagger: {
-                        each: 0.18,
+            const matchMedia = gsap.matchMedia()
+
+            matchMedia.add("(min-width: 1025px)", () => {
+                gsap.timeline({
+                    scrollTrigger: {
+                        trigger: cardsContainerRef.current,
+                        start: "top 85%",
+                        end: "bottom 85%",
+                        scrub: 0.8,
                     },
-                }
-            )
+                }).fromTo(
+                    "article",
+                    {
+                        y: (index) => 72 + index * 24,
+                        scale: 0.9,
+                        autoAlpha: 0,
+                    },
+                    {
+                        y: 0,
+                        scale: 1,
+                        autoAlpha: 1,
+                        ease: "none",
+                        stagger: {
+                            each: 0.18,
+                        },
+                    }
+                )
+            })
+
+            return () => matchMedia.revert()
         }, cardsContainerRef)
 
         return () => ctx.revert()
@@ -50,7 +56,7 @@ export const AppFourthSection = () => {
         <div className="sectionTitleContainer">
             <SplitH2 id="appFourthSectionTitle">
                 Todo en una sola app. <br />
-                Simple para vos, <br />
+                Simple para vos, 
                 simple para tu equipo.
             </SplitH2>
         </div>

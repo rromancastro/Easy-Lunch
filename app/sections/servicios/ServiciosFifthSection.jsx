@@ -1,11 +1,39 @@
+"use client"
+
 import { ImagenParallaxComponent, SplitH2, SplitP } from "@/app/components"
+import { useEffect, useState } from "react"
+
+const MOBILE_BREAKPOINT = 1024
+
+const isMobile = (measure) => measure <= MOBILE_BREAKPOINT
+
+const getResponsiveImage = (imageName, shouldUseMobileImage) => {
+    const suffix = shouldUseMobileImage ? "Mobile" : ""
+
+    return `/servicios/${imageName}${suffix}.png`
+}
 
 export const ServiciosFifthSection = () => {
+    const [windowWidth, setWindowWidth] = useState(null)
+
+    useEffect(() => {
+        const updateWindowWidth = () => {
+            setWindowWidth(window.innerWidth)
+        }
+
+        updateWindowWidth()
+        window.addEventListener("resize", updateWindowWidth)
+
+        return () => window.removeEventListener("resize", updateWindowWidth)
+    }, [])
+
+    const shouldUseMobileImages = windowWidth !== null && isMobile(windowWidth)
+
     return <section id="serviciosFifthSection">
         <article>
             <div>
                 <ImagenParallaxComponent
-                    rutaImagen={'/servicios/fifthSectionImage1.png'}
+                    rutaImagen={getResponsiveImage("fifthSectionImage1", shouldUseMobileImages)}
                     alt="EasyLunch banner"
                     intensidad={2}
                 />
@@ -56,7 +84,7 @@ export const ServiciosFifthSection = () => {
             </div>
             <div>
                 <ImagenParallaxComponent
-                    rutaImagen={'/servicios/fifthSectionImage2.png'}
+                    rutaImagen={getResponsiveImage("fifthSectionImage2", shouldUseMobileImages)}
                     alt="EasyLunch banner"
                     intensidad={2}
                 />

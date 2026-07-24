@@ -9,6 +9,9 @@
 #serviciosFourthSectionCardsContainer {
     display: flex;
     gap: 24px;
+    width: 100%;
+    justify-content: center;
+    flex-wrap: wrap;
 
     article {
         background-color: #fff;
@@ -37,6 +40,36 @@
         h3 {
             font-size: 16px;
             font-weight: 600;
+        }
+    }
+}
+
+
+@media (max-width: 1024px) {
+    #serviciosFourthSection {
+        gap: 28px;
+        padding: 12px 0;
+        padding-bottom: 28px;
+    }
+    #serviciosFourthSectionCardsContainer {
+        padding: 12 32px;
+        gap: 16px;
+        flex-wrap: nowrap;
+        justify-content: flex-start;
+        overflow-x: auto;
+        overflow-y: hidden;
+        -webkit-overflow-scrolling: touch;
+        scrollbar-width: none;
+
+        &::-webkit-scrollbar {
+            display: none;
+        }
+
+        article {
+            flex: 0 0 240px;
+            height: 345px;
+            opacity: 1;
+            transform: none;
         }
     }
 }

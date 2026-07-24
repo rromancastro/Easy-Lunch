@@ -5,6 +5,7 @@
     padding: 12px 72px;
     position: fixed;
     box-shadow: 0px 4px 4px 0px #0000001A, 14px 0px 14px 0px #ffffff1a inset, -14px 0px 14px 0px #ffffff1a inset;
+    -webkit-backdrop-filter: blur(10px);
     backdrop-filter: blur(10px);
     width: 100%;
     background-color: #00000040;
@@ -28,6 +29,16 @@
         display: flex;
         align-items: center;
         gap: 16px;
+        .navbarMenuButton {
+            display: none;
+        }
+
+        .navbarLinks {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+        }
+
         a {
             color: #fff;
 
@@ -41,6 +52,86 @@
         }
         button {
             margin-left: 48px;
+        }
+    }
+}
+
+@media (max-width: 1024px) {
+    #navbarComponent {
+        padding: 16px;
+        
+        >div {
+            a {
+                font-size: 14px;
+            }
+            button {
+                margin-left: 16px;
+                width: 122px;
+                font-size: 14px;
+            }
+        }
+    }
+}
+
+@media (max-width: 769px) {
+    #navbarComponent {
+        flex-wrap: wrap;
+        row-gap: 16px;
+
+        >a {
+            order: 1;
+        }
+
+        >div {
+            display: contents;
+
+            .navbarMenuButton {
+                order: 2;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                background: transparent;
+                padding: 0;
+                margin: 0;
+                width: 36px;
+                height: 36px;
+            }
+
+            .cotizaComponent {
+                order: 3;
+                margin-left: auto;
+            }
+
+            .navbarLinks {
+                order: 4;
+                width: 100%;
+                display: flex;
+                justify-content: space-between;
+                gap: clamp(24px, 8vw, 48px);
+                max-height: 0;
+                opacity: 0;
+                overflow: hidden;
+                pointer-events: none;
+                transition: max-height .28s ease, opacity .22s ease;
+
+                a {
+                    font-size: 24px;
+                    white-space: nowrap;
+                }
+            }
+        }
+
+        &.is-open {
+            >div {
+                .navbarLinks {
+                    max-height: 40px;
+                    opacity: 1;
+                    pointer-events: auto;
+                    a {
+                        font-size: 14px;
+                    }
+                }
+            }
         }
     }
 }

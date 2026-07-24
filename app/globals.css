@@ -98,6 +98,7 @@
   gap: 24px;
   align-items: center;
   justify-content: flex-end;
+  border-radius: 24px 24px 0 0;
 }
 #footerComponent p,
 #footerComponent h3,
@@ -155,9 +156,9 @@
   outline: none;
   color: #1E1E1E;
   font-weight: 400;
-  background-color: #EEEEEE;
+  background-color: #FFFFFF;
   width: 100%;
-  border: 0.75px solid #EEEEEE;
+  border: 0.75px solid #FFFFFF;
 }
 #footerComponent article div:last-child form input:hover, #footerComponent article div:last-child form input:focus {
   border: 0.75px solid #79DB6C;
@@ -220,6 +221,52 @@
     transform: translateX(0);
   }
 }
+@media (max-width: 1024px) {
+  #footerComponent {
+    padding: 32px 16px;
+    gap: 48px;
+  }
+  #footerComponent h3 {
+    font-size: 24px;
+  }
+  #footerComponent p {
+    font-size: 13px;
+  }
+  #footerComponent article {
+    flex-direction: column-reverse;
+    align-items: center;
+    gap: 24px;
+  }
+  #footerComponent article div:first-child {
+    align-items: center;
+  }
+  #footerComponent article div:last-child {
+    max-width: 361px;
+    align-items: center;
+  }
+  #footerComponent article div:last-child form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+  }
+  #footerComponent article div:last-child form input {
+    font-size: 13px;
+  }
+  #footerComponent article div:last-child form button {
+    margin-top: 8px;
+    width: 160px;
+  }
+  #footerComponent > p {
+    font-size: 16px;
+  }
+  .footerBackgroundTrack {
+    gap: 14px;
+  }
+  .footerBackgroundTrack img {
+    height: 213px;
+  }
+}
 header {
   border-radius: 0 0 24px 24px;
   background: linear-gradient(171.32deg, rgba(0, 0, 0, 0) 27.3%, #000000 91.43%);
@@ -231,7 +278,6 @@ header {
   justify-content: end;
   gap: 24px;
   padding: 0 64px;
-  padding-bottom: 200px;
   padding-bottom: 20vh;
 }
 header > h1 {
@@ -258,7 +304,17 @@ header > a:hover {
   background-color: #79DB6C;
 }
 
-#cotizaComponent > button {
+@media (max-width: 1024px) {
+  header {
+    padding: 72px 16px;
+    padding-bottom: 72px;
+    gap: 16px;
+  }
+  header > a, header .verMasButton {
+    margin-top: 16px;
+  }
+}
+.cotizaComponent > button {
   background-color: #138E03;
   font-weight: 500;
   box-shadow: 0px -2px 4px 0px rgba(30, 30, 30, 0.1019607843) inset;
@@ -272,10 +328,113 @@ header > a:hover {
   cursor: pointer;
   font-size: 16px;
 }
-#cotizaComponent > button:hover {
+.cotizaComponent > button:hover {
   background-color: #79DB6C;
 }
 
+.cotizaComponentModal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.4);
+  -webkit-backdrop-filter: blur(5px);
+  backdrop-filter: blur(5px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 200;
+  opacity: 1;
+  transition: opacity 220ms ease;
+  animation: cotizaModalFadeIn 220ms ease;
+}
+.cotizaComponentModal.isClosing {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.cotizaComponentModalContent {
+  background-color: rgba(30, 30, 30, 0.1019607843);
+  border-radius: 24px;
+  padding: 64px;
+  padding-top: 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  align-items: center;
+  justify-content: center;
+  width: fit-content;
+  border-left: 1px solid rgba(255, 255, 255, 0.2);
+  border-right: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.1019607843), 14px 0px 14px 0px rgba(255, 255, 255, 0.1019607843) inset, -14px 0px 14px 0px rgba(255, 255, 255, 0.1019607843) inset;
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+  opacity: 1;
+  transition: opacity 220ms ease, transform 220ms ease;
+  animation: cotizaModalContentFadeIn 220ms ease;
+}
+.cotizaComponentModalContent > .cotizaComponentModalClose {
+  align-self: flex-end;
+  background: transparent;
+  border: 0;
+  cursor: pointer;
+  display: flex;
+  padding: 0;
+}
+.cotizaComponentModalContent > .cotizaComponentModalClose:hover path {
+  stroke: #A4F898;
+}
+.cotizaComponentModalContent > p,
+.cotizaComponentModalContent > h3 {
+  max-width: 420px;
+  text-align: center;
+}
+.cotizaComponentModalContent > form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  align-items: center;
+  width: 100%;
+  max-width: 543px;
+}
+.cotizaComponentModalContent > form > input {
+  background-color: rgba(255, 255, 255, 0.2);
+  -webkit-backdrop-filter: blur(16px);
+  backdrop-filter: blur(16px);
+  padding: 8px;
+  width: 100%;
+  border-radius: 8px;
+  outline: none;
+  border: 0.75px solid rgba(238, 238, 238, 0);
+}
+.cotizaComponentModalContent > form > input:hover, .cotizaComponentModalContent > form > input:focus {
+  border: 0.75px solid #79DB6C;
+}
+.cotizaComponentModalContent > form > input::placeholder {
+  color: #fff;
+}
+.cotizaComponentModalContent button:last-child {
+  width: 200px;
+  margin-left: 0 !important;
+}
+
+.cotizaComponentModal.isClosing .cotizaComponentModalContent {
+  opacity: 0;
+  transform: translateY(8px);
+}
+
+@keyframes cotizaModalFadeIn {
+  from {
+    opacity: 0;
+  }
+}
+@keyframes cotizaModalContentFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+}
 .imagenParallaxComponent {
   --parallax-y: 0px;
   --rotate-x: 0deg;
@@ -324,6 +483,7 @@ header > a:hover {
   padding: 12px 72px;
   position: fixed;
   box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.1019607843), 14px 0px 14px 0px rgba(255, 255, 255, 0.1019607843) inset, -14px 0px 14px 0px rgba(255, 255, 255, 0.1019607843) inset;
+  -webkit-backdrop-filter: blur(10px);
   backdrop-filter: blur(10px);
   width: 100%;
   background-color: rgba(0, 0, 0, 0.2509803922);
@@ -342,6 +502,14 @@ header > a:hover {
   align-items: center;
   gap: 16px;
 }
+#navbarComponent > div .navbarMenuButton {
+  display: none;
+}
+#navbarComponent > div .navbarLinks {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
 #navbarComponent > div a {
   color: #fff;
 }
@@ -355,13 +523,76 @@ header > a:hover {
   margin-left: 48px;
 }
 
+@media (max-width: 1024px) {
+  #navbarComponent {
+    padding: 16px;
+  }
+  #navbarComponent > div a {
+    font-size: 14px;
+  }
+  #navbarComponent > div button {
+    margin-left: 16px;
+    width: 122px;
+    font-size: 14px;
+  }
+}
+@media (max-width: 769px) {
+  #navbarComponent {
+    flex-wrap: wrap;
+    row-gap: 16px;
+  }
+  #navbarComponent > a {
+    order: 1;
+  }
+  #navbarComponent > div {
+    display: contents;
+  }
+  #navbarComponent > div .navbarMenuButton {
+    order: 2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: transparent;
+    padding: 0;
+    margin: 0;
+    width: 36px;
+    height: 36px;
+  }
+  #navbarComponent > div .cotizaComponent {
+    order: 3;
+    margin-left: auto;
+  }
+  #navbarComponent > div .navbarLinks {
+    order: 4;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    gap: clamp(24px, 8vw, 48px);
+    max-height: 0;
+    opacity: 0;
+    overflow: hidden;
+    pointer-events: none;
+    transition: max-height 0.28s ease, opacity 0.22s ease;
+  }
+  #navbarComponent > div .navbarLinks a {
+    font-size: 24px;
+    white-space: nowrap;
+  }
+  #navbarComponent.is-open > div .navbarLinks {
+    max-height: 40px;
+    opacity: 1;
+    pointer-events: auto;
+  }
+  #navbarComponent.is-open > div .navbarLinks a {
+    font-size: 14px;
+  }
+}
 #homeSecondSection {
   width: 100%;
   padding: 72px 144px;
 }
 #homeSecondSection article {
   width: 100%;
-  height: 100%;
   background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.4) 100%);
   padding-bottom: 72px;
   height: 752px;
@@ -396,6 +627,19 @@ header > a:hover {
   z-index: 0;
 }
 
+@media (max-width: 1024px) {
+  #homeSecondSection {
+    padding: 48px 16px;
+  }
+  #homeSecondSection article {
+    height: 584px;
+    padding-bottom: 0px;
+    padding: 32px 16px;
+  }
+  #homeSecondSection article #homeSecondSectionContent {
+    gap: 10px;
+  }
+}
 #homeThirdSection {
   display: flex;
   flex-direction: column;
@@ -478,6 +722,36 @@ header > a:hover {
     width: fit-content;
   }
 }
+@media (max-width: 1024px) {
+  #homeThirdSection {
+    padding: 24px 16px;
+    padding-bottom: 48px;
+    gap: 48px;
+  }
+  #homeThirdSection .sectionTitleContainer h2 {
+    font-size: 36px;
+    font-weight: 600;
+  }
+  #homeThirdSection .sectionTitleContainer p {
+    font-size: 13px;
+  }
+  #homeThirdSection #homeThirdSectionContent {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  #homeThirdSection .flipCard, #homeThirdSection .flipCardFront, #homeThirdSection .flipCardBack {
+    width: 100%;
+    width: 361px;
+    height: 266px;
+  }
+  #homeThirdSection .flipCardFront {
+    padding-bottom: 32px;
+  }
+  #homeThirdSection .flipCardFront h3 {
+    font-size: 24px;
+    max-width: 290px;
+  }
+}
 #homeFourthSection {
   min-height: 400vh;
   padding: 0;
@@ -488,7 +762,7 @@ header > a:hover {
 #homeFourthSectionSticky {
   position: sticky;
   top: 0;
-  height: 100vh;
+  height: 100%;
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -593,6 +867,52 @@ header > a:hover {
   width: 361px;
 }
 
+@media (max-width: 1024px) {
+  #homeFourthSectionSticky {
+    padding: 24px 16px;
+    padding-bottom: 48px;
+    gap: 24px;
+  }
+  #homeFourthSectionTitle {
+    max-width: 199px;
+  }
+  #homeFourthSectionCardsContainer {
+    height: 500px;
+    flex: 0 0 500px;
+  }
+  .homeFourthSectionCard {
+    width: 296px;
+    height: 420px;
+    padding: 32px 24px;
+    gap: 16px;
+  }
+  .homeFourthSectionCard h3 {
+    font-size: 36px;
+  }
+  .homeFourthSectionCard h4 {
+    font-size: 24px;
+  }
+  .homeFourthSectionCard p {
+    font-size: 13px;
+    max-width: 248px;
+    text-wrap: wrap;
+  }
+  .homeFourthSectionCard1 img {
+    width: 270px;
+  }
+  .homeFourthSectionCard2 p {
+    max-width: 240px;
+  }
+  .homeFourthSectionCard2 img {
+    width: 230px;
+  }
+  .homeFourthSectionCard3 img {
+    width: 250px;
+  }
+  .homeFourthSectionCard4 img {
+    width: 230px;
+  }
+}
 #homeFifthSection {
   height: 100vh;
   min-height: 720px;
@@ -659,13 +979,13 @@ header > a:hover {
   height: 140px;
 }
 
-@media (max-width: 900px) {
+@media (max-width: 1024px) {
   #homeFifthSection {
-    padding: 0 24px;
+    min-height: none;
   }
-  .homeFifthSectionCard {
-    width: 120px;
-    height: 140px;
+  #homeFifthSection h2 {
+    font-size: 24px;
+    max-width: 300px;
   }
 }
 #homeSixthSection {
@@ -677,6 +997,7 @@ header > a:hover {
   height: 616px;
   background-color: #fff;
   border-radius: 24px 0 0 24px;
+  overflow: hidden;
   display: grid;
   grid-template-columns: 1fr 1fr;
   transition: 2s ease-in-out;
@@ -703,6 +1024,24 @@ header > a:hover {
   z-index: 10 !important;
 }
 
+@media (max-width: 1024px) {
+  #homeSixthSection {
+    padding: 40px 16px;
+    padding-right: 0px;
+  }
+  #homeSixthSection article {
+    display: flex;
+    flex-direction: column-reverse;
+    height: 100%;
+  }
+  #homeSixthSection article #homeSixthSectionContent {
+    padding: 48px 16px;
+    gap: 24px;
+  }
+  #homeSixthSection article #homeSixthSectionImageBg {
+    height: 334px;
+  }
+}
 #homeSeventhSection {
   padding: 0 0 72px 0;
   display: flex;
@@ -713,8 +1052,10 @@ header > a:hover {
 
 #homeSeventhSectionContent {
   display: grid;
-  grid-template-columns: repeat(3, 448px);
+  grid-template-columns: repeat(3, 1fr);
   height: 400px;
+  width: 100%;
+  max-width: 1344px;
 }
 #homeSeventhSectionContent div p {
   color: #1E1E1E;
@@ -782,9 +1123,49 @@ header > a:hover {
   flex: 0 0 360px;
 }
 
-@media (max-width: 900px) {
+@media (max-width: 1024px) {
+  #homeSeventhSection {
+    padding: 48px 16px;
+  }
+  #homeSeventhSectionContent {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    max-width: none;
+  }
+  #homeSeventhSectionContent div {
+    width: 100%;
+  }
+  #homeSeventhSectionContent div:nth-child(1) {
+    gap: 16px;
+    align-items: start;
+    padding: 24px 0;
+  }
+  #homeSeventhSectionContent div:nth-child(1) p {
+    text-align: start;
+  }
+  #homeSeventhSectionContent div:nth-child(1) p:nth-child(2) {
+    font-weight: 500;
+    font-size: 24px;
+  }
+  #homeSeventhSectionContent div:nth-child(2) {
+    border-top: 1px solid #4D4D4D;
+    border-bottom: 1px solid #4D4D4D;
+    border-left: none;
+    border-right: none;
+    padding: 48px 0;
+  }
+  #homeSeventhSectionContent div:nth-child(3), #homeSeventhSectionContent div:nth-child(2) {
+    margin: 24px 0;
+  }
+  #homeSeventhSectionContent div:nth-child(3) p:first-child, #homeSeventhSectionContent div:nth-child(2) p:first-child {
+    font-size: 16px;
+  }
+  #homeSeventhSectionContent div:nth-child(3) p:nth-child(2), #homeSeventhSectionContent div:nth-child(3) p:nth-child(2) span, #homeSeventhSectionContent div:nth-child(2) p:nth-child(2), #homeSeventhSectionContent div:nth-child(2) p:nth-child(2) span {
+    font-size: 48px;
+  }
   #homeSeventhSectionCarousel {
-    max-width: 100vw;
+    margin-top: 0;
   }
 }
 #appSecondSection {
@@ -867,6 +1248,37 @@ header > a:hover {
   background-color: black;
 }
 
+@media (max-width: 1024px) {
+  #appSecondSection {
+    padding: 48px 24px;
+    padding-top: 72px;
+    align-items: center;
+  }
+  #appSecondSectionContent {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    width: fit-content;
+    max-width: none;
+  }
+  #appSecondSectionContent > article {
+    padding: 0;
+  }
+  #appSecondSectionContent > article > div {
+    flex-wrap: wrap;
+  }
+  #appSecondSectionContent > article > div > article {
+    width: 100%;
+    min-width: 329px;
+    gap: 24px;
+  }
+  #appSecondSectionContent > article > div > article h3 {
+    font-size: 14px;
+  }
+  #appSecondSectionContent > article > div > article ul li {
+    font-size: 13px;
+  }
+}
 #appThirdSection {
   padding: 0;
   min-height: 400vh;
@@ -922,6 +1334,14 @@ header > a:hover {
   max-width: 345px;
   justify-content: center;
 }
+.appThirdSectionCard > div h3:nth-child(1) {
+  font-weight: 600;
+  font-size: 40px;
+}
+.appThirdSectionCard > div h3:nth-child(2) {
+  font-weight: 500;
+  font-size: 32px;
+}
 .appThirdSectionCard > div p {
   font-weight: 300;
 }
@@ -964,7 +1384,8 @@ header > a:hover {
 .appThirdSectionCard:nth-child(4) {
   background: linear-gradient(180deg, #A4F898 0%, #79DB6C 100%);
 }
-.appThirdSectionCard:nth-child(4) h3, .appThirdSectionCard:nth-child(4) p {
+.appThirdSectionCard:nth-child(4) h3,
+.appThirdSectionCard:nth-child(4) p {
   color: #1E1E1E;
 }
 .appThirdSectionCard:nth-child(4) p {
@@ -974,18 +1395,85 @@ header > a:hover {
   width: 200px !important;
 }
 
+@media (max-width: 768px) {
+  #appThirdSectionSticky {
+    height: 100vh;
+    padding: 48px 16px;
+  }
+  #appThirdSectionCardsContainer {
+    height: 490px;
+    flex: 0 0 490px;
+  }
+  .appThirdSectionCard {
+    max-width: none;
+    height: 420px;
+    padding: 0px;
+    align-items: end;
+    justify-content: start;
+  }
+  .appThirdSectionCard > div {
+    height: fit-content;
+    gap: 16px;
+    padding: 24px;
+    width: 100%;
+    max-width: none;
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.842) 96.43%);
+  }
+  .appThirdSectionCard > div h3:nth-child(1) {
+    font-size: 36px;
+  }
+  .appThirdSectionCard > div h3:nth-child(2) {
+    font-size: 24px;
+  }
+  .appThirdSectionCard > div p {
+    max-width: 313px;
+  }
+  .appThirdSectionCard > svg {
+    display: none;
+  }
+  .appThirdSectionCard .appThirdSectionCardImageContainer {
+    position: absolute;
+    z-index: -1;
+    justify-content: center;
+    top: 20%;
+    left: 50%;
+    transform: translateX(-50%);
+    max-width: 445px;
+    background: none;
+  }
+  .appThirdSectionCard .appThirdSectionCardImageContainer img {
+    width: 100%;
+    height: auto;
+    z-index: -1;
+  }
+  .appThirdSectionCard:nth-child(4) h3,
+  .appThirdSectionCard:nth-child(4) p {
+    color: #fff;
+  }
+  .appThirdSectionCard:nth-child(4) .verMasButton {
+    width: 160px !important;
+  }
+}
 #appFourthSection {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   gap: 72px;
+  width: 100%;
+  overflow: hidden;
+  padding: 72px 24px;
+}
+#appFourthSection h2 {
+  max-width: 442px;
 }
 
 #fourthSectionCardsContainer {
   display: flex;
   gap: 24px;
   padding-bottom: 72px;
+  padding: 0 24px;
+  width: fit-content;
 }
 #fourthSectionCardsContainer article {
   background-color: #fff;
@@ -1001,7 +1489,8 @@ header > a:hover {
   opacity: 0;
   transform-origin: center bottom;
 }
-#fourthSectionCardsContainer article h3, #fourthSectionCardsContainer article p {
+#fourthSectionCardsContainer article h3,
+#fourthSectionCardsContainer article p {
   color: #1E1E1E;
   text-align: center;
 }
@@ -1012,6 +1501,36 @@ header > a:hover {
   bottom: 0;
 }
 
+@media (max-width: 1024px) {
+  #appFourthSection {
+    padding: 48px 0px;
+    gap: 24px;
+  }
+  #appFourthSection h2 {
+    max-width: 362px;
+    padding: 0 16px;
+  }
+  #fourthSectionCardsContainer {
+    gap: 16px;
+    padding: 24px 16px;
+    width: 100%;
+    overflow-x: auto;
+    overflow-y: hidden;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+  }
+  #fourthSectionCardsContainer::-webkit-scrollbar {
+    display: none;
+  }
+  #fourthSectionCardsContainer article {
+    flex: 0 0 324px;
+    padding: 48px 24px;
+    opacity: 1;
+    transform: none;
+    height: 400px;
+    min-height: 0;
+  }
+}
 #serviciosSecondSection {
   display: flex;
   flex-direction: column;
@@ -1056,30 +1575,42 @@ header > a:hover {
   font-size: 16px;
   font-weight: 600;
   display: flex;
-  gap: 8px;
   flex-direction: column;
   cursor: pointer;
+  transition: color 0.2s ease;
 }
 #serviciosSecondSection > article > div p span {
   color: #1E1E1E !important;
   font-weight: initial;
+  line-height: 1.45;
+  max-height: 0;
+  opacity: 0;
   overflow: hidden;
-  transition: 0.3s ease-in-out;
-  height: 0px;
+  transition: max-height 0.45s cubic-bezier(0.22, 1, 0.36, 1), opacity 0.25s ease, margin-top 0.25s ease;
+  margin-top: 0;
 }
 #serviciosSecondSection > article > div p:not(:first-child) {
-  margin-top: 8px;
+  margin-top: 16px;
 }
-#serviciosSecondSection > article > div p:hover {
+#serviciosSecondSection > article > div p.is-open {
   color: #138E03;
 }
-#serviciosSecondSection > article > div p:hover span {
-  height: 20px;
+#serviciosSecondSection > article > div p.is-open span {
+  max-height: var(--answer-height, 0px);
+  opacity: 1;
+  margin-top: 8px;
+}
+#serviciosSecondSection > article > div p:focus-visible {
+  outline: 2px solid #138E03;
+  outline-offset: 4px;
+  border-radius: 8px;
 }
 
 #serviciosSecondSectionCardsContainer {
   display: flex;
   gap: 24px;
+  width: 100%;
+  justify-content: center;
 }
 #serviciosSecondSectionCardsContainer article {
   padding: 0 24px;
@@ -1119,6 +1650,63 @@ header > a:hover {
   max-width: 250px;
 }
 
+@media (max-width: 1024px) {
+  #serviciosSecondSection {
+    padding: 72px 16px;
+    gap: 24px;
+    padding-bottom: 24px;
+  }
+  #serviciosSecondSection .sectionTitleContainer {
+    padding-bottom: 0;
+  }
+  #serviciosSecondSection > h3 {
+    padding-bottom: 0;
+  }
+  #serviciosSecondSection > article {
+    margin: 0;
+  }
+  #serviciosSecondSectionSubtitle {
+    padding-top: 0 !important;
+  }
+  #serviciosSecondSectionCardsContainer {
+    gap: 16px;
+  }
+  #serviciosSecondSectionCardsContainer article {
+    gap: 16px;
+  }
+}
+@media (max-width: 768px) {
+  #serviciosSecondSection > article {
+    flex-direction: column;
+    height: 100%;
+    padding: 48px 16px;
+    gap: 24px;
+  }
+  #serviciosSecondSection > article > div {
+    gap: 16px;
+  }
+  #serviciosSecondSection > article > div p {
+    font-size: 14px;
+  }
+  #serviciosSecondSection > article > div p:not(:first-child) {
+    margin-top: 0px;
+  }
+  #serviciosSecondSectionCardsContainer {
+    align-items: center;
+    flex-direction: column;
+  }
+  #serviciosSecondSectionCardsContainer article {
+    height: 100%;
+    padding: 40px 24px;
+    width: 100%;
+  }
+  #serviciosSecondSectionCardsContainer article p {
+    max-width: 100% !important;
+  }
+  #serviciosSecondSectionCardsContainer article:nth-child(2) {
+    background: linear-gradient(360deg, #52C643 0%, #A4F898 100%);
+  }
+}
 #serviciosThirdSection {
   padding-right: 0px;
   overflow: hidden;
@@ -1167,6 +1755,9 @@ header > a:hover {
 #serviciosFourthSectionCardsContainer {
   display: flex;
   gap: 24px;
+  width: 100%;
+  justify-content: center;
+  flex-wrap: wrap;
 }
 #serviciosFourthSectionCardsContainer article {
   background-color: #fff;
@@ -1195,6 +1786,32 @@ header > a:hover {
   font-weight: 600;
 }
 
+@media (max-width: 1024px) {
+  #serviciosFourthSection {
+    gap: 28px;
+    padding: 12px 0;
+    padding-bottom: 28px;
+  }
+  #serviciosFourthSectionCardsContainer {
+    padding: 12 32px;
+    gap: 16px;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    overflow-x: auto;
+    overflow-y: hidden;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+  }
+  #serviciosFourthSectionCardsContainer::-webkit-scrollbar {
+    display: none;
+  }
+  #serviciosFourthSectionCardsContainer article {
+    flex: 0 0 240px;
+    height: 345px;
+    opacity: 1;
+    transform: none;
+  }
+}
 #serviciosFifthSection {
   padding: 24px 72px;
   padding-bottom: 96px;
@@ -1252,6 +1869,31 @@ header > a:hover {
   text-wrap: nowrap;
 }
 
+@media (max-width: 1024px) {
+  #serviciosFifthSection {
+    padding: 24px 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  #serviciosFifthSection article {
+    flex-direction: column;
+  }
+  #serviciosFifthSection article > div:nth-child(2) {
+    width: 100%;
+    padding: 40px 16px;
+  }
+  #serviciosFifthSection article > div:nth-child(2) > p {
+    max-width: 329px;
+  }
+  #serviciosFifthSection article > div:nth-child(2) > p:nth-child(3) {
+    gap: 8px;
+    flex-wrap: wrap;
+  }
+  #serviciosFifthSection article > div:nth-child(2) > p:nth-child(3) span {
+    padding: 4px 12px;
+  }
+}
 #faqSecondSection {
   padding: 92px 72px;
 }
@@ -1287,24 +1929,70 @@ header > a:hover {
   font-size: 16px;
   font-weight: 600;
   display: flex;
-  gap: 8px;
   flex-direction: column;
   cursor: pointer;
+  padding: 12px 0;
+  transition: color 0.2s ease;
+}
+#faqSecondSection > article > div:nth-child(2) p ul {
+  margin-left: 24px;
+}
+#faqSecondSection > article > div:nth-child(2) p ul li {
+  color: #1E1E1E !important;
+  font-weight: initial;
 }
 #faqSecondSection > article > div:nth-child(2) p span {
   color: #1E1E1E !important;
   font-weight: initial;
+  line-height: 1.45;
+  max-height: 0;
+  opacity: 0;
   overflow: hidden;
-  transition: 0.3s ease-in-out;
-  height: 0px;
+  transition: max-height 0.45s cubic-bezier(0.22, 1, 0.36, 1), opacity 0.25s ease, margin-top 0.25s ease;
+  margin-top: 0;
 }
-#faqSecondSection > article > div:nth-child(2) p:hover {
+#faqSecondSection > article > div:nth-child(2) p.is-open {
   color: #138E03;
 }
-#faqSecondSection > article > div:nth-child(2) p:hover span {
-  height: 20px;
+#faqSecondSection > article > div:nth-child(2) p.is-open span {
+  max-height: var(--answer-height, 0px);
+  opacity: 1;
+  margin-top: 8px;
+}
+#faqSecondSection > article > div:nth-child(2) p:focus-visible {
+  outline: 2px solid #138E03;
+  outline-offset: 4px;
+  border-radius: 8px;
 }
 
+@media (max-width: 1024px) {
+  #faqSecondSection {
+    padding: 40px 16px;
+    padding-right: 0;
+  }
+  #faqSecondSection > article {
+    border-radius: 24px 0 0 24px;
+  }
+  #faqSecondSection > article > div:nth-child(2) {
+    padding: 48px 16px;
+    gap: 16px;
+  }
+  #faqSecondSection > article > div:nth-child(2) h2 {
+    font-size: 24px;
+  }
+  #faqSecondSection > article > div:nth-child(2) p {
+    padding: 0;
+  }
+}
+@media (max-width: 768px) {
+  #faqSecondSection > article {
+    display: flex;
+    flex-direction: column;
+  }
+  #faqSecondSection > article > div:nth-child(1) {
+    height: 334px;
+  }
+}
 #trabajaConNosotrosSecondSection {
   padding-right: 0px;
 }
@@ -1351,6 +2039,9 @@ header > a:hover {
 #trabajaConNosotrosSecondSection article > div:nth-child(1) form input[type=file] {
   display: none;
 }
+#trabajaConNosotrosSecondSection article > div:nth-child(1) form input::placeholder {
+  color: #ADACAC;
+}
 #trabajaConNosotrosSecondSection article > div:nth-child(1) form .trabajaConNosotrosFileInput {
   width: 200px;
   height: 40px;
@@ -1376,6 +2067,42 @@ header > a:hover {
   height: auto;
 }
 
+@media (max-width: 1024px) {
+  #trabajaConNosotrosSecondSection article {
+    height: 100%;
+  }
+  #trabajaConNosotrosSecondSection article > div:nth-child(1) {
+    padding: 24px 16px;
+    padding-top: 40px;
+  }
+  #trabajaConNosotrosSecondSection article > div:nth-child(1) h2, #trabajaConNosotrosSecondSection article > div:nth-child(1) p {
+    width: 100%;
+  }
+  #trabajaConNosotrosSecondSection article > div:nth-child(1) form input {
+    font-size: 13px;
+    height: 32px;
+    width: 100%;
+  }
+  #trabajaConNosotrosSecondSection article > div:nth-child(1) form .trabajaConNosotrosFileInput {
+    height: 32px;
+    width: 160px;
+    font-size: 14px;
+  }
+  #trabajaConNosotrosSecondSection article > div:nth-child(1) form button {
+    width: 160px;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+  }
+}
+@media (max-width: 768px) {
+  #trabajaConNosotrosSecondSection article {
+    flex-direction: column-reverse;
+  }
+  #trabajaConNosotrosSecondSection article > div:nth-child(2) {
+    height: 335px;
+  }
+}
 @font-face {
   font-family: "Montserrat";
   src: url("/fonts/Montserrat.ttf") format("truetype");
@@ -1446,7 +2173,6 @@ select {
   font-display: swap;
   text-decoration: none;
   color: #fff;
-  font-size: 16px;
   border: none;
 }
 
@@ -1530,6 +2256,31 @@ main {
   margin: 0;
   padding: 0;
   position: relative;
+}
+
+@media (max-width: 1024px) {
+  main {
+    gap: 0px;
+  }
+  h1 {
+    font-size: 36px;
+  }
+  h2, h3 {
+    font-size: 24px;
+  }
+  p {
+    font-size: 13px;
+  }
+  section {
+    padding: 48px 16px;
+  }
+  .sectionTitleContainer {
+    gap: 16px;
+  }
+  .verMasButton {
+    height: 32px;
+    font-size: 14px;
+  }
 }
 
 /*# sourceMappingURL=globals.css.map */

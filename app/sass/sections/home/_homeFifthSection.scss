@@ -66,13 +66,12 @@
     height: 140px;
 }
 
-@media (max-width: 900px) {
+@media (max-width: 1024px) {
     #homeFifthSection {
-        padding: 0 24px;
-    }
-
-    .homeFifthSectionCard {
-        width: 120px;
-        height: 140px;
+        min-height: none;
+        h2 {
+            font-size: 24px;
+            max-width: 300px;
+        }
     }
 }

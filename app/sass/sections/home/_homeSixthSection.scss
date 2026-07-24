@@ -6,6 +6,7 @@
         height: 616px;
         background-color: #fff;
         border-radius: 24px 0 0 24px;
+        overflow: hidden;
 
         display: grid;
         grid-template-columns: 1fr 1fr;
@@ -37,4 +38,27 @@
             }
         }
     }
+}
+
+@media (max-width: 1024px) {
+    #homeSixthSection {
+        padding: 40px 16px;
+        padding-right: 0px;
+
+        article {
+            display: flex;
+            flex-direction: column-reverse;
+            height: 100%;
+
+            #homeSixthSectionContent {
+                padding: 48px 16px;
+                gap: 24px;
+            }
+
+            #homeSixthSectionImageBg {
+                height: 334px;
+            }
+        }
+    }
+    
 }

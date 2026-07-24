@@ -3,7 +3,7 @@
 import { SplitH2, SplitH3, SplitP } from "@/app/components"
 import gsap from "gsap"
 import { ScrollTrigger } from "gsap/ScrollTrigger"
-import { useLayoutEffect, useRef } from "react"
+import { useEffect, useLayoutEffect, useRef } from "react"
 
 export const ServiciosSecondSection = () => {
     const cardsContainerRef = useRef(null)
@@ -43,6 +43,51 @@ export const ServiciosSecondSection = () => {
         }, cardsContainerRef)
 
         return () => ctx.revert()
+    }, [])
+
+    useEffect(() => {
+        const items = document.querySelectorAll("#serviciosSecondSection > article > div > p")
+
+        const handleItemClick = (event) => {
+            const currentItem = event.currentTarget
+            const currentAnswer = currentItem.querySelector("span")
+            const isOpen = currentItem.classList.contains("is-open")
+
+            items.forEach((item) => {
+                item.classList.remove("is-open")
+                item.setAttribute("aria-expanded", "false")
+            })
+
+            if (!isOpen) {
+                currentItem.style.setProperty("--answer-height", `${currentAnswer.scrollHeight}px`)
+                currentItem.classList.add("is-open")
+                currentItem.setAttribute("aria-expanded", "true")
+            }
+        }
+
+        const handleItemKeyDown = (event) => {
+            if (event.key !== "Enter" && event.key !== " ") {
+                return
+            }
+
+            event.preventDefault()
+            event.currentTarget.click()
+        }
+
+        items.forEach((item) => {
+            item.setAttribute("role", "button")
+            item.setAttribute("tabIndex", "0")
+            item.setAttribute("aria-expanded", "false")
+            item.addEventListener("click", handleItemClick)
+            item.addEventListener("keydown", handleItemKeyDown)
+        })
+
+        return () => {
+            items.forEach((item) => {
+                item.removeEventListener("click", handleItemClick)
+                item.removeEventListener("keydown", handleItemKeyDown)
+            })
+        }
     }, [])
 
     return <section id="serviciosSecondSection">
@@ -95,7 +140,7 @@ export const ServiciosSecondSection = () => {
             <div>
                 <p>
                     ¿Puedo elegir qué días se aplica el beneficio?
-                    <span>¿Puedo elegir qué monto se aplica el beneficio?</span>    
+                    <span>Sí, ofrecemos soluciones gastronómicas para todo tipo de empresas, desde multinacionales hasta oficinas. El pedido mínimo es a partir de 25 viandas por día. Recordá que NO vendemos a consumidores finales.</span>    
                 </p>
                 <p>
                     ¿El descuento es un monto fijo o un porcentaje?

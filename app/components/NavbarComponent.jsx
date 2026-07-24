@@ -2,6 +2,7 @@
 import Link from "next/link"
 import { CotizaComponent } from "."
 import { usePathname } from "next/navigation"
+import { useState } from "react"
 
 const navLinks = [
     { href: "/app", label: "App" },
@@ -15,8 +16,9 @@ const isActivePath = (pathname, href) => pathname === href || pathname.startsWit
 export const NavbarComponent = () => {
 
     const pathname = usePathname()
+    const [isMenuOpen, setIsMenuOpen] = useState(false)
 
-    return <div id="navbarComponent">
+    return <div id="navbarComponent" className={isMenuOpen ? "is-open" : ""}>
         <Link href={'/'}><svg width="151" height="29" viewBox="0 0 151 29" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path d="M25.7341 2.37375C26.2102 0.800571 24.3846 -0.524124 23.1189 0.206221C22.3393 0.656181 19.838 4.06278 17.2244 7.82364C16.5287 8.8243 15.2345 9.21885 14.1079 8.75882C12.9143 8.27024 11.6066 7.99993 10.237 7.99993C7.67868 7.99993 5.34003 8.94015 3.54622 10.4949C3.39198 10.6275 3.19919 10.703 2.99802 10.7349C1.87647 10.9112 1.01812 11.8834 1.01812 13.0553C1.01812 13.1577 1.02483 13.2567 1.03824 13.3558C1.06674 13.564 1.0265 13.7755 0.939327 13.9669C0.364302 15.2077 0.0323639 16.5861 0.00218765 18.0401C-0.110135 23.6461 4.37271 28.3556 9.9704 28.4966C12.3258 28.5571 14.5052 27.8166 16.2621 26.5322C16.4734 26.3778 16.7316 26.3073 16.9931 26.3089H16.9964C18.294 26.3089 19.3451 25.2562 19.3451 23.9567C19.3451 23.8107 19.3317 23.6679 19.3049 23.5303C19.258 23.2818 19.2965 23.0266 19.4089 22.8016C20.0895 21.4299 20.4717 19.8853 20.4717 18.25C20.4717 16.2822 19.9185 14.4471 18.9579 12.8857C18.3208 11.8498 18.4767 10.51 19.3384 9.65202C22.5489 6.45865 25.424 3.39288 25.7324 2.37375H25.7341ZM22.3225 2.47449C22.6193 1.97416 23.0199 1.29586 23.3653 1.14476C24.0107 0.862693 24.9244 1.54099 24.797 2.24783C24.7299 2.61888 23.9571 3.34251 23.5447 3.74042C22.688 4.56479 21.9654 4.73604 21.7123 4.51946C21.4709 4.31295 21.6251 3.64976 22.3209 2.47449H22.3225ZM10.4851 26.3559C6.93098 26.3559 3.92007 24.0306 2.88234 20.8171C4.03742 23.6192 6.79184 25.592 10.0073 25.592C14.2638 25.592 17.714 22.1367 17.714 17.8739C17.714 14.6536 15.7441 11.8951 12.9461 10.7383C16.1549 11.7776 18.4767 14.793 18.4767 18.3524C18.4767 22.7714 14.8992 26.3543 10.4867 26.3543L10.4851 26.3559Z" fill="white" />
             <path d="M31.5471 25.6052V2.89475H41.2361V5.95684H34.798V12.6233H40.4075V15.6853H34.798V22.3518H41.2361V25.6052H31.5471Z" fill="white" />
@@ -31,11 +33,21 @@ export const NavbarComponent = () => {
         </svg>
         </Link>
         <div>
-            {navLinks.map(({ href, label }) => (
-                <Link className={isActivePath(pathname, href) ? "is-active" : ""} href={href} key={href}>
-                    {label}
-                </Link>
-            ))}
+            <button className="navbarMenuButton" onClick={() => setIsMenuOpen((current) => !current)} aria-label="Abrir menu" aria-expanded={isMenuOpen}>
+                <svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <rect width="36" height="36" rx="8" fill="white" fillOpacity="0.06" />
+                    <rect x="10" y="10" width="16" height="2.28571" rx="1.14286" fill="white" />
+                    <rect x="10" y="16.8572" width="16" height="2.28571" rx="1.14286" fill="white" />
+                    <rect x="10" y="23.7144" width="16" height="2.28571" rx="1.14286" fill="white" />
+                </svg>
+            </button>
+            <nav className="navbarLinks">
+                {navLinks.map(({ href, label }) => (
+                    <Link onClick={() => setIsMenuOpen(false)} className={isActivePath(pathname, href) ? "is-active" : ""} href={href} key={href}>
+                        {label}
+                    </Link>
+                ))}
+            </nav>
             <CotizaComponent />
         </div>
     </div>

@@ -55,6 +55,19 @@
         max-width: 345px;
         justify-content: center;
 
+        h3 {
+            &:nth-child(1) {
+                font-weight: 600;
+                font-size: 40px;
+            }
+
+            &:nth-child(2) {
+                font-weight: 500;
+                font-size: 32px;
+            }
+
+        }
+
         p {
             font-weight: 300;
         }
@@ -107,7 +120,8 @@
     &:nth-child(4) {
         background: linear-gradient(180deg, #A4F898 0%, #79DB6C 100%);
 
-        h3, p {
+        h3,
+        p {
             color: #1E1E1E;
         }
 
@@ -117,6 +131,86 @@
 
         .verMasButton {
             width: 200px !important;
+        }
+    }
+}
+
+
+@media (max-width: 768px) {
+    #appThirdSectionSticky {
+        height: 100vh;
+        padding: 48px 16px;
+    }
+
+    #appThirdSectionCardsContainer {
+        height: 490px;
+        flex: 0 0 490px;
+    }
+
+    .appThirdSectionCard {
+        max-width: none;
+        height: 420px;
+        padding: 0px;
+        align-items: end;
+        justify-content: start;
+
+        >div {
+            height: fit-content;
+            gap: 16px;
+            padding: 24px;
+            width: 100%;
+            max-width: none;
+            background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.842) 96.43%);
+
+            h3 {
+                &:nth-child(1) {
+                    font-size: 36px;
+                }
+
+                &:nth-child(2) {
+                    font-size: 24px;
+                }
+
+            }
+
+            p {
+                max-width: 313px;
+            }
+
+        }
+
+        >svg {
+            display: none;
+        }
+
+        .appThirdSectionCardImageContainer {
+            position: absolute;
+            z-index: -1;
+            justify-content: center;
+            top: 20%;
+            left: 50%;
+            transform: translateX(-50%);
+            max-width: 445px;
+            background: none;
+
+
+            img {
+                width: 100%;
+                height: auto;
+                z-index: -1;
+            }
+        }
+
+        &:nth-child(4) {
+
+            h3,
+            p {
+                color: #fff;
+            }
+
+            .verMasButton {
+                width: 160px !important;
+            }
         }
     }
 }

@@ -30,7 +30,7 @@ export const FooterComponent = () => {
                     <input type="text" placeholder="Teléfono" />
                     <input type="email" placeholder="E-mail" />
                     <input type="text" placeholder="Empresa" />
-                    <button className="verMasButton">Cotizá ahora</button>
+                    <button className="verMasButton">Contactanos</button>
                 </form>
             </div>
         </article>

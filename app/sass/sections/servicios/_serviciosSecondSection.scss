@@ -46,27 +46,39 @@
                 font-size: 16px;
                 font-weight: 600;
                 display: flex;
-                gap: 8px;
                 flex-direction: column;
                 cursor: pointer;
+                transition: color .2s ease;
 
                 span {
                     color: #1E1E1E !important;
                     font-weight: initial;
+                    line-height: 1.45;
+                    max-height: 0;
+                    opacity: 0;
                     overflow: hidden;
-                    transition: .3s ease-in-out;
-                    height: 0px;
+                    transition: max-height .45s cubic-bezier(.22, 1, .36, 1), opacity .25s ease, margin-top .25s ease;
+                    margin-top: 0;
                 }
 
                 &:not(:first-child) {
-                    margin-top: 8px;
+                    margin-top: 16px;
                 }
 
-                &:hover {
+                &.is-open {
                     color: #138E03;
+
                     span {
-                        height: 20px;
+                        max-height: var(--answer-height, 0px);
+                        opacity: 1;
+                        margin-top: 8px;
                     }
+                }
+
+                &:focus-visible {
+                    outline: 2px solid #138E03;
+                    outline-offset: 4px;
+                    border-radius: 8px;
                 }
 
             }
@@ -77,6 +89,8 @@
 #serviciosSecondSectionCardsContainer {
     display: flex;
     gap: 24px;
+    width: 100%;
+    justify-content: center;
 
     article {
         padding: 0 24px;
@@ -119,6 +133,79 @@
 
             p {
                 max-width: 250px;
+            }
+        }
+    }
+}
+
+
+@media (max-width: 1024px) {
+    #serviciosSecondSection {
+        padding: 72px 16px;
+        gap: 24px;
+        padding-bottom: 24px;
+
+        .sectionTitleContainer {
+            padding-bottom: 0;
+        }
+
+        >h3 {
+            padding-bottom: 0;
+        }
+
+        >article {
+            margin: 0;
+        }
+    }
+
+    #serviciosSecondSectionSubtitle {
+        padding-top: 0 !important;
+    }
+
+    #serviciosSecondSectionCardsContainer {
+        gap: 16px;
+
+        article {
+            gap: 16px;
+        }
+    }
+}
+
+@media (max-width: 768px) {
+    #serviciosSecondSection {
+        >article {
+            flex-direction: column;
+            height: 100%;
+            padding: 48px 16px;
+            gap: 24px;
+
+            >div {
+                gap: 16px;
+                p {
+                    font-size: 14px;
+                &:not(:first-child) {
+                    margin-top: 0px;
+                }
+                }
+            }
+        }
+    }
+
+    #serviciosSecondSectionCardsContainer {
+        align-items: center;
+        flex-direction: column;
+
+        article {
+            height: 100%;
+            padding: 40px 24px;
+            width: 100%;
+
+            p {
+                max-width: 100% !important;
+            }
+
+            &:nth-child(2) {
+                background: linear-gradient(360deg, #52C643 0%, #A4F898 100%);
             }
         }
     }

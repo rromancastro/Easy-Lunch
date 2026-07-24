@@ -14,6 +14,7 @@
     gap: 24px;
     align-items: center;
     justify-content: flex-end;
+    border-radius: 24px 24px 0 0;
 
     p,
     h3,
@@ -82,9 +83,9 @@
                         outline: none;
                         color: #1E1E1E;
                         font-weight: 400;
-                        background-color: #EEEEEE;
+                        background-color: #FFFFFF;
                         width: 100%;
-                        border: 0.75px solid #EEEEEE;
+                        border: 0.75px solid #FFFFFF;
 
                         &:hover,
                         &:focus {
@@ -160,5 +161,64 @@
 
     to {
         transform: translateX(0);
+    }
+}
+
+@media (max-width: 1024px) {
+    #footerComponent {
+        padding: 32px 16px;
+        gap: 48px;
+
+        h3 {
+            font-size: 24px;
+        }
+
+        p {
+            font-size: 13px;
+        }
+
+        article {
+            flex-direction: column-reverse;
+            align-items: center;
+            gap: 24px;
+
+            div {
+                &:first-child {
+                    align-items: center;
+                }
+
+                &:last-child {
+                    max-width: 361px;
+                    align-items: center;
+
+                    form {
+                        display: flex;
+                        flex-direction: column;
+                        align-items: center;
+                        gap: 16px;
+
+                        input {
+                            font-size: 13px;
+                        }
+
+                        button {
+                            margin-top: 8px;
+                            width: 160px;
+                        }
+                    }
+                }
+            }
+        }
+
+        >p {
+            font-size: 16px;
+        }
+    }
+
+    .footerBackgroundTrack {
+        gap: 14px;
+        img {
+            height: 213px;
+        }
     }
 }

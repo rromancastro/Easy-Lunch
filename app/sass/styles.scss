@@ -100,7 +100,6 @@ select {
     font-display: swap;
     text-decoration: none;
     color: #fff;
-    font-size: 16px;
     border: none;
 }
 
@@ -187,4 +186,34 @@ main {
     margin: 0;
     padding: 0;
     position: relative;
+}
+
+@media (max-width: 1024px) {
+    main {
+        gap: 0px;
+    }
+    h1 {
+        font-size: 36px;
+    }
+
+    h2, h3 {
+        font-size: 24px;
+    }
+
+    p {
+        font-size: 13px;
+    }
+
+    section {
+        padding: 48px 16px;
+    }
+
+    .sectionTitleContainer {
+        gap: 16px;
+    }
+
+    .verMasButton {
+        height: 32px;
+        font-size: 14px;
+    }
 }
