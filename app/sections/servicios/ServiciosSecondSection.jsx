@@ -140,19 +140,19 @@ export const ServiciosSecondSection = () => {
             <div>
                 <p>
                     ¿Puedo elegir qué días se aplica el beneficio?
-                    <span>Sí, ofrecemos soluciones gastronómicas para todo tipo de empresas, desde multinacionales hasta oficinas. El pedido mínimo es a partir de 25 viandas por día. Recordá que NO vendemos a consumidores finales.</span>    
+                    <span>Sí, podés definir días fijos, días rotativos o combinaciones distintas por empleado.</span>    
                 </p>
                 <p>
                     ¿El descuento es un monto fijo o un porcentaje?
-                    <span>¿El descuento es un monto fijo o un porcentaje?</span>
+                    <span>Ambas opciones están disponibles, configurables por empresa.</span>
                 </p>
                 <p>
                     ¿Puedo dar distinta cantidad de días a cada empleado?
-                    <span>¿Puedo dar distinta cantidad de días a cada empleado?</span>
+                    <span>Sí, la cantidad de días semanales es 100% configurable por perfil.</span>
                 </p>
                 <p>
                     ¿Se puede adicionar postres o bebidas?
-                    <span>¿Se puede adicionar postres o bebidas?</span>
+                    <span>Cada empresa puede elegir si ofrecer los adicionales de postre y bebida a sus colaboradores.</span>
                 </p>
             </div>
         </article>

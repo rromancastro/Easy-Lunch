@@ -3,6 +3,9 @@ import Link from "next/link"
 import { FaFacebook, FaInstagram } from "react-icons/fa"
 import { FaXTwitter } from "react-icons/fa6"
 
+const footerBackgroundItems = Array.from({ length: 8 })
+const footerBackgroundRows = Array.from({ length: 4 })
+
 export const FooterComponent = () => {
     return <footer id="footerComponent">
         <article>
@@ -41,11 +44,15 @@ export const FooterComponent = () => {
         </p>
 
         <div id="footerBackground" aria-hidden="true">
-            {[0, 1, 2, 3].map((row) => (
+            {footerBackgroundRows.map((_, row) => (
                 <div className="footerBackgroundRow" key={row}>
                     <div className="footerBackgroundTrack">
-                        {[0, 1, 2, 3, 4, 5].map((item) => (
-                            <Image src="/footer.png" alt="footerBackground" width={1000} height={1000} key={item} />
+                        {[0, 1].map((sequence) => (
+                            <div className="footerBackgroundSequence" key={sequence}>
+                                {footerBackgroundItems.map((_, item) => (
+                                    <Image src="/footer.png" alt="" width={313} height={313} key={item} />
+                                ))}
+                            </div>
                         ))}
                     </div>
                 </div>

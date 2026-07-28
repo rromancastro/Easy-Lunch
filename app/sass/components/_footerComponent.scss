@@ -109,12 +109,14 @@
 }
 
 #footerBackground {
+    --footer-background-gap: 48px;
+    --footer-background-duration: 90s;
     position: absolute;
     inset: 0;
     z-index: 0;
     display: flex;
     flex-direction: column;
-    gap: 48px;
+    gap: var(--footer-background-gap);
     justify-content: center;
     overflow: hidden;
     pointer-events: none;
@@ -126,9 +128,17 @@
 
 .footerBackgroundTrack {
     display: flex;
-    gap: 48px;
+    gap: var(--footer-background-gap);
     width: max-content;
-    animation: footerBackgroundMarqueeLeft 90s linear infinite;
+    animation: footerBackgroundMarqueeLeft var(--footer-background-duration) linear infinite;
+    transform: translate3d(0, 0, 0);
+    will-change: transform;
+}
+
+.footerBackgroundSequence {
+    display: flex;
+    gap: var(--footer-background-gap);
+    flex: 0 0 auto;
 
     img {
         height: 313px;
@@ -146,21 +156,21 @@
 
 @keyframes footerBackgroundMarqueeLeft {
     from {
-        transform: translateX(0);
+        transform: translate3d(0, 0, 0);
     }
 
     to {
-        transform: translateX(calc(-50% - 24px));
+        transform: translate3d(calc(-50% - (var(--footer-background-gap) / 2)), 0, 0);
     }
 }
 
 @keyframes footerBackgroundMarqueeRight {
     from {
-        transform: translateX(calc(-50% - 24px));
+        transform: translate3d(calc(-50% - (var(--footer-background-gap) / 2)), 0, 0);
     }
 
     to {
-        transform: translateX(0);
+        transform: translate3d(0, 0, 0);
     }
 }
 
@@ -215,8 +225,12 @@
         }
     }
 
-    .footerBackgroundTrack {
-        gap: 14px;
+    #footerBackground {
+        --footer-background-gap: 14px;
+        --footer-background-duration: 42s;
+    }
+
+    .footerBackgroundSequence {
         img {
             height: 213px;
         }

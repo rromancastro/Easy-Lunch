@@ -76,7 +76,7 @@
 @media (max-width: 769px) {
     #navbarComponent {
         flex-wrap: wrap;
-        row-gap: 16px;
+        row-gap: 0px;
 
         >a {
             order: 1;
@@ -85,8 +85,15 @@
         >div {
             display: contents;
 
+            button {
+                margin-left: 0px;
+            }
+
             .navbarMenuButton {
+    box-shadow: 0px 4px 4px 0px #0000001A, 14px 0px 14px 0px #ffffff1a inset, -14px 0px 14px 0px #ffffff1a inset;
                 order: 2;
+                border-radius: 8px;
+                border: 1px solid #FFFFFF33;
                 display: flex;
                 align-items: center;
                 justify-content: center;
@@ -99,23 +106,24 @@
 
             .cotizaComponent {
                 order: 3;
-                margin-left: auto;
+                margin-left: 0px !important;
             }
 
             .navbarLinks {
                 order: 4;
                 width: 100%;
                 display: flex;
+                align-items: flex-end;
                 justify-content: space-between;
                 gap: clamp(24px, 8vw, 48px);
                 max-height: 0;
                 opacity: 0;
                 overflow: hidden;
                 pointer-events: none;
-                transition: max-height .28s ease, opacity .22s ease;
+                transition: max-height .28s ease, opacity .22s ease, padding-top .28s ease;
 
                 a {
-                    font-size: 24px;
+                    font-size: 14px;
                     white-space: nowrap;
                 }
             }
@@ -124,9 +132,10 @@
         &.is-open {
             >div {
                 .navbarLinks {
-                    max-height: 40px;
+                    max-height: 90px;
                     opacity: 1;
                     pointer-events: auto;
+                    padding-top: 16px;
                     a {
                         font-size: 14px;
                     }
