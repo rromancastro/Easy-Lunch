@@ -17,7 +17,6 @@ export const ImagenParallaxComponent = ({
     const containerRef = useRef(null);
     const isInViewRef = useRef(true);
     const frameRef = useRef(null);
-    const pointerRef = useRef({ x: 0, y: 0 });
     const requestUpdateRef = useRef(null);
     const [isMobileParallax, setIsMobileParallax] = useState(false);
     const effectiveIntensity = isMobileParallax ? 1 : intensidad;
@@ -66,12 +65,10 @@ export const ImagenParallaxComponent = ({
             const viewportHeight = window.innerHeight || document.documentElement.clientHeight;
             const progress = clamp((viewportHeight - rect.top) / (viewportHeight + rect.height), 0, 1) - 0.5;
             const parallaxY = progress * -56 * effectiveIntensity;
-            const pointerX = pointerRef.current.x;
-            const pointerY = pointerRef.current.y;
 
             container.style.setProperty("--parallax-y", `${parallaxY}px`);
-            container.style.setProperty("--rotate-x", `${pointerY * -8 * effectiveIntensity}deg`);
-            container.style.setProperty("--rotate-y", `${pointerX * 8 * effectiveIntensity}deg`);
+            container.style.setProperty("--rotate-x", "0deg");
+            container.style.setProperty("--rotate-y", "0deg");
         };
 
         const requestUpdate = () => {
@@ -83,22 +80,6 @@ export const ImagenParallaxComponent = ({
         };
 
         requestUpdateRef.current = requestUpdate;
-
-        const handlePointerMove = (event) => {
-            const rect = container.getBoundingClientRect();
-
-            pointerRef.current = {
-                x: (clamp((event.clientX - rect.left) / rect.width, 0, 1) - 0.5) * 2,
-                y: (clamp((event.clientY - rect.top) / rect.height, 0, 1) - 0.5) * 2,
-            };
-
-            requestUpdate();
-        };
-
-        const handlePointerLeave = () => {
-            pointerRef.current = { x: 0, y: 0 };
-            requestUpdate();
-        };
 
         const observer = new IntersectionObserver(
             ([entry]) => {
@@ -115,16 +96,12 @@ export const ImagenParallaxComponent = ({
 
         window.addEventListener("scroll", requestUpdate, { passive: true });
         window.addEventListener("resize", requestUpdate);
-        container.addEventListener("pointermove", handlePointerMove);
-        container.addEventListener("pointerleave", handlePointerLeave);
 
         return () => {
             routeUpdateTimeouts.forEach((timeout) => window.clearTimeout(timeout));
             observer.disconnect();
             window.removeEventListener("scroll", requestUpdate);
             window.removeEventListener("resize", requestUpdate);
-            container.removeEventListener("pointermove", handlePointerMove);
-            container.removeEventListener("pointerleave", handlePointerLeave);
 
             if (requestUpdateRef.current === requestUpdate) {
                 requestUpdateRef.current = null;
