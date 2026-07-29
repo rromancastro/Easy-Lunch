@@ -55,7 +55,7 @@ export const FaqSecondSection = () => {
                 <ImagenParallaxComponent
                     rutaImagen={'/faq/secondSection.png'}
                     alt="EasyLunch banner"
-                    intensidad={2}
+                    intensidad={1.3}
                 />
             </div>
             <div>

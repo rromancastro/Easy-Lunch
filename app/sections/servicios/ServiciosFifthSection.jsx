@@ -35,7 +35,7 @@ export const ServiciosFifthSection = () => {
                 <ImagenParallaxComponent
                     rutaImagen={getResponsiveImage("fifthSectionImage1", shouldUseMobileImages)}
                     alt="EasyLunch banner"
-                    intensidad={2}
+                    intensidad={1.3}
                 />
             </div>
             <div>
@@ -86,7 +86,7 @@ export const ServiciosFifthSection = () => {
                 <ImagenParallaxComponent
                     rutaImagen={getResponsiveImage("fifthSectionImage2", shouldUseMobileImages)}
                     alt="EasyLunch banner"
-                    intensidad={2}
+                    intensidad={1.3}
                 />
             </div>
         </article>

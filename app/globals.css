@@ -556,9 +556,12 @@ header > a:hover {
   #navbarComponent svg {
     width: 122px;
     height: auto;
+    align-self: center;
   }
   #navbarComponent > a {
     order: 1;
+    display: flex;
+    align-items: center;
   }
   #navbarComponent > div {
     display: contents;
@@ -2009,6 +2012,7 @@ header > a:hover {
   }
   #faqSecondSection > article > div:nth-child(2) {
     padding: 48px 16px;
+    min-width: 0;
     gap: 16px;
   }
   #faqSecondSection > article > div:nth-child(2) h2 {

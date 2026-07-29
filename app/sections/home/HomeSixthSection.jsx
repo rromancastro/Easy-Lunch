@@ -23,7 +23,7 @@ export const HomeSixthSection = () => {
                 </SplitP>
             </div>
             <div id="homeSixthSectionImageBg">
-                <ImagenParallaxComponent intensidad={2} rutaImagen={'/home/sixthSection.png'}/>
+                <ImagenParallaxComponent intensidad={1.3} rutaImagen={'/home/sixthSection.png'}/>
             </div>
         </article>
     </section>
