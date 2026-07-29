@@ -188,27 +188,35 @@
 
 .footerBackgroundRow {
   width: 100%;
+  flex: 0 0 auto;
+  overflow: visible;
 }
 
 .footerBackgroundTrack {
   display: flex;
   gap: var(--footer-background-gap);
   width: max-content;
+  min-width: max-content;
   animation: footerBackgroundMarqueeLeft var(--footer-background-duration) linear infinite;
   transform: translate3d(0, 0, 0);
   will-change: transform;
+  backface-visibility: hidden;
 }
 
 .footerBackgroundSequence {
   display: flex;
   gap: var(--footer-background-gap);
   flex: 0 0 auto;
+  width: max-content;
+  min-width: max-content;
 }
 .footerBackgroundSequence img {
   height: 313px;
   width: auto;
+  aspect-ratio: 1/1;
   object-fit: contain;
   flex: 0 0 auto;
+  display: block;
 }
 
 .footerBackgroundRow:nth-child(even) .footerBackgroundTrack {
@@ -271,11 +279,11 @@
     font-size: 16px;
   }
   #footerBackground {
-    --footer-background-gap: 14px;
+    --footer-background-gap: clamp(8px, 1.8vh, 14px);
     --footer-background-duration: 42s;
   }
   .footerBackgroundSequence img {
-    height: 213px;
+    height: clamp(96px, 17vh, 150px);
   }
 }
 header {
@@ -509,10 +517,6 @@ header > a:hover {
 #navbarComponent svg:hover path {
   fill: #79DB6C;
 }
-#navbarComponent img {
-  height: 100%;
-  width: auto;
-}
 #navbarComponent > div {
   display: flex;
   align-items: center;
@@ -556,6 +560,10 @@ header > a:hover {
   #navbarComponent {
     flex-wrap: wrap;
     row-gap: 0px;
+  }
+  #navbarComponent svg {
+    width: 122px;
+    height: auto;
   }
   #navbarComponent > a {
     order: 1;
@@ -1207,6 +1215,10 @@ header > a:hover {
   align-items: center;
   justify-content: center;
 }
+#appSecondSectionContent > video {
+  width: 600px;
+  height: auto;
+}
 #appSecondSectionContent > article {
   padding: 0 56px;
   display: flex;
@@ -1281,9 +1293,14 @@ header > a:hover {
   #appSecondSectionContent {
     display: flex;
     flex-direction: column;
-    align-items: start;
+    align-items: center;
     width: fit-content;
     max-width: none;
+    gap: 48px;
+  }
+  #appSecondSectionContent > video {
+    width: 100%;
+    max-width: 500px;
   }
   #appSecondSectionContent > article {
     padding: 0;

@@ -1,4 +1,3 @@
-import Image from "next/image"
 import Link from "next/link"
 import { FaFacebook, FaInstagram } from "react-icons/fa"
 import { FaXTwitter } from "react-icons/fa6"
@@ -50,7 +49,7 @@ export const FooterComponent = () => {
                         {[0, 1].map((sequence) => (
                             <div className="footerBackgroundSequence" key={sequence}>
                                 {footerBackgroundItems.map((_, item) => (
-                                    <Image src="/footer.png" alt="" width={313} height={313} key={item} />
+                                    <img src="/footer.png" alt="" width={313} height={313} loading="eager" decoding="sync" draggable="false" key={item} />
                                 ))}
                             </div>
                         ))}

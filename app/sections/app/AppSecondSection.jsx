@@ -1,7 +1,28 @@
+"use client"
+
 import { SplitH2, SplitP } from "@/app/components"
+import { useEffect, useRef } from "react"
+import { useInView } from "react-intersection-observer"
 
 export const AppSecondSection = () => {
-    return <section id="appSecondSection">
+    const videoRef = useRef(null)
+    const { ref, inView } = useInView({
+        threshold: 0.5,
+    })
+
+    useEffect(() => {
+        const video = videoRef.current
+
+        if (!video) return
+
+        if (inView) {
+            video.play().catch(() => {})
+        } else {
+            video.pause()
+        }
+    }, [inView])
+
+    return <section ref={ref} id="appSecondSection">
         <div id="appSecondSectionContent">
             <article>
                 <SplitH2 id="appSecondSectionTitle">
@@ -42,6 +63,13 @@ export const AppSecondSection = () => {
                     </article>
                 </div>
             </article>
+            <video src="/app/secondSectionVideo.mp4"
+                ref={videoRef}
+                muted
+                playsInline
+                loop
+                id="appSecondSectionVideo"
+            ></video>
         </div>
     </section>
 }

@@ -59,7 +59,11 @@ const AnimatedCounter = ({ from = 0, to, prefix = "", duration = 2.2 }) => {
     const ref = useRef(null)
     const count = useMotionValue(from)
     const [formatted, setFormatted] = useState(`${prefix}${from.toLocaleString("en-US")}`)
-    const isInView = useInView(ref, { once: true, margin: "-80px" })
+    const isInView = useInView(ref, {
+        once: true,
+        amount: 0.2,
+        margin: "0px 0px -10% 0px",
+    })
 
     useMotionValueEvent(count, "change", (latest) => {
         setFormatted(`${prefix}${Math.round(latest).toLocaleString("en-US")}`)
@@ -78,7 +82,7 @@ const AnimatedCounter = ({ from = 0, to, prefix = "", duration = 2.2 }) => {
         return () => controls.stop()
     }, [count, duration, isInView, to])
 
-    return <span ref={ref}>{formatted}</span>
+    return <span ref={ref} style={{ display: "inline-block" }}>{formatted}</span>
 }
 
 export const HomeSeventhSection = () => {

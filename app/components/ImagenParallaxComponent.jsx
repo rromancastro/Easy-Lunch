@@ -11,11 +11,11 @@ export const ImagenParallaxComponent = ({
     src,
     alt = "",
     className = "",
-    intensidad = 1,
+    intensidad = 1.5,
 }) => {
     const pathname = usePathname();
     const containerRef = useRef(null);
-    const isInViewRef = useRef(false);
+    const isInViewRef = useRef(true);
     const frameRef = useRef(null);
     const pointerRef = useRef({ x: 0, y: 0 });
     const requestUpdateRef = useRef(null);
@@ -53,13 +53,13 @@ export const ImagenParallaxComponent = ({
             const rect = container.getBoundingClientRect();
             const viewportHeight = window.innerHeight || document.documentElement.clientHeight;
             const progress = clamp((viewportHeight - rect.top) / (viewportHeight + rect.height), 0, 1) - 0.5;
-            const parallaxY = progress * -56 * 1.8;
+            const parallaxY = progress * -56 * intensidad;
             const pointerX = pointerRef.current.x;
             const pointerY = pointerRef.current.y;
 
             container.style.setProperty("--parallax-y", `${parallaxY}px`);
-            container.style.setProperty("--rotate-x", `${pointerY * -8 * 1.8}deg`);
-            container.style.setProperty("--rotate-y", `${pointerX * 8 * 1.8}deg`);
+            container.style.setProperty("--rotate-x", `${pointerY * -8 * intensidad}deg`);
+            container.style.setProperty("--rotate-y", `${pointerX * 8 * intensidad}deg`);
         };
 
         const requestUpdate = () => {
@@ -74,10 +74,12 @@ export const ImagenParallaxComponent = ({
 
         const handlePointerMove = (event) => {
             const rect = container.getBoundingClientRect();
+
             pointerRef.current = {
-                x: ((event.clientX - rect.left) / rect.width - 0.5) * 2,
-                y: ((event.clientY - rect.top) / rect.height - 0.5) * 2,
+                x: (clamp((event.clientX - rect.left) / rect.width, 0, 1) - 0.5) * 2,
+                y: (clamp((event.clientY - rect.top) / rect.height, 0, 1) - 0.5) * 2,
             };
+
             requestUpdate();
         };
 
@@ -95,8 +97,9 @@ export const ImagenParallaxComponent = ({
         );
 
         observer.observe(container);
+
         requestUpdate();
-        const routeUpdateTimeout = window.setTimeout(requestUpdate, 0);
+        const routeUpdateTimeouts = [0, 100, 350].map((delay) => window.setTimeout(requestUpdate, delay));
 
         window.addEventListener("scroll", requestUpdate, { passive: true });
         window.addEventListener("resize", requestUpdate);
@@ -104,7 +107,7 @@ export const ImagenParallaxComponent = ({
         container.addEventListener("pointerleave", handlePointerLeave);
 
         return () => {
-            window.clearTimeout(routeUpdateTimeout);
+            routeUpdateTimeouts.forEach((timeout) => window.clearTimeout(timeout));
             observer.disconnect();
             window.removeEventListener("scroll", requestUpdate);
             window.removeEventListener("resize", requestUpdate);
@@ -117,11 +120,12 @@ export const ImagenParallaxComponent = ({
 
             if (frameRef.current) {
                 window.cancelAnimationFrame(frameRef.current);
+                frameRef.current = null;
             }
         };
-    }, [1.8, pathname]);
+    }, [intensidad, pathname]);
 
     return <div className={`imagenParallaxComponent ${className}`.trim()} ref={containerRef}>
-        <img src={src || rutaImagen} alt={alt} />
+        <img src={src || rutaImagen} alt={alt} onLoad={() => requestUpdateRef.current?.()} />
     </div>
 }
