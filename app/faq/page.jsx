@@ -6,7 +6,7 @@ export default function FAQPage() {
         <NavbarComponent />
         <main>
             <HeaderComponent
-                imageUrl={'/faq/headerBg.png'}
+                imageUrl={'/faq/headerBg.avif'}
                 title={'Preguntas'}
                 title2={'Frecuentes'}
             />

@@ -3,7 +3,7 @@ export const HomeSecondSection = () => {
     return <section id="homeSecondSection">
         <article className="radius-24">            
             <ImagenParallaxComponent
-                rutaImagen="/home/secondSectionBg.jpg"
+                rutaImagen="/home/secondSectionBg.avif"
                 alt="EasyLunch banner"
                 intensidad={1.5}
             />

@@ -6,7 +6,7 @@ export default function TrabajaConNosotrosPage() {
         <NavbarComponent />
         <main>
             <HeaderComponent
-                imageUrl={'/trabaja-con-nosotros/headerBg.png'}
+                imageUrl={'/trabaja-con-nosotros/headerBg.avif'}
                 title={'Trabaja con'}
                 title2={'Nosotros'}
                 content="Contactanos"

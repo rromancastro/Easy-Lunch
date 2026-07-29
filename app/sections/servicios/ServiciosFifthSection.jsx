@@ -10,7 +10,7 @@ const isMobile = (measure) => measure <= MOBILE_BREAKPOINT
 const getResponsiveImage = (imageName, shouldUseMobileImage) => {
     const suffix = shouldUseMobileImage ? "Mobile" : ""
 
-    return `/servicios/${imageName}${suffix}.png`
+    return `/servicios/${imageName}${suffix}.avif`
 }
 
 export const ServiciosFifthSection = () => {

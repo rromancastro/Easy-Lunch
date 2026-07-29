@@ -75,7 +75,7 @@ export const AppThirdSection = () => {
                     </div>
                     <RiArrowDownSLine />
                     <div className="appThirdSectionCardImageContainer">
-                        <Image src="/app/thirdSectionCard1.png" alt="appThirdSectionCard1" width={400} height={400} />
+                        <Image src="/app/thirdSectionCard1.avif" alt="appThirdSectionCard1" width={400} height={400} />
                     </div>
                 </motion.article>
 
@@ -93,7 +93,7 @@ export const AppThirdSection = () => {
                     </div>
                     <RiArrowDownSLine />
                     <div className="appThirdSectionCardImageContainer">
-                        <Image src="/app/thirdSectionCard2.png" alt="appThirdSectionCard2" width={400} height={400} />
+                        <Image src="/app/thirdSectionCard2.avif" alt="appThirdSectionCard2" width={400} height={400} />
                     </div>
                 </motion.article>
 
@@ -111,7 +111,7 @@ export const AppThirdSection = () => {
                     </div>
                     <RiArrowDownSLine />
                     <div className="appThirdSectionCardImageContainer">
-                        <Image src="/app/thirdSectionCard3.png" alt="appThirdSectionCard3" width={400} height={400} />
+                        <Image src="/app/thirdSectionCard3.avif" alt="appThirdSectionCard3" width={400} height={400} />
                     </div>
                 </motion.article>
 
@@ -130,7 +130,7 @@ export const AppThirdSection = () => {
                     </div>
                     <RiArrowDownSLine />
                     <div className="appThirdSectionCardImageContainer">
-                        <Image src="/app/thirdSectionCard4.png" alt="appThirdSectionCard4" width={400} height={400} />
+                        <Image src="/app/thirdSectionCard4.avif" alt="appThirdSectionCard4" width={400} height={400} />
                     </div>
                 </motion.article>
             </div>

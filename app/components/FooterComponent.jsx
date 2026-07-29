@@ -1,4 +1,3 @@
-import Image from "next/image"
 import Link from "next/link"
 import { FaFacebook, FaInstagram } from "react-icons/fa"
 import { FaXTwitter } from "react-icons/fa6"

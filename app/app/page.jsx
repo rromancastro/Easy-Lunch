@@ -6,7 +6,7 @@ export default function AppPage() {
         <NavbarComponent />
         <main>
             <HeaderComponent
-                imageUrl={'/app/headerBg.png'}
+                imageUrl={'/app/headerBg.avif'}
                 title={'Nuestra App'}
                 description={'Fácil de usar, intuitiva y sin necesidad de descargar, accede desde la web y hace tu pedido.'}
                 link={'https://app.easylunch.com.ar/'}

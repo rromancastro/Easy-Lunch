@@ -69,7 +69,7 @@ export const AppFourthSection = () => {
                 <SplitP id='appFourthSectionCard1Description'>
                      Diseñada para facilitar las cosas, fácil e intuitiva. Para que puedan realizar los pedidos desde donde quieran y cuándo quieran. 
                 </SplitP>
-                <Image src="/app/fourthSectionCard1.png" alt="appFourthSectionCard1" width={400} height={400} />
+                <Image src="/app/fourthSectionCard1.avif" alt="appFourthSectionCard1" width={400} height={400} />
             </article>
 
             <article>
@@ -79,7 +79,7 @@ export const AppFourthSection = () => {
                 <SplitP id='appFourthSectionCard2Description'>
                      Tus colaboradores pueden organizar y realizar los pedidos de todo el mes sin esperar a último momento.
                 </SplitP>
-                <Image src="/app/fourthSectionCard2.png" alt="appFourthSectionCard2" width={400} height={400} />
+                <Image src="/app/fourthSectionCard2.avif" alt="appFourthSectionCard2" width={400} height={400} />
             </article>
 
             <article>
@@ -89,7 +89,7 @@ export const AppFourthSection = () => {
                 <SplitP id='appFourthSectionCard3Description'>
                      Olvidate de la gestión manual! En los casos donde los colaboradores pagan una parte o el total de su almuerzo, pueden hacerlo directo desde la app, sin sumarle trabajo extra a RR.HH.
                 </SplitP>
-                <Image src="/app/fourthSectionCard3.png" alt="appFourthSectionCard3" width={400} height={400} />
+                <Image src="/app/fourthSectionCard3.avif" alt="appFourthSectionCard3" width={400} height={400} />
             </article>
 
         </div>

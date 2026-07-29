@@ -72,7 +72,7 @@ export const HomeThirdSection = () => {
             >
                 <ReactCardFlip isFlipped={isFlipped1} flipDirection="horizontal">
                     <div className="flipCardFront">
-                        <Image src={'/home/thirdSectionCard1.png'} alt="EasyLunch banner" width={500} height={500} />
+                        <Image src={'/home/thirdSectionCard1.avif'} alt="EasyLunch banner" width={500} height={500} />
                         <SplitH3 id="homeThirdSectionCard1Title">
                             Plataforma de pedidos
                         </SplitH3>
@@ -95,7 +95,7 @@ export const HomeThirdSection = () => {
             >
                 <ReactCardFlip isFlipped={isFlipped2} flipDirection="horizontal">
                     <div className="flipCardFront">
-                        <Image src={'/home/thirdSectionCard2.png'} alt="EasyLunch banner" width={500} height={500} />
+                        <Image src={'/home/thirdSectionCard2.avif'} alt="EasyLunch banner" width={500} height={500} />
                         <SplitH3 id="homeThirdSectionCard2Title">
                             Modalidades de contratación
                         </SplitH3>
@@ -118,7 +118,7 @@ export const HomeThirdSection = () => {
             >
                 <ReactCardFlip isFlipped={isFlipped3} flipDirection="horizontal">
                     <div className="flipCardFront">
-                        <Image src={'/home/thirdSectionCard3.png'} alt="EasyLunch banner" width={500} height={500} />
+                        <Image src={'/home/thirdSectionCard3.avif'} alt="EasyLunch banner" width={500} height={500} />
                         <SplitH3 id="homeThirdSectionCard3Title">
                             Variedad y calidad de los productos
                         </SplitH3>
@@ -141,7 +141,7 @@ export const HomeThirdSection = () => {
             >
                 <ReactCardFlip isFlipped={isFlipped4} flipDirection="horizontal">
                     <div className="flipCardFront">
-                        <Image src={'/home/thirdSectionCard4.png'} alt="EasyLunch banner" width={500} height={500} />
+                        <Image src={'/home/thirdSectionCard4.avif'} alt="EasyLunch banner" width={500} height={500} />
                         <SplitH3 id="homeThirdSectionCard4Title">
                             Atención y seguimiento personalizado
                         </SplitH3>

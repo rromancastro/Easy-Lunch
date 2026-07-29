@@ -61,7 +61,7 @@ export const ServiciosFourthSection = () => {
         <div id="serviciosFourthSectionCardsContainer" ref={cardsContainerRef}>
 
             <article>
-                <Image src="/servicios/fourthSectionCard1.png" alt="serviciosFourthSectionCard1" width={400} height={400} />
+                <Image src="/servicios/fourthSectionCard1.avif" alt="serviciosFourthSectionCard1" width={400} height={400} />
                 <SplitH3 id="serviciosFourthSectionCard1Title">
                     Platos calientes
                 </SplitH3>
@@ -71,7 +71,7 @@ export const ServiciosFourthSection = () => {
             </article>
 
             <article>
-                <Image src="/servicios/fourthSectionCard2.png" alt="serviciosFourthSectionCard2" width={400} height={400} />
+                <Image src="/servicios/fourthSectionCard2.avif" alt="serviciosFourthSectionCard2" width={400} height={400} />
                 <SplitH3 id="serviciosFourthSectionCard2Title">
                     Ensaladas
                 </SplitH3>
@@ -81,7 +81,7 @@ export const ServiciosFourthSection = () => {
             </article>
 
             <article>
-                <Image src="/servicios/fourthSectionCard3.png" alt="serviciosFourthSectionCard3" width={400} height={400} />
+                <Image src="/servicios/fourthSectionCard3.avif" alt="serviciosFourthSectionCard3" width={400} height={400} />
                 <SplitH3 id="serviciosFourthSectionCard3Title">
                     Tartas
                 </SplitH3>
@@ -91,7 +91,7 @@ export const ServiciosFourthSection = () => {
             </article>
 
             <article>
-                <Image src="/servicios/fourthSectionCard4.png" alt="serviciosFourthSectionCard4" width={400} height={400} />
+                <Image src="/servicios/fourthSectionCard4.avif" alt="serviciosFourthSectionCard4" width={400} height={400} />
                 <SplitH3 id="serviciosFourthSectionCard4Title">
                     Sándwiches y wraps
                 </SplitH3>

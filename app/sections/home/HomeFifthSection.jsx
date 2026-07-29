@@ -7,7 +7,7 @@ import { useEffect, useRef, useState } from "react"
 
 const fifthSectionCards = [
     {
-        src: "/home/fifthSectionCard1.png",
+        src: "/home/fifthSectionCard1.avif",
         alt: "Opcion de comida 1",
         className: "homeFifthSectionCard1",
         x: "-32vw",
@@ -15,7 +15,7 @@ const fifthSectionCards = [
         duration: 8.2,
     },
     {
-        src: "/home/fifthSectionCard2.png",
+        src: "/home/fifthSectionCard2.avif",
         alt: "Opcion de comida 2",
         className: "homeFifthSectionCard2",
         x: "18vw",
@@ -23,7 +23,7 @@ const fifthSectionCards = [
         duration: 10,
     },
     {
-        src: "/home/fifthSectionCard3.png",
+        src: "/home/fifthSectionCard3.avif",
         alt: "Opcion de comida 3",
         className: "homeFifthSectionCard3",
         x: "-8vw",
@@ -31,7 +31,7 @@ const fifthSectionCards = [
         duration: 7.6,
     },
     {
-        src: "/home/fifthSectionCard4.png",
+        src: "/home/fifthSectionCard4.avif",
         alt: "Opcion de comida 4",
         className: "homeFifthSectionCard4",
         x: "34vw",
@@ -39,7 +39,7 @@ const fifthSectionCards = [
         duration: 9.4,
     },
     {
-        src: "/home/fifthSectionCard5.png",
+        src: "/home/fifthSectionCard5.avif",
         alt: "Opcion de comida 5",
         className: "homeFifthSectionCard5",
         x: "-22vw",
@@ -47,7 +47,7 @@ const fifthSectionCards = [
         duration: 8.8,
     },
     {
-        src: "/home/fifthSectionCard6.png",
+        src: "/home/fifthSectionCard6.avif",
         alt: "Opcion de comida 6",
         className: "homeFifthSectionCard6",
         x: "4vw",
@@ -55,7 +55,7 @@ const fifthSectionCards = [
         duration: 10.6,
     },
     {
-        src: "/home/fifthSectionCard1.png",
+        src: "/home/fifthSectionCard1.avif",
         alt: "Opcion de comida 7",
         className: "homeFifthSectionCard1",
         x: "-3vw",
@@ -63,7 +63,7 @@ const fifthSectionCards = [
         duration: 7.9,
     },
     {
-        src: "/home/fifthSectionCard2.png",
+        src: "/home/fifthSectionCard2.avif",
         alt: "Opcion de comida 8",
         className: "homeFifthSectionCard2",
         x: "2vw",
@@ -71,7 +71,7 @@ const fifthSectionCards = [
         duration: 9.8,
     },
     {
-        src: "/home/fifthSectionCard3.png",
+        src: "/home/fifthSectionCard3.avif",
         alt: "Opcion de comida 9",
         className: "homeFifthSectionCard3",
         x: "-7vw",
@@ -79,7 +79,7 @@ const fifthSectionCards = [
         duration: 8.4,
     },
     {
-        src: "/home/fifthSectionCard4.png",
+        src: "/home/fifthSectionCard4.avif",
         alt: "Opcion de comida 10",
         className: "homeFifthSectionCard4",
         x: "54vw",
@@ -87,7 +87,7 @@ const fifthSectionCards = [
         duration: 11,
     },
     {
-        src: "/home/fifthSectionCard5.png",
+        src: "/home/fifthSectionCard5.avif",
         alt: "Opcion de comida 11",
         className: "homeFifthSectionCard5",
         x: "-13vw",
@@ -95,7 +95,7 @@ const fifthSectionCards = [
         duration: 7.4,
     },
     {
-        src: "/home/fifthSectionCard6.png",
+        src: "/home/fifthSectionCard6.avif",
         alt: "Opcion de comida 12",
         className: "homeFifthSectionCard6",
         x: "6vw",
@@ -103,7 +103,7 @@ const fifthSectionCards = [
         duration: 9.2,
     },
     {
-        src: "/home/fifthSectionCard6.png",
+        src: "/home/fifthSectionCard6.avif",
         alt: "Opcion de comida 13",
         className: "homeFifthSectionCard6",
         x: "16vw",
