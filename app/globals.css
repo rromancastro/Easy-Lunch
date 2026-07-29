@@ -785,7 +785,7 @@ header > a:hover {
 
 #homeFourthSectionSticky {
   position: sticky;
-  top: 0;
+  top: 80px;
   height: 100%;
   width: 100%;
   display: flex;
@@ -896,6 +896,7 @@ header > a:hover {
     padding: 24px 16px;
     padding-bottom: 48px;
     gap: 24px;
+    top: 92px;
   }
   #homeFourthSectionTitle {
     max-width: 199px;
