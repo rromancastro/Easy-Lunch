@@ -31,7 +31,7 @@ export const TrabajaConNosotrosSecondSection = () => {
                 <ImagenParallaxComponent
                     rutaImagen={'/trabaja-con-nosotros/secondSection.png'}
                     alt="EasyLunch banner"
-                    intensidad={1}
+                    intensidad={1.5}
                 />
             </div>
         </article>

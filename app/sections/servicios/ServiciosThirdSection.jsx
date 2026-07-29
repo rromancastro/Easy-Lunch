@@ -16,7 +16,7 @@ export const ServiciosThirdSection = () => {
                 </SplitP>
             </div>
             <div id="serviciosThirdSectionImageBg">
-                <ImagenParallaxComponent intensidad={1} rutaImagen={'/servicios/thirdSection.png'}/>
+                <ImagenParallaxComponent intensidad={1.5} rutaImagen={'/servicios/thirdSection.png'}/>
             </div>
         </article>
     </section>

@@ -1,6 +1,6 @@
 "use client";
 
-import { useCallback, useEffect, useRef } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 import { usePathname } from "next/navigation";
 import { useLenis } from "lenis/react";
 
@@ -11,7 +11,7 @@ export const ImagenParallaxComponent = ({
     src,
     alt = "",
     className = "",
-    intensidad = 1,
+    intensidad = 1.5,
 }) => {
     const pathname = usePathname();
     const containerRef = useRef(null);
@@ -19,6 +19,8 @@ export const ImagenParallaxComponent = ({
     const frameRef = useRef(null);
     const pointerRef = useRef({ x: 0, y: 0 });
     const requestUpdateRef = useRef(null);
+    const [isMobileParallax, setIsMobileParallax] = useState(false);
+    const effectiveIntensity = isMobileParallax ? 1 : intensidad;
 
     useLenis(
         useCallback(() => {
@@ -26,6 +28,16 @@ export const ImagenParallaxComponent = ({
         }, []),
         [],
     );
+
+    useEffect(() => {
+        const mediaQuery = window.matchMedia("(max-width: 768px)");
+        const updateIsMobileParallax = () => setIsMobileParallax(mediaQuery.matches);
+
+        updateIsMobileParallax();
+        mediaQuery.addEventListener("change", updateIsMobileParallax);
+
+        return () => mediaQuery.removeEventListener("change", updateIsMobileParallax);
+    }, []);
 
     useEffect(() => {
         const container = containerRef.current;
@@ -53,13 +65,13 @@ export const ImagenParallaxComponent = ({
             const rect = container.getBoundingClientRect();
             const viewportHeight = window.innerHeight || document.documentElement.clientHeight;
             const progress = clamp((viewportHeight - rect.top) / (viewportHeight + rect.height), 0, 1) - 0.5;
-            const parallaxY = progress * -56 * intensidad;
+            const parallaxY = progress * -56 * effectiveIntensity;
             const pointerX = pointerRef.current.x;
             const pointerY = pointerRef.current.y;
 
             container.style.setProperty("--parallax-y", `${parallaxY}px`);
-            container.style.setProperty("--rotate-x", `${pointerY * -8 * intensidad}deg`);
-            container.style.setProperty("--rotate-y", `${pointerX * 8 * intensidad}deg`);
+            container.style.setProperty("--rotate-x", `${pointerY * -8 * effectiveIntensity}deg`);
+            container.style.setProperty("--rotate-y", `${pointerX * 8 * effectiveIntensity}deg`);
         };
 
         const requestUpdate = () => {
@@ -123,7 +135,7 @@ export const ImagenParallaxComponent = ({
                 frameRef.current = null;
             }
         };
-    }, [intensidad, pathname]);
+    }, [effectiveIntensity, pathname]);
 
     return <div className={`imagenParallaxComponent ${className}`.trim()} ref={containerRef}>
         <img src={src || rutaImagen} alt={alt} onLoad={() => requestUpdateRef.current?.()} />

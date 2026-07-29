@@ -1695,6 +1695,7 @@ header > a:hover {
   }
   #serviciosSecondSection .sectionTitleContainer {
     padding-bottom: 0;
+    max-width: 330px;
   }
   #serviciosSecondSection > h3 {
     padding-bottom: 0;
@@ -1753,6 +1754,7 @@ header > a:hover {
   height: 616px;
   background-color: #fff;
   border-radius: 24px 0 0 24px;
+  overflow: hidden;
   display: flex;
   transition: 2s ease-in-out;
 }
@@ -1781,6 +1783,22 @@ header > a:hover {
   z-index: 10 !important;
 }
 
+@media (max-width: 768px) {
+  #serviciosThirdSection article {
+    flex-direction: column-reverse;
+    height: 100%;
+  }
+  #serviciosThirdSection article #serviciosThirdSectionContent {
+    padding: 48px 16px;
+    gap: 16px;
+  }
+  #serviciosThirdSection article #serviciosThirdSectionContent p, #serviciosThirdSection article #serviciosThirdSectionContent h2 {
+    width: 100%;
+  }
+  #serviciosThirdSection article #serviciosThirdSectionImageBg {
+    height: 334px;
+  }
+}
 #serviciosFourthSection {
   display: flex;
   flex-direction: column;

@@ -6,6 +6,7 @@
         height: 616px;
         background-color: #fff;
         border-radius: 24px 0 0 24px;
+        overflow: hidden;
 
         display: flex;
         transition: 2s ease-in-out;
@@ -36,6 +37,26 @@
 
             .imagenParallaxComponent {
                 z-index: 10 !important;
+            }
+        }
+    }
+}
+
+@media (max-width: 768px) {
+    #serviciosThirdSection {
+        article {
+            flex-direction: column-reverse;
+            height: 100%;
+            #serviciosThirdSectionContent {
+                padding: 48px 16px;
+                gap: 16px;
+
+                p, h2 {
+                    width: 100%;
+                }
+            }
+            #serviciosThirdSectionImageBg {
+                height: 334px;
             }
         }
     }

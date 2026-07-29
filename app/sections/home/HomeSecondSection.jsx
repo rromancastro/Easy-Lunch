@@ -5,7 +5,7 @@ export const HomeSecondSection = () => {
             <ImagenParallaxComponent
                 rutaImagen="/home/secondSectionBg.jpg"
                 alt="EasyLunch banner"
-                intensidad={1}
+                intensidad={1.5}
             />
 
             <div id="homeSecondSectionContent">
