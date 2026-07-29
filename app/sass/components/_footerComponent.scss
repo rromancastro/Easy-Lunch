@@ -110,7 +110,7 @@
 
 #footerBackground {
     --footer-background-gap: 48px;
-    --footer-background-duration: 90s;
+    --footer-background-duration: 160s;
     position: absolute;
     inset: 0;
     z-index: 0;
@@ -227,7 +227,7 @@
 
     #footerBackground {
         --footer-background-gap: 14px;
-        --footer-background-duration: 42s;
+        --footer-background-duration: 160s;
     }
 
     .footerBackgroundSequence {
