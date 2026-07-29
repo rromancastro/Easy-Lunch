@@ -12,6 +12,7 @@ export const ImagenParallaxComponent = ({
     alt = "",
     className = "",
     intensidad = 1.5,
+    priority = false,
 }) => {
     const pathname = usePathname();
     const containerRef = useRef(null);
@@ -115,6 +116,13 @@ export const ImagenParallaxComponent = ({
     }, [effectiveIntensity, pathname]);
 
     return <div className={`imagenParallaxComponent ${className}`.trim()} ref={containerRef}>
-        <img src={src || rutaImagen} alt={alt} onLoad={() => requestUpdateRef.current?.()} />
+        <img
+            src={src || rutaImagen}
+            alt={alt}
+            loading={priority ? "eager" : "lazy"}
+            fetchPriority={priority ? "high" : "auto"}
+            decoding="async"
+            onLoad={() => requestUpdateRef.current?.()}
+        />
     </div>
 }

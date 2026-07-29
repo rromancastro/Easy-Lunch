@@ -9,6 +9,7 @@ export const HeaderComponent = ({ imageUrl, title, description, link, title2, sh
             rutaImagen={imageUrl}
             alt="EasyLunch banner" 
             intensidad={1.5}
+            priority
         />
         <SplitH1 id="homeHeaderTitle">
             {title}
