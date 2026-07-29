@@ -8,7 +8,7 @@ export const HeaderComponent = ({ imageUrl, title, description, link, title2, sh
         <ImagenParallaxComponent 
             rutaImagen={imageUrl}
             alt="EasyLunch banner" 
-            intensidad={1.3}
+            intensidad={1}
         />
         <SplitH1 id="homeHeaderTitle">
             {title}

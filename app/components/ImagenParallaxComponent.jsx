@@ -11,7 +11,7 @@ export const ImagenParallaxComponent = ({
     src,
     alt = "",
     className = "",
-    intensidad = 1.3,
+    intensidad = 1,
 }) => {
     const pathname = usePathname();
     const containerRef = useRef(null);
