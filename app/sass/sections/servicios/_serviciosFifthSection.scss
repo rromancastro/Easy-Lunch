@@ -80,6 +80,7 @@
                 &:nth-child(2) {
                     width: 100%;
                     padding: 40px 16px;
+                    min-width: 0;
 
                     >p {
                         max-width: 329px;
