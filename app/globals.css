@@ -1611,12 +1611,23 @@ header > a:hover {
 #serviciosSecondSection > article > div p {
   font-size: 16px;
   font-weight: 600;
-  display: flex;
-  flex-direction: column;
+  display: block;
   cursor: pointer;
   transition: color 0.2s ease;
 }
-#serviciosSecondSection > article > div p span {
+#serviciosSecondSection > article > div p .questionText {
+  color: inherit !important;
+  font-weight: inherit;
+}
+#serviciosSecondSection > article > div p .questionChevronIcon {
+  display: inline-block;
+  width: 14px;
+  height: 9px;
+  transition: transform 0.25s ease;
+  vertical-align: middle;
+}
+#serviciosSecondSection > article > div p .answerText {
+  display: block;
   color: #1E1E1E !important;
   font-weight: initial;
   line-height: 1.45;
@@ -1632,7 +1643,10 @@ header > a:hover {
 #serviciosSecondSection > article > div p.is-open {
   color: #138E03;
 }
-#serviciosSecondSection > article > div p.is-open span {
+#serviciosSecondSection > article > div p.is-open .questionChevronIcon {
+  transform: rotate(180deg);
+}
+#serviciosSecondSection > article > div p.is-open .answerText {
   max-height: var(--answer-height, 0px);
   opacity: 1;
   margin-top: 8px;
@@ -1965,7 +1979,7 @@ header > a:hover {
 }
 #faqSecondSection > article > div:nth-child(2) {
   background-color: #fff;
-  min-width: 536px;
+  max-width: 536px;
   padding: 72px;
   height: 100%;
   display: flex;
@@ -1974,29 +1988,47 @@ header > a:hover {
   gap: 8px;
 }
 #faqSecondSection > article > div:nth-child(2) h2,
-#faqSecondSection > article > div:nth-child(2) p {
+#faqSecondSection > article > div:nth-child(2) p,
+#faqSecondSection > article > div:nth-child(2) .faqItem {
   color: #1E1E1E;
 }
 #faqSecondSection > article > div:nth-child(2) h2 {
   margin-bottom: 16px;
 }
-#faqSecondSection > article > div:nth-child(2) p {
+#faqSecondSection > article > div:nth-child(2) p,
+#faqSecondSection > article > div:nth-child(2) .faqItem {
   font-size: 16px;
   font-weight: 600;
-  display: flex;
-  flex-direction: column;
+  display: block;
   cursor: pointer;
   padding: 12px 0;
   transition: color 0.2s ease;
 }
-#faqSecondSection > article > div:nth-child(2) p ul {
+#faqSecondSection > article > div:nth-child(2) p .questionText,
+#faqSecondSection > article > div:nth-child(2) .faqItem .questionText {
+  color: inherit !important;
+  font-weight: inherit;
+}
+#faqSecondSection > article > div:nth-child(2) p .questionChevronIcon,
+#faqSecondSection > article > div:nth-child(2) .faqItem .questionChevronIcon {
+  display: inline-block;
+  width: 14px;
+  height: 9px;
+  transition: transform 0.25s ease;
+  vertical-align: middle;
+}
+#faqSecondSection > article > div:nth-child(2) p ul,
+#faqSecondSection > article > div:nth-child(2) .faqItem ul {
   margin-left: 24px;
 }
-#faqSecondSection > article > div:nth-child(2) p ul li {
+#faqSecondSection > article > div:nth-child(2) p ul li,
+#faqSecondSection > article > div:nth-child(2) .faqItem ul li {
   color: #1E1E1E !important;
   font-weight: initial;
 }
-#faqSecondSection > article > div:nth-child(2) p span {
+#faqSecondSection > article > div:nth-child(2) p .answerText,
+#faqSecondSection > article > div:nth-child(2) .faqItem .answerText {
+  display: block;
   color: #1E1E1E !important;
   font-weight: initial;
   line-height: 1.45;
@@ -2006,15 +2038,22 @@ header > a:hover {
   transition: max-height 0.45s cubic-bezier(0.22, 1, 0.36, 1), opacity 0.25s ease, margin-top 0.25s ease;
   margin-top: 0;
 }
-#faqSecondSection > article > div:nth-child(2) p.is-open {
+#faqSecondSection > article > div:nth-child(2) p.is-open,
+#faqSecondSection > article > div:nth-child(2) .faqItem.is-open {
   color: #138E03;
 }
-#faqSecondSection > article > div:nth-child(2) p.is-open span {
+#faqSecondSection > article > div:nth-child(2) p.is-open .questionChevronIcon,
+#faqSecondSection > article > div:nth-child(2) .faqItem.is-open .questionChevronIcon {
+  transform: rotate(180deg);
+}
+#faqSecondSection > article > div:nth-child(2) p.is-open .answerText,
+#faqSecondSection > article > div:nth-child(2) .faqItem.is-open .answerText {
   max-height: var(--answer-height, 0px);
   opacity: 1;
   margin-top: 8px;
 }
-#faqSecondSection > article > div:nth-child(2) p:focus-visible {
+#faqSecondSection > article > div:nth-child(2) p:focus-visible,
+#faqSecondSection > article > div:nth-child(2) .faqItem:focus-visible {
   outline: 2px solid #138E03;
   outline-offset: 4px;
   border-radius: 8px;
@@ -2036,7 +2075,8 @@ header > a:hover {
   #faqSecondSection > article > div:nth-child(2) h2 {
     font-size: 24px;
   }
-  #faqSecondSection > article > div:nth-child(2) p {
+  #faqSecondSection > article > div:nth-child(2) p,
+  #faqSecondSection > article > div:nth-child(2) .faqItem {
     padding: 0;
   }
 }

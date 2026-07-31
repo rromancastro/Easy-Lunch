@@ -8,7 +8,7 @@ const navLinks = [
     { href: "/app", label: "App" },
     { href: "/servicios", label: "Servicios" },
     { href: "/faq", label: "FAQ" },
-    { href: "/trabaja-con-nosotros", label: "Trabaja con nosotros" },
+    { href: "/trabaja-con-nosotros", label: "Trabajá con nosotros" },
 ]
 
 const isActivePath = (pathname, href) => pathname === href || pathname.startsWith(`${href}/`)

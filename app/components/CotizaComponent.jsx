@@ -48,8 +48,8 @@ export const CotizaComponent = ({ content = "Cotizá ahora" }) => {
                             <path d="M22 10L10 22" stroke="white" strokeWidth="2.5" />
                         </svg>
                     </button>
-                    {modalStep === 1 ? <><h3>Comer en el laburo nunca fue tan fácil</h3>
-                    <p>Dejanos tu datos si queres saber más y un representante se pondra en contacto en la brevedad.</p>
+                    {modalStep === 1 ? <><h3>Comer en el laburo nunca fué tan fácil</h3>
+                    <p>Dejanos tus datos si queres saber más y un representante se pondrá en contacto en la brevedad.</p>
                     <form>
                         <input type="text" placeholder="Nombre y Apellido" />
                         <input type="email" placeholder="E-mail" />

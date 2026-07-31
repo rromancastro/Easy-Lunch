@@ -5,6 +5,12 @@ import gsap from "gsap"
 import { ScrollTrigger } from "gsap/ScrollTrigger"
 import { useEffect, useLayoutEffect, useRef } from "react"
 
+const QuestionChevronIcon = () => (
+    <svg className="questionChevronIcon" width="14" height="9" viewBox="0 0 14 9" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <path d="M0.707031 0.707153L6.70703 6.70715L12.707 0.707153" stroke="#138E03" strokeWidth="2" />
+    </svg>
+)
+
 export const ServiciosSecondSection = () => {
     const cardsContainerRef = useRef(null)
 
@@ -50,7 +56,7 @@ export const ServiciosSecondSection = () => {
 
         const handleItemClick = (event) => {
             const currentItem = event.currentTarget
-            const currentAnswer = currentItem.querySelector("span")
+            const currentAnswer = currentItem.querySelector(".answerText")
             const isOpen = currentItem.classList.contains("is-open")
 
             items.forEach((item) => {
@@ -139,20 +145,20 @@ export const ServiciosSecondSection = () => {
             </SplitH3>
             <div>
                 <p>
-                    ¿Puedo elegir qué días se aplica el beneficio?
-                    <span>Sí, podés definir días fijos, días rotativos o combinaciones distintas por empleado.</span>    
+                    <span className="questionText">¿Puedo elegir qué días se aplica el beneficio?{"\u00A0"}<QuestionChevronIcon /></span>
+                    <span className="answerText">Sí, podés definir días fijos, días rotativos o combinaciones distintas por empleado.</span>
                 </p>
                 <p>
-                    ¿El descuento es un monto fijo o un porcentaje?
-                    <span>Ambas opciones están disponibles, configurables por empresa.</span>
+                    <span className="questionText">¿El descuento es un monto fijo o un porcentaje?{"\u00A0"}<QuestionChevronIcon /></span>
+                    <span className="answerText">Ambas opciones están disponibles, configurables por empresa.</span>
                 </p>
                 <p>
-                    ¿Puedo dar distinta cantidad de días a cada empleado?
-                    <span>Sí, la cantidad de días semanales es 100% configurable por perfil.</span>
+                    <span className="questionText">¿Puedo dar distinta cantidad de días a cada empleado?{"\u00A0"}<QuestionChevronIcon /></span>
+                    <span className="answerText">Sí, la cantidad de días semanales es 100% configurable por perfil.</span>
                 </p>
                 <p>
-                    ¿Se puede adicionar postres o bebidas?
-                    <span>Cada empresa puede elegir si ofrecer los adicionales de postre y bebida a sus colaboradores.</span>
+                    <span className="questionText">¿Se puede adicionar postres o bebidas?{"\u00A0"}<QuestionChevronIcon /></span>
+                    <span className="answerText">Cada empresa puede elegir si ofrecer los adicionales de postre y bebida a sus colaboradores.</span>
                 </p>
             </div>
         </article>

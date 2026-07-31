@@ -80,7 +80,7 @@ export const HomeThirdSection = () => {
                     <div className="flipCardBack">
                         <h3 className="color-negro">Plataforma de pedidos</h3>
                         <p className="color-negro">Plataforma web propia dinámica e intuitiva para poder cargar los pedidos desde la computadora, tablet o celular.</p>
-                        <Link className="verMasButton" href={'/'}>Ver más</Link>
+                        <Link className="verMasButton" href={'/app'}>Ver más</Link>
                     </div>
                 </ReactCardFlip>
             </div>
@@ -103,7 +103,7 @@ export const HomeThirdSection = () => {
                     <div className="flipCardBack">
                         <h3 className="color-negro">Modalidades de contratación</h3>
                         <p className="color-negro">Diferentes modalidades de contratación que <br /> se adaptan a la política de cada empresa.</p>
-                        <Link className="verMasButton" href={'/'}>Ver más</Link>
+                        <Link className="verMasButton" href={'/servicios'}>Ver más</Link>
                     </div>
                 </ReactCardFlip>
             </div>
@@ -126,7 +126,7 @@ export const HomeThirdSection = () => {
                     <div className="flipCardBack">
                         <h3 className="color-negro">Variedad y calidad de los productos</h3>
                         <p className="color-negro">Más de 40 opciones diarias entregadas termoselladas y etiquetadas.</p>
-                        <Link className="verMasButton" href={'/'}>Ver más</Link>
+                        <Link className="verMasButton" href={'/servicios'}>Ver más</Link>
                     </div>
                 </ReactCardFlip>
             </div>

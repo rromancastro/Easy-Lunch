@@ -88,7 +88,7 @@ export const AppThirdSection = () => {
                             Elegí tu menú
                         </SplitH3>
                         <SplitP id='appThirdSectionCard2Description'>
-                            Podés ingresar desde tu teléfono o tu computadora, sin descargas desde tu navegador.
+                            Seleccioná el día y hace tu pedido, podes elegir plato principal, bebida y postre.
                         </SplitP>
                     </div>
                     <RiArrowDownSLine />
@@ -124,9 +124,9 @@ export const AppThirdSection = () => {
                             ¡Ya está!
                         </SplitH3>
                         <SplitP id='appThirdSectionCard4Description'>
-                            Confirmá el pedio, elegí como pagar y esperálo en tu trabajo.
+                            Confirmá el pedido, elegí como pagar y esperálo en tu trabajo.
                         </SplitP>
-                        <Link className='verMasButton' href={'https://app.easylunch.com.ar/'} target="_blank">Ver App</Link>
+                        <Link className='verMasButton' href={'/app'} target="_blank">Ver App</Link>
                     </div>
                     <RiArrowDownSLine />
                     <div className="appThirdSectionCardImageContainer">

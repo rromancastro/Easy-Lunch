@@ -18,10 +18,10 @@ export const FooterComponent = () => {
 
                 <h3>Menu</h3>
                 <p>
-                    <Link href='/'>App</Link>
-                    <Link href='/'>Servicios</Link>
-                    <Link href='/'>FAQ</Link>
-                    <Link href='/'>Trabajá con nosotros</Link>
+                    <Link href='/app'>App</Link>
+                    <Link href='/servicios'>Servicios</Link>
+                    <Link href='/faq'>FAQ</Link>
+                    <Link href='/trabaja-con-nosotros'>Trabajá con nosotros</Link>
                 </p>
             </div>
 
