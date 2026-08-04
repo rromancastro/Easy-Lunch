@@ -278,6 +278,35 @@
     height: 213px;
   }
 }
+#whatsappComponent {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  background-color: #138E03;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+#whatsappComponent svg {
+  font-size: 32px;
+}
+#whatsappComponent:hover {
+  background-color: #79DB6C;
+}
+
+@media (max-width: 1024px) {
+  #whatsappComponent {
+    width: 48px;
+    height: 48px;
+  }
+  #whatsappComponent svg {
+    font-size: 24px;
+  }
+}
 header {
   border-radius: 0 0 24px 24px;
   background: linear-gradient(171.32deg, rgba(0, 0, 0, 0) 27.3%, #000000 91.43%);
@@ -780,24 +809,26 @@ header > a:hover {
   }
 }
 #homeFourthSection {
-  min-height: 400vh;
   padding: 0;
-  position: relative;
+  min-height: 400vh;
   background-color: #EEEEEE;
+}
+#homeFourthSection .inverted {
+  flex-direction: row-reverse;
 }
 
 #homeFourthSectionSticky {
   position: sticky;
-  top: 80px;
-  height: 100%;
+  top: 0;
+  height: 100vh;
   width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: clamp(24px, 4vh, 56px);
+  gap: clamp(32px, 6vh, 72px);
+  padding: clamp(24px, 6vh, 72px) 72px;
   overflow: hidden;
-  padding: clamp(24px, 5vh, 72px) 72px;
 }
 
 #homeFourthSectionTitle {
@@ -805,140 +836,142 @@ header > a:hover {
 }
 
 #homeFourthSectionCardsContainer {
-  width: min(100%, 576px);
+  width: min(100%, 903px);
   height: 670px;
   flex: 0 0 670px;
   overflow: visible;
 }
 
 .homeFourthSectionCard {
-  width: 100%;
-  max-width: 576px;
-  height: 598px;
   border-radius: 24px;
-  padding: 72px;
+  width: 100%;
+  max-width: 903px;
+  height: 598px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  padding: 48px 64px;
   position: absolute;
   inset: 0 0 auto;
   margin: 0 auto;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 24px;
   overflow: hidden;
-  z-index: 2;
-  opacity: 1;
-  pointer-events: none;
   transform-origin: top center;
   will-change: transform;
 }
-.homeFourthSectionCard h3 {
-  font-size: 40px;
+.homeFourthSectionCard > div {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  height: 100%;
+  width: 100%;
+  max-width: 345px;
+  justify-content: center;
+}
+.homeFourthSectionCard > div h3 {
   color: #1E1E1E;
+}
+.homeFourthSectionCard > div h3:nth-child(1) {
   font-weight: 600;
-  filter: blur(var(--card-content-blur, 0px));
+  font-size: 40px;
 }
-.homeFourthSectionCard h4 {
-  font-size: 32px;
+.homeFourthSectionCard > div h3:nth-child(2) {
   font-weight: 500;
+  font-size: 32px;
+}
+.homeFourthSectionCard > div p {
+  font-weight: 400;
   color: #1E1E1E;
-  filter: blur(var(--card-content-blur, 0px));
+  max-width: 345px;
 }
-.homeFourthSectionCard p {
-  font-size: 14px;
-  color: #1E1E1E;
-  text-align: center;
-  text-wrap: nowrap;
-  filter: blur(var(--card-content-blur, 0px));
+.homeFourthSectionCard .homeFourthSectionCardImageContainer {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: end;
+  align-items: center;
+  transform: translateY(48px);
 }
-.homeFourthSectionCard img {
-  position: absolute;
-  bottom: 0;
-  height: auto;
-  filter: blur(var(--card-content-blur, 0px));
+.homeFourthSectionCard .homeFourthSectionCardImageContainer img {
+  height: 100%;
+  width: auto;
 }
-.homeFourthSectionCard::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  z-index: 3;
-  pointer-events: none;
-  background-color: #1E1E1E;
-  opacity: var(--overlay-opacity, 0);
-}
-
-.homeFourthSectionCard1 {
+.homeFourthSectionCard:nth-child(1) {
   background: linear-gradient(180deg, #FFFFFF 0%, #EEEEEE 100%);
 }
-.homeFourthSectionCard1 img {
-  width: 450px;
-}
-
-.homeFourthSectionCard2 {
+.homeFourthSectionCard:nth-child(2) {
   background: linear-gradient(180deg, #EEEEEE 0%, #ADACAC 100%);
 }
-.homeFourthSectionCard2 img {
-  width: 356px;
-}
-
-.homeFourthSectionCard3 {
+.homeFourthSectionCard:nth-child(3) {
   background: linear-gradient(180deg, #ADACAC 0%, #898989 100%);
 }
-.homeFourthSectionCard3 img {
-  width: 467px;
-}
-
-.homeFourthSectionCard4 {
+.homeFourthSectionCard:nth-child(4) {
   background: linear-gradient(180deg, #A4F898 0%, #79DB6C 100%);
 }
-.homeFourthSectionCard4 img {
-  width: 361px;
-}
 
-@media (max-width: 1024px) {
+@media (max-width: 768px) {
   #homeFourthSectionSticky {
-    padding: 24px 16px;
-    padding-bottom: 48px;
-    gap: 24px;
-    top: 92px;
+    height: 100vh;
+    padding: 48px 16px;
   }
   #homeFourthSectionTitle {
     max-width: 199px;
   }
   #homeFourthSectionCardsContainer {
-    height: 500px;
-    flex: 0 0 500px;
+    height: 490px;
+    flex: 0 0 490px;
   }
   .homeFourthSectionCard {
-    width: 296px;
+    max-width: none;
     height: 420px;
-    padding: 32px 24px;
-    gap: 16px;
+    padding: 0;
+    display: flex;
+    align-items: end;
+    justify-content: start;
+    flex-direction: column;
   }
-  .homeFourthSectionCard h3 {
+  .homeFourthSectionCard > div {
+    height: fit-content;
+    gap: 16px;
+    padding: 24px;
+    width: 100%;
+    max-width: none;
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.842) 96.43%);
+  }
+  .homeFourthSectionCard > div h3:nth-child(1) {
     font-size: 36px;
   }
-  .homeFourthSectionCard h4 {
+  .homeFourthSectionCard > div h3:nth-child(2) {
     font-size: 24px;
   }
-  .homeFourthSectionCard p {
-    font-size: 13px;
-    max-width: 248px;
-    text-wrap: wrap;
+  .homeFourthSectionCard > div p {
+    max-width: 313px;
   }
-  .homeFourthSectionCard1 img {
-    width: 270px;
+  .homeFourthSectionCard > svg {
+    display: none;
   }
-  .homeFourthSectionCard2 p {
-    max-width: 240px;
+  .homeFourthSectionCard .homeFourthSectionCardImageContainer {
+    position: absolute;
+    z-index: 0;
+    justify-content: center;
+    top: 20%;
+    left: 50%;
+    transform: translateX(-50%);
+    max-width: 445px;
+    background: none;
   }
-  .homeFourthSectionCard2 img {
-    width: 230px;
+  .homeFourthSectionCard .homeFourthSectionCardImageContainer img {
+    width: 100%;
+    height: auto;
+    z-index: -1;
   }
-  .homeFourthSectionCard3 img {
-    width: 250px;
+  .homeFourthSectionCard:nth-child(even) {
+    flex-direction: column;
   }
-  .homeFourthSectionCard4 img {
-    width: 230px;
+  .homeFourthSectionCard:nth-child(4) h3,
+  .homeFourthSectionCard:nth-child(4) h4,
+  .homeFourthSectionCard:nth-child(4) p {
+    color: #fff;
   }
 }
 #homeFifthSection {

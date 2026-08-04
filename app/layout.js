@@ -1,5 +1,5 @@
 import { Geist, Geist_Mono } from "next/font/google";
-import { LenisProvider } from "./components";
+import { LenisProvider, WhatsappComponent } from "./components";
 import "lenis/dist/lenis.css";
 import "./globals.css";
 
@@ -35,6 +35,7 @@ export default function RootLayout({ children }) {
         ))}
       </head>
       <body>
+        <WhatsappComponent />
         <LenisProvider>{children}</LenisProvider>
       </body>
     </html>

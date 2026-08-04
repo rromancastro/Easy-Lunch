@@ -67,7 +67,7 @@ export const AppFourthSection = () => {
                     App
                 </SplitH3>
                 <SplitP id='appFourthSectionCard1Description'>
-                     Diseñada para facilitar las cosas, fácil e intuitiva. Para que puedan realizar los pedidos desde donde quieran y cuándo quieran. 
+                     Diseñada de forma intuitiva para facilitar la carga de pedidos desde donde quieran y cuándo quieran.
                 </SplitP>
                 <Image src="/app/fourthSectionCard1.avif" alt="appFourthSectionCard1" width={400} height={400} />
             </article>
@@ -84,10 +84,10 @@ export const AppFourthSection = () => {
 
             <article>
                 <SplitH3 id="appFourthSectionCard3Title">
-                    Pago online
+                    Gestión
                 </SplitH3>
                 <SplitP id='appFourthSectionCard3Description'>
-                     Olvidate de la gestión manual! En los casos donde los colaboradores pagan una parte o el total de su almuerzo, pueden hacerlo directo desde la app, sin sumarle trabajo extra a RR.HH.
+                    Crea tus reportes de consumo por período y colaborador como así también gestioná las altas y bajas de personal.
                 </SplitP>
                 <Image src="/app/fourthSectionCard3.avif" alt="appFourthSectionCard3" width={400} height={400} />
             </article>

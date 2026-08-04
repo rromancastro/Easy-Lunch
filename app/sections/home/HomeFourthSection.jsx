@@ -1,15 +1,15 @@
 "use client"
 
-import { CotizaComponent, SplitH2 } from "@/app/components"
+import { SplitH2, SplitH3, SplitP } from "@/app/components"
 import { motion, useScroll, useTransform } from "framer-motion"
 import Image from "next/image"
 import { useRef } from "react"
+import { RiArrowDownSLine } from "react-icons/ri"
 
 const cardCount = 4
 const cardStackOffset = 24
 const cardTravel = 686
 const cardShrink = 0.045
-const cardBlur = 2.4
 
 const getCardY = (progress, index) => {
     const scrollStep = progress * (cardCount - 1)
@@ -21,37 +21,21 @@ const getCardY = (progress, index) => {
     return index * cardStackOffset + (index - scrollStep) * cardTravel
 }
 
-const getShownDistance = (progress, index) => {
-    const scrollStep = progress * (cardCount - 1)
-    return Math.max(0, scrollStep - index)
-}
-
 const getCardScale = (progress, index) => {
-    return Math.max(0.86, 1 - getShownDistance(progress, index) * cardShrink)
+    const scrollStep = progress * (cardCount - 1)
+    const shownDistance = Math.max(0, scrollStep - index)
+
+    return Math.max(0.86, 1 - shownDistance * cardShrink)
 }
 
-const getCardBlur = (progress, index) => {
-    return Math.min(getShownDistance(progress, index) * cardBlur, 7)
-}
-
-const getOverlayOpacity = (progress, index) => {
-    return Math.min(getShownDistance(progress, index) * 0.16, 0.42)
-}
-
-const useCardMotion = (scrollYProgress, index) => {
+const useHomeFourthSectionCardMotion = (scrollYProgress, index) => {
     const y = useTransform(scrollYProgress, (latest) => getCardY(latest, index))
     const scale = useTransform(scrollYProgress, (latest) => getCardScale(latest, index))
-    const contentBlur = useTransform(scrollYProgress, (latest) => `${getCardBlur(latest, index)}px`)
-    const overlayOpacity = useTransform(scrollYProgress, (latest) => getOverlayOpacity(latest, index))
-
-    const zIndex = index + 1
 
     return {
-        "--card-content-blur": contentBlur,
-        "--overlay-opacity": overlayOpacity,
         y,
         scale,
-        zIndex,
+        zIndex: index + 1,
     }
 }
 
@@ -63,10 +47,10 @@ export const HomeFourthSection = () => {
         offset: ["start start", "end end"],
     })
 
-    const card1Style = useCardMotion(scrollYProgress, 0)
-    const card2Style = useCardMotion(scrollYProgress, 1)
-    const card3Style = useCardMotion(scrollYProgress, 2)
-    const card4Style = useCardMotion(scrollYProgress, 3)
+    const card1Style = useHomeFourthSectionCardMotion(scrollYProgress, 0)
+    const card2Style = useHomeFourthSectionCardMotion(scrollYProgress, 1)
+    const card3Style = useHomeFourthSectionCardMotion(scrollYProgress, 2)
+    const card4Style = useHomeFourthSectionCardMotion(scrollYProgress, 3)
 
     return <section id="homeFourthSection" ref={sectionRef}>
         <div id="homeFourthSectionSticky">
@@ -78,40 +62,55 @@ export const HomeFourthSection = () => {
 
         <div id="homeFourthSectionCardsContainer">
             <motion.article className="homeFourthSectionCard homeFourthSectionCard1" style={card1Style}>
-                <h3>1.</h3>
-                <h4>Hacés tu pedido</h4>
-                <p>Cada empleado accede a <br />
-                    la plataforma desde computadora o celular y <br />
-                    selecciona su comida entre <br />
-                    múltiples opciones diarias.</p>
-                <Image src="/home/fourthSectionCard1.avif" alt="homeFourthSectionCard1" width={400} height={400} />
+                <div>
+                <SplitH3 id="homeFourthSectionCard1Title">1.</SplitH3>
+                <SplitH3 id="homeFourthSectionCard1Subtitle">Hacés tu pedido</SplitH3>
+                <SplitP id="homeFourthSectionCard1Description">Cada empleado accede a 
+                    la plataforma desde computadora o celular y 
+                    selecciona su comida entre 
+                    múltiples opciones diarias.</SplitP>
+                </div>
+                <div className="homeFourthSectionCardImageContainer">
+                    <Image src="/home/fourthSectionCard1.avif" alt="homeFourthSectionCard1" width={400} height={400} />
+                </div>
             </motion.article>
 
-            <motion.article className="homeFourthSectionCard homeFourthSectionCard2" style={card2Style}>
-                <h3>2.</h3>
-                <h4>Lo preparamos</h4>
-                <p>Nuestro equipo produce diariamente cada pedido, <br /> priorizando calidad, frescura y presentación.</p>
-                <Image src="/home/fourthSectionCard2.avif" alt="homeFourthSectionCard2" width={400} height={400} />
+            <motion.article className="homeFourthSectionCard homeFourthSectionCard2 inverted" style={card2Style}>
+                <div>
+                <SplitH3 id="homeFourthSectionCard2Title">2.</SplitH3>
+                <SplitH3 id="homeFourthSectionCard2Subtitle">Lo preparamos</SplitH3>
+                <SplitP id="homeFourthSectionCard2Description">Nuestro equipo produce diariamente cada pedido,  priorizando calidad, frescura y presentación.</SplitP>
+                </div>
+                <div className="homeFourthSectionCardImageContainer">
+                    <Image src="/home/fourthSectionCard2.avif" alt="homeFourthSectionCard2" width={400} height={400} />
+                </div>
             </motion.article>
 
             <motion.article className="homeFourthSectionCard homeFourthSectionCard3" style={card3Style}>
-                <h3>3.</h3>
-                <h4>Te lo enviamos</h4>
-                <p>Las viandas se distribuyen en vehículos refrigerados, y <br />
-                    llegan termoselladas y <br />
-                    etiquedas para una correcta distribución interna.</p>
-                <Image src="/home/fourthSectionCard3.avif" alt="homeFourthSectionCard3" width={400} height={400} />
+                <div>
+                <SplitH3 id="homeFourthSectionCard3Title">3.</SplitH3>
+                <SplitH3 id="homeFourthSectionCard3Subtitle">Te lo enviamos</SplitH3>
+                <SplitP id="homeFourthSectionCard3Description">Las viandas se distribuyen en vehículos refrigerados, y 
+                    llegan termoselladas y 
+                    etiquedas para una correcta distribución interna.</SplitP>
+                </div>
+                <div className="homeFourthSectionCardImageContainer">
+                    <Image src="/home/fourthSectionCard3.avif" alt="homeFourthSectionCard3" width={400} height={400} />
+                </div>
             </motion.article>
 
-            <motion.article className="homeFourthSectionCard homeFourthSectionCard4" style={card4Style}>
-                <h3>4.</h3>
-                <h4>¡A disfrutar!</h4>
-                <p>Las viandas pueden ser regeneradas en hornos y microondas.</p>
-                <Image src="/home/fourthSectionCard4.avif" alt="homeFourthSectionCard4" width={400} height={400} />
+            <motion.article className="homeFourthSectionCard homeFourthSectionCard4 inverted" style={card4Style}>
+                <div>
+                <SplitH3 id="homeFourthSectionCard4Title">4.</SplitH3>
+                <SplitH3 id="homeFourthSectionCard4Subtitle">¡A disfrutar!</SplitH3>
+                <SplitP id="homeFourthSectionCard4Description">Las viandas pueden ser regeneradas en hornos y microondas.</SplitP>
+                </div>
+                <div className="homeFourthSectionCardImageContainer">
+                    <Image src="/home/fourthSectionCard4.avif" alt="homeFourthSectionCard4" width={400} height={400} />
+                </div>
             </motion.article>
         </div>
 
-        <CotizaComponent />
         </div>
     </section>
 }

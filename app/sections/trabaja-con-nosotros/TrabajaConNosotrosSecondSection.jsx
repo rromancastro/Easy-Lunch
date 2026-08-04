@@ -13,12 +13,12 @@ export const TrabajaConNosotrosSecondSection = () => {
 
                 <form>
                     <input type="text" placeholder="Nombre y Apellido" />
-                    <input type="text" placeholder="DNI" />
                     <input type="text" placeholder="Fecha de Nacimiento" />
-                    <input type="text" placeholder="Lugar de Nacimiento" />
                     <input type="email" placeholder="E-mail" />
                     <input type="text" placeholder="Teléfono" />
+                    <input type="text" placeholder="Barrio o localidad" />
                     <input type="text" placeholder="Años de experiencia" />
+
                     <label className="trabajaConNosotrosFileInput" htmlFor="trabajaConNosotrosCv">
                         Adjuntar CV
                     </label>

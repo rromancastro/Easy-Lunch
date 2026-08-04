@@ -88,7 +88,7 @@ export const AppThirdSection = () => {
                             Elegí tu menú
                         </SplitH3>
                         <SplitP id='appThirdSectionCard2Description'>
-                            Seleccioná el día y hace tu pedido, podes elegir plato principal, bebida y postre.
+                            Elegí de forma ágil e intuitiva lo que querés comer para cada día.
                         </SplitP>
                     </div>
                     <RiArrowDownSLine />
@@ -106,7 +106,7 @@ export const AppThirdSection = () => {
                             Organizá tu mes
                         </SplitH3>
                         <SplitP id='appThirdSectionCard3Description'>
-                            Podes organizar los pedidos del mes y sumarlos al pedido.
+                            Podes cargar los pedidos de todo el mes, de forma anticipada.
                         </SplitP>
                     </div>
                     <RiArrowDownSLine />
@@ -121,10 +121,10 @@ export const AppThirdSection = () => {
                             4.
                         </SplitH3>
                         <SplitH3 id="appThirdSectionCard4Subtitle">
-                            ¡Ya está!
+                            Pago
                         </SplitH3>
                         <SplitP id='appThirdSectionCard4Description'>
-                            Confirmá el pedido, elegí como pagar y esperálo en tu trabajo.
+                            En caso que el colaborador pague una parte o el total del almuerzo.
                         </SplitP>
                         <Link className='verMasButton' href={'/app'} target="_blank">Ver App</Link>
                     </div>

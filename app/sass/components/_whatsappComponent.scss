@@ -1,0 +1,31 @@
+#whatsappComponent {
+    position: fixed;
+    bottom: 24px;
+    right: 24px;
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    background-color: #138E03;
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    svg {
+        font-size: 32px;
+    }
+
+    &:hover {
+        background-color: #79DB6C;
+    }
+}
+
+@media (max-width: 1024px) {
+    #whatsappComponent {
+        width: 48px;
+        height: 48px;
+
+        svg {
+            font-size: 24px;
+        }
+    }
+}

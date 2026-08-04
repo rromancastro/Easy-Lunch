@@ -59,7 +59,7 @@ export const AppSecondSection = () => {
                             <li>Pedido simple e intuitivo</li>
                             <li>Visualización de menú</li>
                             <li>Selección anticipada</li>
-                            <li>Pago online</li>
+                            <li>Pago online: según modalidad de contratación </li>
                         </ul>
                     </article>
                 </div>

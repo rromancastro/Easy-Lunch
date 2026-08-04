@@ -12,7 +12,7 @@ export const ServiciosThirdSection = () => {
                     El menú cambia diariamente para que comer bien nunca se vuelva rutina.
                 </SplitP>
                 <SplitP id="serviciosThirdSectionDescription2">
-                    Preparación el mismo día, con ingredientes frescos, sin congelados ni conservantes.
+                    Preparación en el mismo día, con ingredientes frescos, sin congelados ni conservantes.
                 </SplitP>
             </div>
             <div id="serviciosThirdSectionImageBg">

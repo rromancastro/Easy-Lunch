@@ -146,15 +146,15 @@ export const ServiciosSecondSection = () => {
             <div>
                 <p>
                     <span className="questionText">¿Puedo elegir qué días se aplica el beneficio?{"\u00A0"}<QuestionChevronIcon /></span>
-                    <span className="answerText">Sí, podés definir días fijos, días rotativos o combinaciones distintas por empleado.</span>
+                    <span className="answerText">Se pueden establecer días fijos o bien una cantidad de días a la semana.</span>
                 </p>
                 <p>
                     <span className="questionText">¿El descuento es un monto fijo o un porcentaje?{"\u00A0"}<QuestionChevronIcon /></span>
                     <span className="answerText">Ambas opciones están disponibles, configurables por empresa.</span>
                 </p>
                 <p>
-                    <span className="questionText">¿Puedo dar distinta cantidad de días a cada empleado?{"\u00A0"}<QuestionChevronIcon /></span>
-                    <span className="answerText">Sí, la cantidad de días semanales es 100% configurable por perfil.</span>
+                    <span className="questionText">¿Los días que la empresa no brinda el beneficio, los empleados pueden pedir y pagar por sus pedidos? {"\u00A0"}<QuestionChevronIcon /></span>
+                    <span className="answerText">Si, los empleados pueden pagar por sus almuerzos aquellos días que no los cubra la empresa.</span>
                 </p>
                 <p>
                     <span className="questionText">¿Se puede adicionar postres o bebidas?{"\u00A0"}<QuestionChevronIcon /></span>
