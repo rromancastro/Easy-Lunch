@@ -23,6 +23,10 @@ export const FooterComponent = () => {
                     <Link href='/faq'>FAQ</Link>
                     <Link href='/trabaja-con-nosotros'>Trabajá con nosotros</Link>
                 </p>
+                <p>
+                    <Link target="_blank" href='/politicas-de-privacidad'>Políticas de privacidad</Link>
+                    <Link target="_blank" href='/politicas-de-cookies'>Cookies</Link>
+                </p>
             </div>
 
             <div>

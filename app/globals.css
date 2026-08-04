@@ -133,7 +133,7 @@
 #footerComponent article div:first-child p:nth-child(2) svg {
   font-size: 20px;
 }
-#footerComponent article div:first-child p:nth-child(4) {
+#footerComponent article div:first-child p:nth-child(4), #footerComponent article div:first-child p:nth-child(5) {
   display: flex;
   gap: 16px;
 }
@@ -2319,6 +2319,8 @@ button,
 input,
 textarea,
 label,
+th,
+td,
 select {
   font-family: "Montserrat", sans-serif;
   font-style: normal;
@@ -2432,6 +2434,121 @@ main {
   .verMasButton {
     height: 32px;
     font-size: 14px;
+  }
+}
+.privacyPolicyPage {
+  background-color: #EEEEEE;
+  margin-bottom: 0;
+}
+.privacyPolicyPage .privacyPolicySection {
+  width: min(100%, 960px);
+  margin: 0 auto;
+  padding: 144px 72px 96px;
+}
+.privacyPolicyPage .privacyPolicyHeader {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-bottom: 56px;
+}
+.privacyPolicyPage .privacyPolicyHeader .policyBackLink {
+  width: fit-content;
+  color: #138E03;
+  font-weight: 600;
+  font-size: 14px;
+}
+.privacyPolicyPage .privacyPolicyHeader .policyBackLink:hover {
+  color: #79DB6C;
+}
+.privacyPolicyPage .privacyPolicyHeader h1,
+.privacyPolicyPage .privacyPolicyHeader p {
+  color: #1E1E1E;
+}
+.privacyPolicyPage .privacyPolicyHeader h1 {
+  font-size: 40px;
+}
+.privacyPolicyPage .privacyPolicyHeader p {
+  font-weight: 400;
+}
+.privacyPolicyPage .privacyPolicyContent {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+.privacyPolicyPage .privacyPolicyContent article,
+.privacyPolicyPage .privacyPolicyContent article > div {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+.privacyPolicyPage .privacyPolicyContent h2,
+.privacyPolicyPage .privacyPolicyContent h3,
+.privacyPolicyPage .privacyPolicyContent p,
+.privacyPolicyPage .privacyPolicyContent li {
+  color: #1E1E1E;
+}
+.privacyPolicyPage .privacyPolicyContent h2 {
+  font-size: 24px;
+  font-weight: 600;
+}
+.privacyPolicyPage .privacyPolicyContent h3 {
+  font-size: 18px;
+  font-weight: 600;
+  margin-top: 8px;
+}
+.privacyPolicyPage .privacyPolicyContent p,
+.privacyPolicyPage .privacyPolicyContent li {
+  line-height: 1.7;
+}
+.privacyPolicyPage .privacyPolicyContent ul {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding-left: 20px;
+}
+.privacyPolicyPage .privacyPolicyContent .policyTableWrapper {
+  width: 100%;
+  overflow-x: auto;
+}
+.privacyPolicyPage .privacyPolicyContent table {
+  width: 100%;
+  min-width: 680px;
+  border-collapse: collapse;
+  overflow: hidden;
+  border-radius: 8px;
+}
+.privacyPolicyPage .privacyPolicyContent th,
+.privacyPolicyPage .privacyPolicyContent td {
+  color: #1E1E1E;
+  text-align: left;
+  vertical-align: top;
+  padding: 16px;
+  border: 1px solid #D0D0D0;
+  line-height: 1.6;
+}
+.privacyPolicyPage .privacyPolicyContent th {
+  font-weight: 600;
+  background-color: #E0E0E0;
+}
+.privacyPolicyPage .privacyPolicyContent td {
+  background-color: #F7F7F7;
+}
+
+@media (max-width: 768px) {
+  .privacyPolicyPage .privacyPolicySection {
+    padding: 120px 16px 72px;
+  }
+  .privacyPolicyPage .privacyPolicyHeader {
+    margin-bottom: 40px;
+  }
+  .privacyPolicyPage .privacyPolicyHeader h1 {
+    font-size: 36px;
+  }
+  .privacyPolicyPage .privacyPolicyContent {
+    gap: 32px;
+  }
+  .privacyPolicyPage .privacyPolicyContent h2 {
+    font-size: 22px;
   }
 }
 

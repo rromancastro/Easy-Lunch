@@ -94,6 +94,8 @@ button,
 input,
 textarea,
 label,
+th,
+td,
 select {
     font-family: 'Montserrat', sans-serif;
     font-style: normal;
@@ -215,5 +217,146 @@ main {
     .verMasButton {
         height: 32px;
         font-size: 14px;
+    }
+}
+
+.privacyPolicyPage {
+    background-color: #EEEEEE;
+    margin-bottom: 0;
+
+    .privacyPolicySection {
+        width: min(100%, 960px);
+        margin: 0 auto;
+        padding: 144px 72px 96px;
+    }
+
+    .privacyPolicyHeader {
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+        margin-bottom: 56px;
+
+        .policyBackLink {
+            width: fit-content;
+            color: #138E03;
+            font-weight: 600;
+            font-size: 14px;
+
+            &:hover {
+                color: #79DB6C;
+            }
+        }
+
+        h1,
+        p {
+            color: #1E1E1E;
+        }
+
+        h1 {
+            font-size: 40px;
+        }
+
+        p {
+            font-weight: 400;
+        }
+    }
+
+    .privacyPolicyContent {
+        display: flex;
+        flex-direction: column;
+        gap: 40px;
+
+        article,
+        article>div {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+
+        h2,
+        h3,
+        p,
+        li {
+            color: #1E1E1E;
+        }
+
+        h2 {
+            font-size: 24px;
+            font-weight: 600;
+        }
+
+        h3 {
+            font-size: 18px;
+            font-weight: 600;
+            margin-top: 8px;
+        }
+
+        p,
+        li {
+            line-height: 1.7;
+        }
+
+        ul {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            padding-left: 20px;
+        }
+
+        .policyTableWrapper {
+            width: 100%;
+            overflow-x: auto;
+        }
+
+        table {
+            width: 100%;
+            min-width: 680px;
+            border-collapse: collapse;
+            overflow: hidden;
+            border-radius: 8px;
+        }
+
+        th,
+        td {
+            color: #1E1E1E;
+            text-align: left;
+            vertical-align: top;
+            padding: 16px;
+            border: 1px solid #D0D0D0;
+            line-height: 1.6;
+        }
+
+        th {
+            font-weight: 600;
+            background-color: #E0E0E0;
+        }
+
+        td {
+            background-color: #F7F7F7;
+        }
+    }
+}
+
+@media (max-width: 768px) {
+    .privacyPolicyPage {
+        .privacyPolicySection {
+            padding: 120px 16px 72px;
+        }
+
+        .privacyPolicyHeader {
+            margin-bottom: 40px;
+
+            h1 {
+                font-size: 36px;
+            }
+        }
+
+        .privacyPolicyContent {
+            gap: 32px;
+
+            h2 {
+                font-size: 22px;
+            }
+        }
     }
 }
