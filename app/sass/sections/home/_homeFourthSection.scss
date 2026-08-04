@@ -79,6 +79,24 @@
         }
     }
 
+    >svg {
+        position: absolute;
+        width: 32px;
+        height: 32px;
+        bottom: 24px;
+        justify-self: center;
+        background-color: #00000033;
+        backdrop-filter: blur(4px);
+        border-radius: 8px;
+        left: 50%;
+        transform: translateX(-50%);
+        padding: 4px;
+
+        path {
+            color: #A4F898;
+        }
+    }
+
     .homeFourthSectionCardImageContainer {
         width: 100%;
         height: 100%;
@@ -88,25 +106,36 @@
         transform: translateY(48px);
 
         img {
-            height: 100%;
             width: auto;
         }
     }
 
     &:nth-child(1) {
         background: linear-gradient(180deg, #FFFFFF 0%, #EEEEEE 100%);
+        img {
+            height: 570px;
+        }
     }
 
     &:nth-child(2) {
         background: linear-gradient(180deg, #EEEEEE 0%, #ADACAC 100%);
+        img {
+            height: 560px;
+        }
     }
 
     &:nth-child(3) {
         background: linear-gradient(180deg, #ADACAC 0%, #898989 100%);
+        img {
+            height: 450px;
+        }
     }
 
     &:nth-child(4) {
         background: linear-gradient(180deg, #A4F898 0%, #79DB6C 100%);
+        img {
+            height: 500px;
+        }
     }
 }
 
@@ -114,10 +143,6 @@
     #homeFourthSectionSticky {
         height: 100vh;
         padding: 48px 16px;
-    }
-
-    #homeFourthSectionTitle {
-        max-width: 199px;
     }
 
     #homeFourthSectionCardsContainer {
@@ -128,11 +153,9 @@
     .homeFourthSectionCard {
         max-width: none;
         height: 420px;
-        padding: 0;
-        display: flex;
+        padding: 0px;
         align-items: end;
         justify-content: start;
-        flex-direction: column;
 
         >div {
             height: fit-content;
@@ -143,6 +166,8 @@
             background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.842) 96.43%);
 
             h3 {
+                color: #fff;
+
                 &:nth-child(1) {
                     font-size: 36px;
                 }
@@ -150,11 +175,14 @@
                 &:nth-child(2) {
                     font-size: 24px;
                 }
+
             }
 
             p {
                 max-width: 313px;
+                color: #fff;
             }
+
         }
 
         >svg {
@@ -163,13 +191,14 @@
 
         .homeFourthSectionCardImageContainer {
             position: absolute;
-            z-index: 0;
+            z-index: -1;
             justify-content: center;
             top: 20%;
             left: 50%;
             transform: translateX(-50%);
             max-width: 445px;
             background: none;
+
 
             img {
                 width: 100%;
@@ -178,14 +207,9 @@
             }
         }
 
-        &:nth-child(even) {
-            flex-direction: column;
-        }
-
         &:nth-child(4) {
 
             h3,
-            h4,
             p {
                 color: #fff;
             }

@@ -71,7 +71,7 @@ export const HomeFourthSection = () => {
                     múltiples opciones diarias.</SplitP>
                 </div>
                 <div className="homeFourthSectionCardImageContainer">
-                    <Image src="/home/fourthSectionCard1.avif" alt="homeFourthSectionCard1" width={400} height={400} />
+                    <img src="/home/fourthSectionCard1.avif" alt="homeFourthSectionCard1" width={400} height={400} />
                 </div>
             </motion.article>
 
@@ -82,7 +82,7 @@ export const HomeFourthSection = () => {
                 <SplitP id="homeFourthSectionCard2Description">Nuestro equipo produce diariamente cada pedido,  priorizando calidad, frescura y presentación.</SplitP>
                 </div>
                 <div className="homeFourthSectionCardImageContainer">
-                    <Image src="/home/fourthSectionCard2.avif" alt="homeFourthSectionCard2" width={400} height={400} />
+                    <img src="/home/fourthSectionCard2.avif" alt="homeFourthSectionCard2" width={400} height={400} />
                 </div>
             </motion.article>
 
@@ -95,7 +95,7 @@ export const HomeFourthSection = () => {
                     etiquedas para una correcta distribución interna.</SplitP>
                 </div>
                 <div className="homeFourthSectionCardImageContainer">
-                    <Image src="/home/fourthSectionCard3.avif" alt="homeFourthSectionCard3" width={400} height={400} />
+                    <img src="/home/fourthSectionCard3.avif" alt="homeFourthSectionCard3" width={400} height={400} />
                 </div>
             </motion.article>
 
@@ -106,7 +106,7 @@ export const HomeFourthSection = () => {
                 <SplitP id="homeFourthSectionCard4Description">Las viandas pueden ser regeneradas en hornos y microondas.</SplitP>
                 </div>
                 <div className="homeFourthSectionCardImageContainer">
-                    <Image src="/home/fourthSectionCard4.avif" alt="homeFourthSectionCard4" width={400} height={400} />
+                    <img src="/home/fourthSectionCard4.avif" alt="homeFourthSectionCard4" width={400} height={400} />
                 </div>
             </motion.article>
         </div>
