@@ -20,6 +20,87 @@ export const HomeThirdSection = () => {
             return
         }
 
+        const mediaQuery = window.matchMedia("(max-width: 768px)")
+        const flipSetters = [setIsFlipped1, setIsFlipped2, setIsFlipped3, setIsFlipped4]
+        const timeoutIds = new Map()
+        let observer = null
+
+        const clearPendingFlips = () => {
+            timeoutIds.forEach((timeoutId) => clearTimeout(timeoutId))
+            timeoutIds.clear()
+        }
+
+        const disconnectObserver = () => {
+            if (observer) {
+                observer.disconnect()
+                observer = null
+            }
+            clearPendingFlips()
+        }
+
+        const setupMobileAutoFlip = () => {
+            disconnectObserver()
+
+            if (!mediaQuery.matches) {
+                flipSetters.forEach((setIsFlipped) => setIsFlipped(false))
+                return
+            }
+
+            const cards = Array.from(contentRef.current.querySelectorAll(".flipCard"))
+
+            observer = new IntersectionObserver((entries) => {
+                entries.forEach((entry) => {
+                    const cardIndex = cards.indexOf(entry.target)
+
+                    if (cardIndex === -1) {
+                        return
+                    }
+
+                    if (entry.isIntersecting) {
+                        if (timeoutIds.has(cardIndex)) {
+                            return
+                        }
+
+                        const timeoutId = setTimeout(() => {
+                            flipSetters[cardIndex](true)
+                            timeoutIds.delete(cardIndex)
+                        }, 800)
+
+                        timeoutIds.set(cardIndex, timeoutId)
+                        return
+                    }
+
+                    const timeoutId = timeoutIds.get(cardIndex)
+
+                    if (timeoutId) {
+                        clearTimeout(timeoutId)
+                        timeoutIds.delete(cardIndex)
+                    }
+
+                    flipSetters[cardIndex](false)
+                })
+            }, {
+                threshold: 1,
+                triggerOnce: false,
+            })
+
+            cards.forEach((card) => observer.observe(card))
+        }
+
+        setupMobileAutoFlip()
+        mediaQuery.addEventListener("change", setupMobileAutoFlip)
+
+        return () => {
+            mediaQuery.removeEventListener("change", setupMobileAutoFlip)
+            disconnectObserver()
+        }
+    }, [])
+
+    useLayoutEffect(() => {
+        if (!contentRef.current) {
+            return
+        }
+
         gsap.registerPlugin(ScrollTrigger)
 
         const ctx = gsap.context(() => {

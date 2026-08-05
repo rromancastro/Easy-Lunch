@@ -112,12 +112,27 @@ const fifthSectionCards = [
     }
 ]
 
+const getRandomCardSize = () => {
+    const width = Math.round(96 + Math.random() * 64)
+
+    return {
+        width,
+        height: Math.round(width * 1.16),
+    }
+}
+
 const FloatingFoodCard = ({ card, scrollDirection }) => {
     const directionRef = useRef(scrollDirection)
+    const previousProgressRef = useRef((card.delay / card.duration) % 1)
+    const [cardSize, setCardSize] = useState({ width: 120, height: 140 })
     const progress = useMotionValue((card.delay / card.duration) % 1)
     const y = useTransform(progress, [0, 1], ["68vh", "-58vh"])
     const scale = useTransform(progress, [0, 1], [1, 0.9])
     const opacity = useTransform(progress, [0, 0.08, 0.92, 1], [0, 1, 1, 0])
+
+    useEffect(() => {
+        setCardSize(getRandomCardSize())
+    }, [])
 
     useEffect(() => {
         directionRef.current = scrollDirection
@@ -126,13 +141,23 @@ const FloatingFoodCard = ({ card, scrollDirection }) => {
     useAnimationFrame((_, delta) => {
         const direction = directionRef.current === "up" ? -1 : 1
         const nextProgress = progress.get() + direction * (delta / (card.duration * 1000))
-        progress.set((nextProgress % 1 + 1) % 1)
+        const normalizedProgress = (nextProgress % 1 + 1) % 1
+        const hasLooped = direction === 1
+            ? normalizedProgress < previousProgressRef.current
+            : normalizedProgress > previousProgressRef.current
+
+        if (hasLooped) {
+            setCardSize(getRandomCardSize())
+        }
+
+        previousProgressRef.current = normalizedProgress
+        progress.set(normalizedProgress)
     })
 
     return (
         <motion.article
             className={`homeFifthSectionCard ${card.className}`}
-            style={{ x: card.x, y, scale, opacity }}
+            style={{ x: card.x, y, scale, opacity, width: cardSize.width, height: cardSize.height }}
         >
             <Image src={card.src} alt={card.alt} width={128} height={148} />
         </motion.article>
