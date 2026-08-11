@@ -21,7 +21,10 @@ export const HeaderComponent = ({ imageUrl, title, description, link, title2, sh
             description && <SplitP id={'homeHeaderDescription'}>{description}</SplitP>
         }
         {
-            link === 'app' ? <VerAppComponent /> : <Link target="_blank" href={link}>Ver App
+            link === 'app' && <VerAppComponent />
+        }
+        {
+            link && link !== 'app' && <Link target="_blank" href={link}>Ver App
             </Link>
         }
         {
