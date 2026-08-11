@@ -1,6 +1,6 @@
 "use client"
 
-import { SplitH2, SplitH3, SplitP } from "@/app/components"
+import { SplitH2, SplitH3, SplitP, VerAppComponent } from "@/app/components"
 import { motion, useScroll, useTransform } from "framer-motion"
 import Image from "next/image"
 import Link from "next/link"
@@ -126,7 +126,7 @@ export const AppThirdSection = () => {
                         <SplitP id='appThirdSectionCard4Description'>
                             En caso que el colaborador pague una parte o el total del almuerzo
                         </SplitP>
-                        <Link className='verMasButton' href={'/app'} target="_blank">Ver App</Link>
+                        <VerAppComponent />
                     </div>
                     <RiArrowDownSLine />
                     <div className="appThirdSectionCardImageContainer">

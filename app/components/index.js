@@ -10,3 +10,4 @@ export * from "./SplitH3";
 export * from "./ReviewCardComponent";
 export * from "./FooterComponent";
 export * from "./WhatsappComponent";
+export * from "./VerAppComponent";

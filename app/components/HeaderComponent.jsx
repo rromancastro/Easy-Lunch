@@ -1,5 +1,5 @@
 import Link from "next/link"
-import { CotizaComponent, ImagenParallaxComponent, SplitH1, SplitP } from "."
+import { CotizaComponent, ImagenParallaxComponent, SplitH1, SplitP, VerAppComponent } from "."
 
 export const HeaderComponent = ({ imageUrl, title, description, link, title2, shadow=1, content="Cotizá ahora"}) => {
     return <header style={{
@@ -21,7 +21,7 @@ export const HeaderComponent = ({ imageUrl, title, description, link, title2, sh
             description && <SplitP id={'homeHeaderDescription'}>{description}</SplitP>
         }
         {
-            link && <Link target="_blank" href={link}>Ver App
+            link === 'app' ? <VerAppComponent /> : <Link target="_blank" href={link}>Ver App
             </Link>
         }
         {

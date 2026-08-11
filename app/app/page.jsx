@@ -9,7 +9,7 @@ export default function AppPage() {
                 imageUrl={'/app/headerBg.avif'}
                 title={'Nuestra App'}
                 description={'Fácil de usar, intuitiva y sin necesidad de descargar, accede desde la web y hacé tu pedido.'}
-                link={'https://app.easylunch.com.ar/'}
+                link={'app'}
             />
             <AppSecondSection />
             <AppThirdSection />

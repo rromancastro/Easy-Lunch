@@ -1,0 +1,130 @@
+.verAppComponent {
+    >button {
+        background-color: #138E03;
+        font-weight: 500;
+        box-shadow: 0px -2px 4px 0px #1E1E1E1A inset;
+        box-shadow: 0px 1px 2px 0px #FFFFFF33 inset;
+        height: 40px;
+        width: 200px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 8px;
+        cursor: pointer;
+        font-size: 16px;
+
+        &:hover {
+            background-color: #79DB6C;
+        }
+    }
+}
+
+.verAppComponentModal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 16px;
+    height: 100vh;
+    background-color: #00000066;
+    -webkit-backdrop-filter: blur(5px);
+    backdrop-filter: blur(5px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 200;
+    opacity: 1;
+    transition: opacity 220ms ease;
+    animation: cotizaModalFadeIn 220ms ease;
+
+    &.isClosing {
+        opacity: 0;
+        pointer-events: none;
+    }
+}
+
+.verAppComponentModalContent {
+    border-radius: 24px;
+    padding: 64px;
+    padding-top: 32px;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    align-items: center;
+    justify-content: center;
+    width: fit-content;
+    opacity: 1;
+    transition: opacity 220ms ease, transform 220ms ease;
+    animation: cotizaModalContentFadeIn 220ms ease;
+    height: 675px;
+    width: 322px;
+
+    >.verAppComponentModalClose {
+        align-self: flex-end;
+        background: transparent;
+        border: 0;
+        cursor: pointer;
+        display: flex;
+        padding: 0;
+        z-index: 10;
+        position: absolute;
+        top: 16px;
+        right: 32px;
+        background-color: #00000040;
+        border-radius: 8px;
+
+        &:hover {
+            path {
+                stroke: #A4F898;
+            }
+        }
+    }
+
+    img {
+        position: absolute;
+        z-index: 5;
+        height: 675px;
+    }
+
+    video {
+        position: absolute;
+        z-index: 3;
+        height: 645px;
+        border-radius: 40px;
+    }
+}
+
+.verAppComponentModal.isClosing {
+    .verAppComponentModalContent {
+        opacity: 0;
+        transform: translateY(8px);
+    }
+}
+
+@keyframes cotizaModalFadeIn {
+    from {
+        opacity: 0;
+    }
+}
+
+@keyframes cotizaModalContentFadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(8px);
+    }
+}
+
+@media (max-width: 1024px) {
+    .verAppComponentModalContent {
+        height: 602px;
+        width: 288px;
+
+        img {
+            height: 602px;
+        }
+
+        video {
+            height: 575px;
+        }
+    }
+}
