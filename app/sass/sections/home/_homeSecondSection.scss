@@ -34,12 +34,12 @@
 
         #homeSecondSectionBlur {
             position: absolute;
-            height: 648px;
-            width: 648px;
-            backdrop-filter: blur(2px);
-            border-radius: 50%;
-            bottom: -250px;
+            height: 100%;
+            width: 100%;
+            bottom: -128px;
+            left: 0px;
             z-index: 0;
+            background: linear-gradient(180deg, rgba(0, 0, 0, 0) 46.93%, rgba(0, 0, 0, 0.8) 88.21%);
         }
 
     }

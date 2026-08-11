@@ -55,9 +55,9 @@ export const AppFourthSection = () => {
     return <section id="appFourthSection">
         <div className="sectionTitleContainer">
             <SplitH2 id="appFourthSectionTitle">
-                Todo en una sola app. <br />
+                Todo en una sola app <br />
                 Simple para vos, 
-                simple para tu equipo.
+                simple para tu equipo
             </SplitH2>
         </div>
         <div id="fourthSectionCardsContainer" ref={cardsContainerRef}>

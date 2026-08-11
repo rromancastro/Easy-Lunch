@@ -70,7 +70,7 @@ export const AppThirdSection = () => {
                             Ingresá a la app
                         </SplitH3>
                         <SplitP id='appThirdSectionCard1Description'>
-                            Podés ingresar desde tu teléfono o tu computadora, sin descargas desde tu navegador.
+                            Podés ingresar desde tu teléfono o computadora sin necesidad de descargas.
                         </SplitP>
                     </div>
                     <RiArrowDownSLine />
@@ -121,10 +121,10 @@ export const AppThirdSection = () => {
                             4.
                         </SplitH3>
                         <SplitH3 id="appThirdSectionCard4Subtitle">
-                            Pago
+                            Pagá tu pedido
                         </SplitH3>
                         <SplitP id='appThirdSectionCard4Description'>
-                            En caso que el colaborador pague una parte o el total del almuerzo.
+                            En caso que el colaborador pague una parte o el total del almuerzo
                         </SplitP>
                         <Link className='verMasButton' href={'/app'} target="_blank">Ver App</Link>
                     </div>

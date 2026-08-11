@@ -210,7 +210,7 @@ export const HomeFifthSection = () => {
 
             <div id="homeFifthSectionTitleContainer">
                 <SplitH2 id="homeFifthSectionTitle">
-                    Variedad y calidad para todos los gustos.
+                    Variedad y calidad para todos los gustos
                 </SplitH2>
             </div>
 

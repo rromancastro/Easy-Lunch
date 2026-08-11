@@ -8,7 +8,7 @@ export default function AppPage() {
             <HeaderComponent
                 imageUrl={'/app/headerBg.avif'}
                 title={'Nuestra App'}
-                description={'Fácil de usar, intuitiva y sin necesidad de descargar, accede desde la web y hace tu pedido.'}
+                description={'Fácil de usar, intuitiva y sin necesidad de descargar, accede desde la web y hacé tu pedido.'}
                 link={'https://app.easylunch.com.ar/'}
             />
             <AppSecondSection />

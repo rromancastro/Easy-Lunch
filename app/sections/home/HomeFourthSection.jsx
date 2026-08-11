@@ -2,9 +2,7 @@
 
 import { SplitH2, SplitH3, SplitP } from "@/app/components"
 import { motion, useScroll, useTransform } from "framer-motion"
-import Image from "next/image"
 import { useRef } from "react"
-import { RiArrowDownSLine } from "react-icons/ri"
 
 const cardCount = 4
 const cardStackOffset = 24
@@ -56,7 +54,7 @@ export const HomeFourthSection = () => {
         <div id="homeFourthSectionSticky">
         <div className="sectionTitleContainer">
             <SplitH2 id="homeFourthSectionTitle">
-                Así funciona nuestro servicio.
+                Así funciona nuestro servicio
             </SplitH2>
         </div>
 

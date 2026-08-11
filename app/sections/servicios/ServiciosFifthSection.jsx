@@ -1,46 +1,18 @@
-"use client"
-
 import { ImagenParallaxComponent, SplitH2, SplitP } from "@/app/components"
-import { useEffect, useState } from "react"
-
-const MOBILE_BREAKPOINT = 1024
-
-const isMobile = (measure) => measure <= MOBILE_BREAKPOINT
-
-const getResponsiveImage = (imageName, shouldUseMobileImage) => {
-    const suffix = shouldUseMobileImage ? "Mobile" : ""
-
-    return `/servicios/${imageName}${suffix}.avif`
-}
 
 export const ServiciosFifthSection = () => {
-    const [windowWidth, setWindowWidth] = useState(null)
-
-    useEffect(() => {
-        const updateWindowWidth = () => {
-            setWindowWidth(window.innerWidth)
-        }
-
-        updateWindowWidth()
-        window.addEventListener("resize", updateWindowWidth)
-
-        return () => window.removeEventListener("resize", updateWindowWidth)
-    }, [])
-
-    const shouldUseMobileImages = windowWidth !== null && isMobile(windowWidth)
-
     return <section id="serviciosFifthSection">
         <article>
             <div>
                 <ImagenParallaxComponent
-                    rutaImagen={getResponsiveImage("fifthSectionImage1", shouldUseMobileImages)}
+                    rutaImagen={"/servicios/fifthSectionImage1.avif"}
                     alt="EasyLunch banner"
                     intensidad={1.5}
                 />
             </div>
             <div>
                 <SplitH2 id="serviciosFifthSectionTitle">
-                    Para todos, sin excepción.
+                    Para todos, sin excepción
                 </SplitH2>
                 <SplitP id="serviciosFifthSectionDescription">
                     Todos los días contamos con opciones para distintos requerimientos alimentarios.
@@ -84,7 +56,7 @@ export const ServiciosFifthSection = () => {
             </div>
             <div>
                 <ImagenParallaxComponent
-                    rutaImagen={getResponsiveImage("fifthSectionImage2", shouldUseMobileImages)}
+                    rutaImagen={"/servicios/fifthSectionImage2.avif"}
                     alt="EasyLunch banner"
                     intensidad={1.5}
                 />

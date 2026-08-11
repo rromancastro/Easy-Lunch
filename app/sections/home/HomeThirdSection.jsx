@@ -136,36 +136,13 @@ export const HomeThirdSection = () => {
     return <section id="homeThirdSection">
         <div id="homeThirdSectionTitleContainer"  className="sectionTitleContainer">
             <SplitH2 id="homeThirdSectionTitle">
-                Por que nos eligen. 
+                ¿Por qué nos eligen?
             </SplitH2>
             <SplitP id="homeThirdSectionDescription">
                 Ayudamos a  empresas y oficinas a potenciar el rendimiento de sus colaboradores con comidas sanas y variadas.
             </SplitP>
         </div>
         <div id="homeThirdSectionContent" ref={contentRef}>  
-            <div
-                className="flipCard"
-                onMouseEnter={() => setIsFlipped1(true)}
-                onMouseLeave={() => setIsFlipped1(false)}
-                onFocus={() => setIsFlipped1(true)}
-                onBlur={() => setIsFlipped1(false)}
-                tabIndex={0}
-            >
-                <ReactCardFlip isFlipped={isFlipped1} flipDirection="horizontal">
-                    <div className="flipCardFront">
-                        <Image src={'/home/thirdSectionCard1.avif'} alt="EasyLunch banner" width={500} height={500} />
-                        <SplitH3 id="homeThirdSectionCard1Title">
-                            Plataforma de pedidos
-                        </SplitH3>
-                    </div>
-                    <div className="flipCardBack">
-                        <h3 className="color-negro">Plataforma de pedidos</h3>
-                        <p className="color-negro">Plataforma web propia dinámica e intuitiva para poder cargar los pedidos desde la computadora, tablet o celular.</p>
-                        <Link className="verMasButton" href={'/app'}>Ver más</Link>
-                    </div>
-                </ReactCardFlip>
-            </div>
-
             <div
                 className="flipCard"
                 onMouseEnter={() => setIsFlipped2(true)}
@@ -185,6 +162,29 @@ export const HomeThirdSection = () => {
                         <h3 className="color-negro">Modalidades de contratación</h3>
                         <p className="color-negro">Diferentes modalidades de contratación que <br /> se adaptan a la política de cada empresa.</p>
                         <Link className="verMasButton" href={'/servicios'}>Ver más</Link>
+                    </div>
+                </ReactCardFlip>
+            </div>
+
+            <div
+                className="flipCard"
+                onMouseEnter={() => setIsFlipped1(true)}
+                onMouseLeave={() => setIsFlipped1(false)}
+                onFocus={() => setIsFlipped1(true)}
+                onBlur={() => setIsFlipped1(false)}
+                tabIndex={0}
+            >
+                <ReactCardFlip isFlipped={isFlipped1} flipDirection="horizontal">
+                    <div className="flipCardFront">
+                        <Image src={'/home/thirdSectionCard1.avif'} alt="EasyLunch banner" width={500} height={500} />
+                        <SplitH3 id="homeThirdSectionCard1Title">
+                            Plataforma de pedidos
+                        </SplitH3>
+                    </div>
+                    <div className="flipCardBack">
+                        <h3 className="color-negro">Plataforma de pedidos</h3>
+                        <p className="color-negro">Plataforma web propia dinámica e intuitiva para poder cargar los pedidos desde la computadora, tablet o celular.</p>
+                        <Link className="verMasButton" href={'/app'}>Ver más</Link>
                     </div>
                 </ReactCardFlip>
             </div>

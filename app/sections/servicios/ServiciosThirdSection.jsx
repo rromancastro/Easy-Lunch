@@ -6,7 +6,7 @@ export const ServiciosThirdSection = () => {
         <article>
             <div id="serviciosThirdSectionContent">
                 <SplitH2 id="serviciosThirdSectionTitle">
-                    +40 opciones disponibles todos los días.
+                    +40 opciones disponibles todos los días
                 </SplitH2>
                 <SplitP id="serviciosThirdSectionDescription">
                     El menú cambia diariamente para que comer bien nunca se vuelva rutina.

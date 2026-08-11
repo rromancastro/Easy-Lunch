@@ -675,12 +675,12 @@ header > a:hover {
 }
 #homeSecondSection article #homeSecondSectionBlur {
   position: absolute;
-  height: 648px;
-  width: 648px;
-  backdrop-filter: blur(2px);
-  border-radius: 50%;
-  bottom: -250px;
+  height: 100%;
+  width: 100%;
+  bottom: -128px;
+  left: 0px;
   z-index: 0;
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0) 46.93%, rgba(0, 0, 0, 0.8) 88.21%);
 }
 
 @media (max-width: 1024px) {
@@ -784,13 +784,6 @@ header > a:hover {
     padding-bottom: 48px;
     gap: 48px;
   }
-  #homeThirdSection .sectionTitleContainer h2 {
-    font-size: 36px;
-    font-weight: 600;
-  }
-  #homeThirdSection .sectionTitleContainer p {
-    font-size: 13px;
-  }
   #homeThirdSection #homeThirdSectionContent {
     display: flex;
     flex-wrap: wrap;
@@ -820,7 +813,8 @@ header > a:hover {
 #homeFourthSectionSticky {
   position: sticky;
   top: 0;
-  height: 100vh;
+  height: 100%;
+  min-height: 100vh;
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -1006,6 +1000,9 @@ header > a:hover {
   color: #1E1E1E;
   text-align: center;
   font-weight: 500;
+  backdrop-filter: blur(4px);
+  padding: 48px;
+  border-radius: 50%;
 }
 
 #homeFifthSectionContent {
@@ -1296,19 +1293,17 @@ header > a:hover {
   flex-direction: column;
   gap: 40px;
 }
-#appSecondSectionContent > article > div > article svg {
-  position: absolute;
-  top: 24px;
-  right: 16px;
-}
 #appSecondSectionContent > article > div > article h3 {
   font-size: 16px;
-  max-width: 160px;
-  height: 40px;
+  width: 100%;
+  height: 56px;
   display: flex;
   align-items: center;
-  color: #1E1E1E;
   font-weight: 600;
+  justify-content: center;
+  text-align: center;
+  background-color: #138E03;
+  border-radius: 8px;
 }
 #appSecondSectionContent > article > div > article ul {
   display: flex;
@@ -1382,7 +1377,8 @@ header > a:hover {
 #appThirdSectionSticky {
   position: sticky;
   top: 0;
-  height: 100vh;
+  height: 100%;
+  min-height: 100vh;
   width: 100%;
   display: flex;
   flex-direction: column;

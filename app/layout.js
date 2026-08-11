@@ -1,4 +1,5 @@
 import { Geist, Geist_Mono } from "next/font/google";
+import Script from "next/script";
 import { LenisProvider, WhatsappComponent } from "./components";
 import "lenis/dist/lenis.css";
 import "./globals.css";
@@ -26,6 +27,23 @@ const headerBackgrounds = [
   "/trabaja-con-nosotros/headerBg.avif",
 ];
 
+const speculationRules = {
+  prerender: [
+    {
+      source: "document",
+      where: {
+        and: [
+          { href_matches: "/*" },
+          { not: { href_matches: "/api/*" } },
+          { not: { href_matches: "/*.ico" } },
+          { not: { href_matches: "/*.*" } },
+        ],
+      },
+      eagerness: "moderate",
+    },
+  ],
+};
+
 export default function RootLayout({ children }) {
   return (
     <html lang="en" className={`${geistSans.variable} ${geistMono.variable}`}>
@@ -33,6 +51,12 @@ export default function RootLayout({ children }) {
         {headerBackgrounds.map((href) => (
           <link key={href} rel="preload" as="image" href={href} fetchPriority="high" />
         ))}
+        <Script
+          id="speculation-rules"
+          type="speculationrules"
+          strategy="beforeInteractive"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(speculationRules) }}
+        />
       </head>
       <body>
         <WhatsappComponent />

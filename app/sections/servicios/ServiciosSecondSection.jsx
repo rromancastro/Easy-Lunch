@@ -99,7 +99,7 @@ export const ServiciosSecondSection = () => {
     return <section id="serviciosSecondSection">
         <div className="sectionTitleContainer">
             <SplitH2 id="serviciosSecondSectionTitle">
-                Armá tu propio esquema de beneficios.
+                Armá tu propio esquema de beneficios
             </SplitH2>
             <SplitP id="serviciosSecondSectionDescription">
                 Gracias a nuestra plataforma 100% configurable, diagramamos el beneficio que mejor se adapte a la dinámica y el presupuesto de tu empresa.
