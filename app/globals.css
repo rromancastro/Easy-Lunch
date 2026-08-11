@@ -954,7 +954,7 @@ header > a:hover {
   border-radius: 24px;
   width: 100%;
   max-width: 903px;
-  height: 598px;
+  height: 60vh;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -1023,25 +1023,30 @@ header > a:hover {
   background: linear-gradient(180deg, #FFFFFF 0%, #EEEEEE 100%);
 }
 .homeFourthSectionCard:nth-child(1) img {
-  height: 570px;
+  height: 100%;
+  max-height: 570px;
 }
 .homeFourthSectionCard:nth-child(2) {
   background: linear-gradient(180deg, #EEEEEE 0%, #ADACAC 100%);
 }
 .homeFourthSectionCard:nth-child(2) img {
-  height: 560px;
+  height: 100%;
+  max-height: 560px;
 }
 .homeFourthSectionCard:nth-child(3) {
   background: linear-gradient(180deg, #ADACAC 0%, #898989 100%);
 }
 .homeFourthSectionCard:nth-child(3) img {
-  height: 450px;
+  margin-left: auto;
+  height: 100%;
+  max-height: 450px;
 }
 .homeFourthSectionCard:nth-child(4) {
   background: linear-gradient(180deg, #A4F898 0%, #79DB6C 100%);
 }
 .homeFourthSectionCard:nth-child(4) img {
-  height: 500px;
+  height: 100%;
+  max-height: 500px;
 }
 
 @media (max-width: 768px) {
@@ -1514,7 +1519,7 @@ header > a:hover {
   border-radius: 24px;
   width: 100%;
   max-width: 903px;
-  height: 598px;
+  height: 60vh;
   display: flex;
   align-items: center;
   justify-content: space-between;

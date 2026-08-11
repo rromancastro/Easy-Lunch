@@ -1,5 +1,12 @@
 import { FooterComponent, HeaderComponent, NavbarComponent } from "../components";
 import { AppFourthSection, AppSecondSection, AppThirdSection } from "../sections";
+import { pageMetadata } from "../seo";
+
+export const metadata = pageMetadata({
+    title: "App de pedidos corporativos",
+    description: "Conoce la app web de Easy Lunch: pedidos individuales, gestion simple y acceso sin descargas para colaboradores y empresas.",
+    path: "/app",
+});
 
 export default function AppPage() {
     return <>

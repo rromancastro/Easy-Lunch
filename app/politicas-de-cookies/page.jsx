@@ -1,4 +1,12 @@
 import Link from "next/link"
+import { pageMetadata } from "../seo"
+
+export const metadata = pageMetadata({
+    title: "Politica de cookies",
+    description: "Politica de cookies de Easy Lunch: tipos de cookies, finalidad, consentimiento y gestion desde el navegador.",
+    path: "/politicas-de-cookies",
+    noIndex: true,
+})
 
 const cookieTypes = [
     {

@@ -38,7 +38,7 @@
     border-radius: 24px;
     width: 100%;
     max-width: 903px;
-    height: 598px;
+    height: 60vh;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -114,28 +114,33 @@
     &:nth-child(1) {
         background: linear-gradient(180deg, #FFFFFF 0%, #EEEEEE 100%);
         img {
-            height: 570px;
+            height: 100%;
+            max-height: 570px;
         }
     }
 
     &:nth-child(2) {
         background: linear-gradient(180deg, #EEEEEE 0%, #ADACAC 100%);
         img {
-            height: 560px;
+            height: 100%;
+            max-height: 560px;
         }
     }
 
     &:nth-child(3) {
         background: linear-gradient(180deg, #ADACAC 0%, #898989 100%);
         img {
-            height: 450px;
+            margin-left: auto;
+            height: 100%;
+            max-height: 450px;
         }
     }
 
     &:nth-child(4) {
         background: linear-gradient(180deg, #A4F898 0%, #79DB6C 100%);
         img {
-            height: 500px;
+            height: 100%;
+            max-height: 500px;
         }
     }
 }

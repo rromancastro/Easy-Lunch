@@ -1,4 +1,12 @@
 import Link from "next/link"
+import { pageMetadata } from "../seo"
+
+export const metadata = pageMetadata({
+    title: "Politica de privacidad",
+    description: "Politica de privacidad de Easy Lunch y BAD KITCHEN S.R.L. sobre tratamiento de datos personales.",
+    path: "/politicas-de-privacidad",
+    noIndex: true,
+})
 
 const sections = [
     {
