@@ -56,6 +56,7 @@ export const VerAppComponent = ({ content = "Ver App" }) => {
                     loop
                     id="appSecondSectionVideo"
                     autoPlay
+                    poster="/app/app.png"
                 ></video>
             </div>
         </div>,
