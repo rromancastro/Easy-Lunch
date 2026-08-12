@@ -34,7 +34,7 @@ export const AppSecondSection = () => {
                 <div>
                     <article>
                         <h3>
-                            Para empresa/
+                            Para empresas /
                             administradores
                         </h3>
                         <ul>

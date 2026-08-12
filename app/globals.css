@@ -133,9 +133,24 @@
 #footerComponent article div:first-child p:nth-child(2) svg {
   font-size: 20px;
 }
-#footerComponent article div:first-child p:nth-child(4), #footerComponent article div:first-child p:nth-child(5) {
+#footerComponent article div:first-child p:nth-child(4) {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  font-weight: 400;
+}
+#footerComponent article div:first-child p:nth-child(4) a {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+#footerComponent article div:first-child p:nth-child(4) svg {
+  font-size: 20px;
+}
+#footerComponent article div:first-child p:nth-child(6), #footerComponent article div:first-child p:nth-child(7) {
   display: flex;
   gap: 16px;
+  font-weight: 600;
 }
 #footerComponent article div:last-child {
   width: 100%;

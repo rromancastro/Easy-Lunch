@@ -1,10 +1,10 @@
 "use client"
 
 import Link from "next/link"
-import { FaFacebook, FaInstagram } from "react-icons/fa"
-import { FaXTwitter } from "react-icons/fa6"
+import { FaInstagram, FaLinkedin, FaWhatsapp } from "react-icons/fa"
 import { formPatterns } from "@/app/utils/contactForms"
 import { useContactFormSubmit } from "@/app/utils/useContactFormSubmit"
+import { MdOutlineEmail } from "react-icons/md"
 
 const footerBackgroundItems = Array.from({ length: 8 })
 const footerBackgroundRows = Array.from({ length: 4 })
@@ -17,9 +17,13 @@ export const FooterComponent = () => {
             <div>
                 <h3>Seguínos</h3>
                 <p>
-                    <Link href='/'><FaFacebook /></Link>
-                    <Link href='/'><FaInstagram /></Link>
-                    <Link href='/'><FaXTwitter /></Link>
+                    <Link target="_blank" href='https://www.instagram.com/easylunch.ok'><FaInstagram /></Link>
+                    <Link target="_blank" href='https://www.linkedin.com/company/easylunchok/'><FaLinkedin /></Link>
+                </p>
+                <h3>Contactanos</h3>
+                <p>
+                    <Link target="_blank" href='mailto:info@easylunch.com.ar'><MdOutlineEmail /> info@easylunch.com.ar</Link>
+                    <Link target="_blank" href='https://wa.me/5491139042215?text=Hola%2C%20me%20gustar%C3%ADa%20recibir%20m%C3%A1s%20informaci%C3%B3n%20sobre%20el%20servicio%20de%20viandas%20corporativas%20de%20Easy%20Lunch%20para%20mi%20empresa.'><FaWhatsapp /> +54 9 11 3904-2215</Link>
                 </p>
 
                 <h3>Menu</h3>

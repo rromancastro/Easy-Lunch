@@ -25,8 +25,6 @@ export const TrabajaConNosotrosSecondSection = () => {
                     <input type="text" name="phone" placeholder="Teléfono" pattern={formPatterns.phone} title="Usá entre 7 y 25 caracteres: números, espacios, +, -, puntos o paréntesis." required />
                     <input type="text" name="neighborhood" placeholder="Barrio o localidad" pattern={formPatterns.location} title="Usá entre 2 y 100 caracteres válidos." required />
                     <input type="text" name="experienceYears" inputMode="numeric" placeholder="Años de experiencia" pattern={formPatterns.experienceYears} title="Ingresá hasta 2 dígitos." required />
-                    <input type="text" name="employeeCount" inputMode="numeric" placeholder="Cantidad de empleados" pattern={formPatterns.positiveInteger} title="Ingresá solo números." required />
-                    <input type="text" name="deliveryZone" placeholder="Zona de entrega" pattern={formPatterns.deliveryZone} title="Usá entre 2 y 120 caracteres válidos." required />
 
                     <label className="trabajaConNosotrosFileInput" htmlFor="trabajaConNosotrosCv">
                         Adjuntar CV

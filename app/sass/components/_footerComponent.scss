@@ -57,9 +57,28 @@
                         }
                     }
 
-                    &:nth-child(4), &:nth-child(5) {
+                    &:nth-child(4) {
+                        display: flex;
+                        gap: 8px;
+                        align-items: center;
+                        font-weight: 400;
+
+                        a {
+                            display: flex;
+                            gap: 8px;
+                            align-items: center;
+                        }
+
+                        svg {
+                            font-size: 20px;
+                        }
+                    }
+
+                    &:nth-child(6),
+                    &:nth-child(7) {
                         display: flex;
                         gap: 16px;
+                        font-weight: 600;
                     }
                 }
             }

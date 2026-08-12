@@ -16,7 +16,9 @@ export default function TrabajaConNosotrosPage() {
                 imageUrl={'/trabaja-con-nosotros/headerBg.avif'}
                 title={'Trabaja con'}
                 title2={'Nosotros'}
+                link={'https://wa.me/5491139042215?text=Hola%2C%20me%20gustar%C3%ADa%20recibir%20informaci%C3%B3n%20sobre%20las%20oportunidades%20laborales%20en%20Easy%20Lunch.'}
                 content="Contactanos"
+                
             />
             <TrabajaConNosotrosSecondSection />
         </main>
