@@ -8,6 +8,7 @@ const clamp = (value, min, max) => Math.min(Math.max(value, min), max);
 
 export const ImagenParallaxComponent = ({
     rutaImagen,
+    rutaImagenMobile,
     src,
     alt = "",
     className = "",
@@ -20,6 +21,7 @@ export const ImagenParallaxComponent = ({
     const frameRef = useRef(null);
     const requestUpdateRef = useRef(null);
     const [isMobileParallax, setIsMobileParallax] = useState(false);
+    const [isMobileImage, setIsMobileImage] = useState(false);
     const effectiveIntensity = isMobileParallax ? 1 : intensidad;
 
     useLenis(
@@ -37,6 +39,16 @@ export const ImagenParallaxComponent = ({
         mediaQuery.addEventListener("change", updateIsMobileParallax);
 
         return () => mediaQuery.removeEventListener("change", updateIsMobileParallax);
+    }, []);
+
+    useEffect(() => {
+        const mediaQuery = window.matchMedia("(max-width: 767px)");
+        const updateIsMobileImage = () => setIsMobileImage(mediaQuery.matches);
+
+        updateIsMobileImage();
+        mediaQuery.addEventListener("change", updateIsMobileImage);
+
+        return () => mediaQuery.removeEventListener("change", updateIsMobileImage);
     }, []);
 
     useEffect(() => {
@@ -115,9 +127,11 @@ export const ImagenParallaxComponent = ({
         };
     }, [effectiveIntensity, pathname]);
 
+    const imageSrc = isMobileImage && rutaImagenMobile ? rutaImagenMobile : src || rutaImagen;
+
     return <div className={`imagenParallaxComponent ${className}`.trim()} ref={containerRef}>
         <img
-            src={src || rutaImagen}
+            src={imageSrc}
             alt={alt}
             loading={priority ? "eager" : "lazy"}
             fetchPriority={priority ? "high" : "auto"}

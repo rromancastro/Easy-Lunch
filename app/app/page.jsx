@@ -13,7 +13,7 @@ export default function AppPage() {
         <NavbarComponent />
         <main>
             <HeaderComponent
-                imageUrl={'/app/headerBg.avif'}
+                imageUrl={'/app/headerBg'}
                 title={'Nuestra App'}
                 description={'Fácil de usar, intuitiva y sin necesidad de descargar, accede desde la web y hacé tu pedido.'}
                 link={'app'}

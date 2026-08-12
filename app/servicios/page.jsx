@@ -13,7 +13,7 @@ export default function ServiciosPage() {
         <NavbarComponent />
         <main>
             <HeaderComponent
-                imageUrl={'/servicios/headerBg.avif'}
+                imageUrl={'/servicios/headerBg'}
                 title={'Nuestros '}
                 titleWidth="200px"
                 title2={'Servicios'}

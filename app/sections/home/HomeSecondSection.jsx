@@ -4,6 +4,7 @@ export const HomeSecondSection = () => {
         <article className="radius-24">            
             <ImagenParallaxComponent
                 rutaImagen="/home/secondSectionBg.avif"
+                rutaImagenMobile="/home/secondSectionBgMobile.avif"
                 alt="EasyLunch banner"
                 intensidad={1.5}
             />

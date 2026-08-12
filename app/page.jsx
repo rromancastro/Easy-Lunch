@@ -13,7 +13,7 @@ export default function Home() {
         <NavbarComponent />
         <main>
             <HeaderComponent 
-                imageUrl="/home/headerBg.avif" 
+                imageUrl="/home/headerBgNuevo" 
                 title="La forma más simple de resolver el almuerzo corporativo."
                 shadow={2}
             />
