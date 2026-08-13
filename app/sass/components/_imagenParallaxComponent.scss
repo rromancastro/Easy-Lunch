@@ -16,10 +16,14 @@
     object-fit: cover;
     z-index: -1;
 
+    picture,
     img {
         width: 100%;
         height: calc(100% + 96px);
         display: block;
+    }
+
+    img {
         object-fit: cover;
         transform: translateY(var(--parallax-y)) translateZ(40px) scale(1.08);
         transform-origin: center;

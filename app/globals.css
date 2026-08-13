@@ -515,10 +515,13 @@ header > a:hover {
   object-fit: cover;
   z-index: -1;
 }
+.imagenParallaxComponent picture,
 .imagenParallaxComponent img {
   width: 100%;
   height: calc(100% + 96px);
   display: block;
+}
+.imagenParallaxComponent img {
   object-fit: cover;
   transform: translateY(var(--parallax-y)) translateZ(40px) scale(1.08);
   transform-origin: center;
@@ -2392,42 +2395,42 @@ header > a:hover {
   src: url("/fonts/Montserrat.ttf") format("truetype");
   font-weight: 300;
   font-style: normal;
-  font-display: swap;
+  font-display: block;
 }
 @font-face {
   font-family: "Montserrat";
   src: url("/fonts/Montserrat.ttf") format("truetype");
   font-weight: 400;
   font-style: normal;
-  font-display: swap;
+  font-display: block;
 }
 @font-face {
   font-family: "Montserrat";
   src: url("/fonts/Montserrat.ttf") format("truetype");
   font-weight: 500;
   font-style: normal;
-  font-display: swap;
+  font-display: block;
 }
 @font-face {
   font-family: "Montserrat";
   src: url("/fonts/Montserrat.ttf") format("truetype");
   font-weight: 600;
   font-style: normal;
-  font-display: swap;
+  font-display: block;
 }
 @font-face {
   font-family: "Montserrat";
   src: url("/fonts/Montserrat.ttf") format("truetype");
   font-weight: 700;
   font-style: normal;
-  font-display: swap;
+  font-display: block;
 }
 @font-face {
   font-family: "Montserrat";
   src: url("/fonts/Montserrat.ttf") format("truetype");
   font-weight: 800;
   font-style: normal;
-  font-display: swap;
+  font-display: block;
 }
 .color-negro {
   color: #1E1E1E;

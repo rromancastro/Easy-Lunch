@@ -96,11 +96,16 @@ const websiteSchema = {
 };
 
 const headerBackgrounds = [
-  "/home/headerBg.avif",
+  "/home/headerBgNuevo.avif",
+  "/home/headerBgNuevoMobile.avif",
   "/app/headerBg.avif",
+  "/app/headerBgMobile.avif",
   "/servicios/headerBg.avif",
+  "/servicios/headerBgMobile.avif",
   "/faq/headerBg.avif",
+  "/faq/headerBgMobile.avif",
   "/trabaja-con-nosotros/headerBg.avif",
+  "/trabaja-con-nosotros/headerBgMobile.avif",
 ];
 
 const speculationRules = {
