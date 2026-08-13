@@ -196,7 +196,7 @@
 @media (max-width: 1024px) {
     #footerComponent {
         padding: 32px 16px;
-        gap: 48px;
+        gap: 24px;
 
         h3 {
             font-size: 24px;
@@ -209,16 +209,18 @@
         article {
             flex-direction: column-reverse;
             align-items: center;
-            gap: 24px;
+            gap: 16px;
 
             div {
                 &:first-child {
                     align-items: center;
+                    gap: 16px;
                 }
 
                 &:last-child {
                     max-width: 361px;
                     align-items: center;
+                    gap: 16px;
 
                     form {
                         display: flex;
