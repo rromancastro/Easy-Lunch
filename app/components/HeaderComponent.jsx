@@ -11,7 +11,7 @@ export const HeaderComponent = ({ imageUrl, title, description, link, title2, sh
         background: shadow === 2 ? 'linear-gradient(171.32deg, rgba(0, 0, 0, 0) 27.3%, #000000 91.43%)' : 'linear-gradient(205.9deg, rgba(0, 0, 0, 0) 42.43%, #000000 90.87%)'
     }}>
         <ImagenParallaxComponent
-            rutaImagen={`${imageUrl}.avif`}
+            rutaImagen={`${imageUrl}${isMobile ? "Mobile" : ""}.avif`}
             alt="EasyLunch banner"
             intensidad={1.5}
             priority
