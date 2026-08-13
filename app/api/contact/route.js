@@ -97,27 +97,28 @@ export async function POST(request) {
             </table>
         `
 
-        await transporter.sendMail({
-            from: `"Easy Lunch" <${sender}>`,
-            to: COMPANY_EMAIL,
-            replyTo: values.email,
-            subject: title,
-            text: `${title}\n\n${buildTextData(formType, values)}${formType === "work" ? `\nCV adjunto: ${attachments.length ? "Si" : "No"}` : ""}`,
-            html: companyHtml,
-            attachments,
-        })
-
-        await transporter.sendMail({
-            from: `"Easy Lunch" <${sender}>`,
-            to: values.email,
-            subject: "Recibimos tus datos en Easy Lunch",
-            text: "Recibimos tus datos correctamente. Pronto se contactara alguien de nuestro equipo.",
-            html: `
-                <p>Hola ${escapeHtml(values.fullName)},</p>
-                <p>Recibimos tus datos correctamente. Pronto se contactara alguien de nuestro equipo.</p>
-                <p>Gracias por contactarte con Easy Lunch.</p>
-            `,
-        })
+        await Promise.all([
+            transporter.sendMail({
+                from: `"Easy Lunch" <${sender}>`,
+                to: COMPANY_EMAIL,
+                replyTo: values.email,
+                subject: title,
+                text: `${title}\n\n${buildTextData(formType, values)}${formType === "work" ? `\nCV adjunto: ${attachments.length ? "Si" : "No"}` : ""}`,
+                html: companyHtml,
+                attachments,
+            }),
+            transporter.sendMail({
+                from: `"Easy Lunch" <${sender}>`,
+                to: values.email,
+                subject: "Recibimos tus datos en Easy Lunch",
+                text: "Recibimos tus datos correctamente. Pronto se contactara alguien de nuestro equipo.",
+                html: `
+                    <p>Hola ${escapeHtml(values.fullName)},</p>
+                    <p>Recibimos tus datos correctamente. Pronto se contactara alguien de nuestro equipo.</p>
+                    <p>Gracias por contactarte con Easy Lunch.</p>
+                `,
+            }),
+        ])
 
         return Response.json({ message: "Formulario enviado correctamente." })
     } catch (error) {
