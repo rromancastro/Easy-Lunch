@@ -3,7 +3,7 @@ import { contactFormFields, fieldLabels, formTitles, validateContactForm } from 
 
 export const runtime = "nodejs"
 
-const COMPANY_EMAIL = "bronstein300@gmail.com"
+const COMPANY_EMAIL = process.env.CONTACT_TO_EMAIL || "info@easylunch.com.ar"
 const MAX_ATTACHMENT_SIZE = 5 * 1024 * 1024
 const ALLOWED_ATTACHMENT_TYPES = new Set([
     "application/pdf",
@@ -32,15 +32,20 @@ const buildTextData = (formType, values) =>
         .join("\n")
 
 const getTransporter = () => {
-    const user = process.env.GMAIL_USER
-    const pass = process.env.GMAIL_APP_PASSWORD
+    const host = process.env.SMTP_HOST
+    const port = Number(process.env.SMTP_PORT || 465)
+    const secure = process.env.SMTP_SECURE !== "false"
+    const user = process.env.SMTP_USER
+    const pass = process.env.SMTP_PASSWORD
 
-    if (!user || !pass) {
-        throw new Error("Faltan configurar GMAIL_USER y GMAIL_APP_PASSWORD.")
+    if (!host || !user || !pass) {
+        throw new Error("Faltan configurar SMTP_HOST, SMTP_USER y SMTP_PASSWORD.")
     }
 
     return nodemailer.createTransport({
-        service: "gmail",
+        host,
+        port,
+        secure,
         auth: { user, pass },
     })
 }
@@ -83,7 +88,7 @@ export async function POST(request) {
 
         const transporter = getTransporter()
         const title = formTitles[formType]
-        const sender = process.env.GMAIL_USER
+        const sender = process.env.SMTP_USER
         const companyHtml = `
             <h2>${escapeHtml(title)}</h2>
             <table cellpadding="6" cellspacing="0" border="0">
