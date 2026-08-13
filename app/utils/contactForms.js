@@ -46,8 +46,6 @@ export const contactFormFields = {
         { name: "phone", label: fieldLabels.phone, pattern: formPatterns.phone },
         { name: "neighborhood", label: fieldLabels.neighborhood, pattern: formPatterns.location },
         { name: "experienceYears", label: fieldLabels.experienceYears, pattern: formPatterns.experienceYears },
-        { name: "employeeCount", label: fieldLabels.employeeCount, pattern: formPatterns.positiveInteger },
-        { name: "deliveryZone", label: fieldLabels.deliveryZone, pattern: formPatterns.deliveryZone },
     ],
 }
 
