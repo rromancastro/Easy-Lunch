@@ -1,0 +1,50 @@
+
+> easylunch-nuevo@0.1.0 dev
+> next dev --hostname 127.0.0.1 --port 3000
+
+▲ Next.js 16.2.10 (Turbopack)
+- Local:         http://127.0.0.1:3000
+- Network:       http://127.0.0.1:3000
+✓ Ready in 707ms
+Creating turbopack project { dir: 'D:\\Proyectos\\Easy-Lunch', testMode: true }
+
+○ Compiling / ...
+ GET / 200 in 5.6s (next.js: 4.8s, application-code: 857ms)
+ GET /app 200 in 917ms (next.js: 876ms, application-code: 42ms)
+ GET / 200 in 35ms (next.js: 6ms, application-code: 29ms)
+ GET /servicios 200 in 1022ms (next.js: 971ms, application-code: 51ms)
+ GET / 200 in 34ms (next.js: 6ms, application-code: 28ms)
+ GET /servicios 200 in 39ms (next.js: 5ms, application-code: 34ms)
+ GET / 200 in 31ms (next.js: 6ms, application-code: 25ms)
+ GET /servicios 200 in 38ms (next.js: 5ms, application-code: 33ms)
+✓ Compiled in 98ms
+ GET /servicios 200 in 194ms (next.js: 110ms, application-code: 84ms)
+ GET /servicios 200 in 371ms (next.js: 6ms, application-code: 365ms)
+ GET / 200 in 440ms (next.js: 110ms, application-code: 330ms)
+ GET /servicios 200 in 114ms (next.js: 7ms, application-code: 107ms)
+ GET /servicios 200 in 99ms (next.js: 5ms, application-code: 94ms)
+ GET /servicios 200 in 91ms (next.js: 6ms, application-code: 86ms)
+ GET / 200 in 31ms (next.js: 5ms, application-code: 25ms)
+ GET /servicios 200 in 91ms (next.js: 5ms, application-code: 86ms)
+ GET /app 200 in 140ms (next.js: 98ms, application-code: 42ms)
+ GET /faq 200 in 931ms (next.js: 896ms, application-code: 35ms)
+ GET /servicios 200 in 41ms (next.js: 5ms, application-code: 36ms)
+✓ Compiled in 96ms
+ GET /servicios 200 in 166ms (next.js: 106ms, application-code: 60ms)
+ GET /servicios 200 in 446ms (next.js: 5ms, application-code: 441ms)
+ GET /app 200 in 128ms (next.js: 92ms, application-code: 36ms)
+ GET /servicios 200 in 46ms (next.js: 6ms, application-code: 40ms)
+ GET /faq 200 in 147ms (next.js: 109ms, application-code: 37ms)
+ GET /servicios 200 in 36ms (next.js: 5ms, application-code: 31ms)
+ GET / 200 in 132ms (next.js: 97ms, application-code: 34ms)
+ GET /servicios 200 in 36ms (next.js: 5ms, application-code: 31ms)
+ GET /app 200 in 31ms (next.js: 5ms, application-code: 25ms)
+ GET / 200 in 31ms (next.js: 6ms, application-code: 25ms)
+ GET /servicios 200 in 98ms (next.js: 7ms, application-code: 90ms)
+ GET / 200 in 33ms (next.js: 6ms, application-code: 27ms)
+ GET /app 200 in 33ms (next.js: 5ms, application-code: 28ms)
+ GET /faq 200 in 33ms (next.js: 5ms, application-code: 27ms)
+ GET /trabaja-con-nosotros 200 in 786ms (next.js: 752ms, application-code: 34ms)
+✓ Compiled in 46ms
+ GET /trabaja-con-nosotros 200 in 136ms (next.js: 77ms, application-code: 59ms)
+ GET /trabaja-con-nosotros 200 in 76ms (next.js: 10ms, application-code: 66ms)

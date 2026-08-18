@@ -1,4 +1,3 @@
-import Script from "next/script";
 import { FooterComponent, HeaderComponent, NavbarComponent } from "../components";
 import { FaqSecondSection } from "../sections";
 import { pageMetadata, siteUrl } from "../seo";
@@ -58,10 +57,9 @@ const faqSchema = {
 
 export default function FAQPage() {
     return <>
-        <Script
+        <script
             id="faq-schema"
             type="application/ld+json"
-            strategy="beforeInteractive"
             dangerouslySetInnerHTML={{ __html: JSON.stringify({ ...faqSchema, url: `${siteUrl}/faq` }) }}
         />
         <NavbarComponent />
