@@ -1,19 +1,8 @@
-import { Geist, Geist_Mono } from "next/font/google";
 import Script from "next/script";
 import { LenisProvider, WhatsappComponent } from "./components";
 import { defaultDescription, defaultOgImage, siteName, siteUrl } from "./seo";
 import "lenis/dist/lenis.css";
 import "./globals.css";
-
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
 
 export const metadata = {
   metadataBase: new URL(siteUrl),
@@ -127,7 +116,7 @@ const speculationRules = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="es-AR" className={`${geistSans.variable} ${geistMono.variable}`}>
+    <html lang="es-AR">
       <head>
         {headerBackgrounds.map((href) => (
           <link key={href} rel="preload" as="image" href={href} fetchPriority="high" />

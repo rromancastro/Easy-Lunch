@@ -2,8 +2,6 @@
 
 import { useEffect, useRef, useState } from "react"
 import { createPortal } from "react-dom"
-import { formPatterns } from "@/app/utils/contactForms"
-import { useContactFormSubmit } from "@/app/utils/useContactFormSubmit"
 
 const MODAL_TRANSITION_MS = 220
 
@@ -11,10 +9,7 @@ export const VerAppComponent = ({ content = "Ver App" }) => {
     const [isOpen, setIsOpen] = useState(false)
     const [isClosing, setIsClosing] = useState(false)
     const closeTimeoutRef = useRef(null)
-    const { isSending, status, message, handleSubmit } = useContactFormSubmit({
-        onSuccess: () => setModalStep(2),
-    })
-
+    
     const openModal = () => {
         if (closeTimeoutRef.current) {
             clearTimeout(closeTimeoutRef.current)

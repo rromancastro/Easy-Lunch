@@ -105,12 +105,14 @@
 #footerComponent a {
   color: #1E1E1E;
   font-weight: 500;
+  text-wrap: nowrap;
 }
 #footerComponent h3 {
   font-size: 32px;
 }
 #footerComponent p {
   font-size: 16px;
+  text-wrap: wrap;
 }
 #footerComponent > p {
   text-align: center;
@@ -120,6 +122,7 @@
   width: 100%;
   display: flex;
   justify-content: space-between;
+  gap: 32px;
 }
 #footerComponent article div {
   display: flex;

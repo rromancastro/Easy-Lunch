@@ -21,6 +21,7 @@
     a {
         color: #1E1E1E;
         font-weight: 500;
+        text-wrap: nowrap;
     }
 
     h3 {
@@ -29,6 +30,7 @@
 
     p {
         font-size: 16px;
+        text-wrap: wrap;
     }
 
     >p {
@@ -40,6 +42,7 @@
         width: 100%;
         display: flex;
         justify-content: space-between;
+        gap: 32px;
 
         div {
             display: flex;
